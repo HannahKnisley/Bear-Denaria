@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck6wujen710bn"]
+
+[sub_resource type="Gradient" id="Gradient_hjxgd"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.295167, 0.383304, 0.15442, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rojhc"]
+gradient = SubResource("Gradient_hjxgd")
+
+[node name="title_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_rojhc")
+
+[node name="title_name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.244
+anchor_right = 0.739
+anchor_bottom = 0.13
+offset_left = -0.0880127
+offset_top = 5.0
+offset_right = -0.328003
+offset_bottom = -0.240005
+theme_override_font_sizes/font_size = 55
+text = "Mama's Bear Deneria"
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416
+anchor_top = 0.792
+anchor_right = 0.525
+anchor_bottom = 0.91
+offset_left = -0.231995
+offset_top = -0.216064
+offset_right = 0.199951
+offset_bottom = 0.320007
+theme_override_font_sizes/font_size = 50
+text = "Start
+"
