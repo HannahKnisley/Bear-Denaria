@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck6wujen710bn"]
+[gd_scene load_steps=4 format=3 uid="uid://ck6wujen710bn"]
+
+[ext_resource type="Script" path="res://Scenes/Titlescreen/title_screen.gd" id="1_o8nbo"]
 
 [sub_resource type="Gradient" id="Gradient_hjxgd"]
 offsets = PackedFloat32Array(0)
@@ -14,42 +16,61 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o8nbo")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -5.0
-offset_right = 4.0
+offset_left = -4.0
+offset_top = 3.0
+offset_right = 18.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_rojhc")
 
-[node name="title_name" type="Label" parent="."]
+[node name="title_name" type="Label" parent="background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.244
-anchor_right = 0.739
-anchor_bottom = 0.13
-offset_left = -0.0880127
-offset_top = 5.0
-offset_right = -0.328003
-offset_bottom = -0.240005
+anchor_left = 0.257
+anchor_right = 0.743
+anchor_bottom = 0.122
+offset_left = 0.282013
+offset_right = -0.282043
+offset_bottom = -0.0560074
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 55
 text = "Mama's Bear Deneria"
+horizontal_alignment = 1
 
-[node name="Start" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.416
-anchor_top = 0.792
-anchor_right = 0.525
-anchor_bottom = 0.91
-offset_left = -0.231995
-offset_top = -0.216064
-offset_right = 0.199951
-offset_bottom = 0.320007
+anchor_left = 0.004
+anchor_top = 0.767
+anchor_right = 1.0
+anchor_bottom = 0.886
+offset_left = 0.356
+offset_top = -0.0160217
+offset_right = -10.0
+offset_bottom = -0.128052
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Credit" type="Button" parent="background/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits
+"
+
+[node name="Start" type="Button" parent="background/HBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Start
 "
+
+[connection signal="pressed" from="background/HBoxContainer/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="background/HBoxContainer/Start" to="." method="_on_start_pressed"]
