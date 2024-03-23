@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwl3yt5o5e816"]
+
+[ext_resource type="Script" path="res://Scenes/GrillArea/beef_patty.gd" id="1_q6l5v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_w3olk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_073w4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5hv6k"]
+radius = 28.0179
+
+[node name="BeefPatty" type="RigidBody2D" groups=["patty"]]
+sleeping = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_q6l5v")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0.839216, 0.572549, 0.4, 1)
+self_modulate = Color(0.615686, 0.615686, 0.615686, 1)
+rotation = -3.14159
+scale = Vector2(104.949, -89)
+mesh = SubResource("SphereMesh_w3olk")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MeshInstance2D2"]
+position = Vector2(9.16303e-09, -0.123596)
+mesh = SubResource("SphereMesh_073w4")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_5hv6k")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

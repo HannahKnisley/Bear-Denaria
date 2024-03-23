@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c16cne033c4of"]
+
+[ext_resource type="Script" path="res://Scripts/grillArea/patty_spawner.gd" id="1_dmaec"]
+[ext_resource type="PackedScene" uid="uid://cwl3yt5o5e816" path="res://Scenes/GrillArea/beef_patty.tscn" id="2_pledu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_le17l"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_go83v"]
+
+[node name="pattySpawner" type="Area2D"]
+script = ExtResource("1_dmaec")
+patty = ExtResource("2_pledu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_le17l")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(50, 50)
+mesh = SubResource("SphereMesh_go83v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

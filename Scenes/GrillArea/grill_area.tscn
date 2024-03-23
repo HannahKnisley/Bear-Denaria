@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6v3p1p6eibu0"]
+[gd_scene load_steps=4 format=3 uid="uid://6v3p1p6eibu0"]
+
+[ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
+[ext_resource type="PackedScene" uid="uid://cocyyg8ps4hq5" path="res://Scenes/GrillArea/cooktop.tscn" id="2_wnctg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ha7ct"]
 
@@ -6,6 +9,33 @@
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.521569, 0, 0.521569, 1)
-position = Vector2(626, 322)
-scale = Vector2(858, 471)
+position = Vector2(631, 320.75)
+scale = Vector2(806, 472.5)
 mesh = SubResource("BoxMesh_ha7ct")
+
+[node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
+position = Vector2(91, 125)
+
+[node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
+position = Vector2(344, 197)
+
+[node name="Cooktop2" parent="." instance=ExtResource("2_wnctg")]
+position = Vector2(350, 414)
+
+[node name="Cooktop3" parent="." instance=ExtResource("2_wnctg")]
+position = Vector2(708, 204)
+
+[node name="Cooktop4" parent="." instance=ExtResource("2_wnctg")]
+position = Vector2(525, 201)
+
+[node name="Cooktop5" parent="." instance=ExtResource("2_wnctg")]
+position = Vector2(718, 414)
+
+[node name="Cooktop6" parent="." instance=ExtResource("2_wnctg")]
+position = Vector2(534, 414)
+
+[node name="Cooktop7" parent="." instance=ExtResource("2_wnctg")]
+position = Vector2(904, 415)
+
+[node name="Cooktop8" parent="." instance=ExtResource("2_wnctg")]
+position = Vector2(898, 212)
