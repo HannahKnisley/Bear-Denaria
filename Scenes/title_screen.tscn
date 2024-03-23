@@ -23,8 +23,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
+offset_left = -4.0
+offset_top = 3.0
 offset_right = 18.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_rojhc")
@@ -32,27 +34,30 @@ texture = SubResource("GradientTexture1D_rojhc")
 [node name="title_name" type="Label" parent="background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.244
-anchor_right = 0.75
-anchor_bottom = 0.145
-offset_left = 15.716
-offset_top = 15.0
-offset_right = 2.80389
-offset_bottom = 0.0399933
+anchor_left = 0.257
+anchor_right = 0.743
+anchor_bottom = 0.122
+offset_left = 0.282013
+offset_right = -0.282043
+offset_bottom = -0.0560074
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 55
 text = "Mama's Bear Deneria"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.085
-anchor_top = 0.494
-anchor_right = 0.785
-anchor_bottom = 0.782
-offset_left = 0.315002
-offset_top = -0.112
-offset_right = -0.38501
-offset_bottom = 0.263947
+anchor_left = 0.004
+anchor_top = 0.767
+anchor_right = 1.0
+anchor_bottom = 0.886
+offset_left = 0.356
+offset_top = -0.0160217
+offset_right = -10.0
+offset_bottom = -0.128052
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
 [node name="Credit" type="Button" parent="background/HBoxContainer"]
@@ -67,4 +72,5 @@ theme_override_font_sizes/font_size = 50
 text = "Start
 "
 
+[connection signal="pressed" from="background/HBoxContainer/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="background/HBoxContainer/Start" to="." method="_on_start_pressed"]

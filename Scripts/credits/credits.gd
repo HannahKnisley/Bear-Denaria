@@ -11,11 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/dayscreen/dayscreen.tscn")
-	
-	
-
-
-func _on_credit_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Credits/credits.tscn")
+func _on_exit_pressed():
+	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
