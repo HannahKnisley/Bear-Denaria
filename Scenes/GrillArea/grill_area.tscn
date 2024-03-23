@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://6v3p1p6eibu0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ha7ct"]
+
+[node name="GrillArea" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.521569, 0, 0.521569, 1)
+position = Vector2(626, 322)
+scale = Vector2(858, 471)
+mesh = SubResource("BoxMesh_ha7ct")
