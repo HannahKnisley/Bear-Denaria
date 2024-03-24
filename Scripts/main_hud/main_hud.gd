@@ -16,4 +16,4 @@ func _on_grill_pressed():
 
 
 func _on_order_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Order_screen/order_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Credits/order_screen.tscn")
