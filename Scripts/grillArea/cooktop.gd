@@ -2,6 +2,7 @@ extends Area2D
 
 
 var canHoldPatty = true
+var heldPatty
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,14 +21,12 @@ func _on_body_entered(body):
 	if canHoldPatty and body.is_in_group("patty"):
 		canHoldPatty = false
 		body.snapToGrill(self.global_position)
+		heldPatty = body
 		
 
 			
 		
 
-
-
-
 func _on_body_exited(body):
-	if body.is_in_group("patty"):
+	if body == heldPatty:
 		canHoldPatty = true
