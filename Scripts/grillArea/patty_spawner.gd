@@ -20,8 +20,6 @@ func _process(delta):
 
 func spawn_patty():
 	var newPatty = patty.instantiate()
-	print(self.global_position)
-	print(newPatty.global_position)
 	self.add_child(newPatty)
 	newPatty.global_position = self.global_position
 	

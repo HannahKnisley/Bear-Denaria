@@ -25,9 +25,10 @@ func _physics_process(delta):
 			move_and_collide(burgerToMouse())
 		
 	if Input.is_action_just_released("mouseClick"):
+		move_and_collide((burgerToGrill()))
+		await get_tree().create_timer(0.05).timeout
 		self.set_collision_mask_value(1, true)
 		self.set_collision_mask_value(2, false)
-		move_and_collide((burgerToGrill()))
 		
 			
 

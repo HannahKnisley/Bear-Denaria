@@ -1,6 +1,6 @@
 extends Area2D
 
-var sendSpawn = false
+
 var canHoldPatty = true
 
 # Called when the node enters the scene tree for the first time.
@@ -17,10 +17,15 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.is_in_group("patty") and canHoldPatty:
-		body.snapToGrill(self.global_position)
+	if canHoldPatty and body.is_in_group("patty"):
 		canHoldPatty = false
+		body.snapToGrill(self.global_position)
 		
+
+			
+		
+
+
 
 
 func _on_body_exited(body):
