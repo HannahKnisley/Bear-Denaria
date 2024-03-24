@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ccj22doayxb2g"]
+
+[ext_resource type="FontFile" uid="uid://dyn6cqbfxl7h" path="res://OtherAssets/Fonts/Outdoor.otf" id="1_e2gyn"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 120
+Label/fonts/font = ExtResource("1_e2gyn")

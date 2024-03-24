@@ -23,23 +23,6 @@ position = Vector2(619.5, 305.25)
 scale = Vector2(675, 441.5)
 mesh = SubResource("BoxMesh_ha7ct")
 
-[node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
-position = Vector2(1062, 560)
-
-[node name="spatulaBelow" type="Node2D" parent="."]
-
-[node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
-position = Vector2(107, 405)
-
-[node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
-position = Vector2(91, 125)
-
-[node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
-position = Vector2(93, 295)
-
-[node name="spatulaAbove" type="Node2D" parent="."]
-position = Vector2(107, 405)
-
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
 position = Vector2(344, 197)
 
@@ -63,3 +46,20 @@ position = Vector2(904, 415)
 
 [node name="Cooktop8" parent="." instance=ExtResource("2_wnctg")]
 position = Vector2(898, 212)
+
+[node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
+position = Vector2(1062, 560)
+
+[node name="spatulaBelow" type="Node2D" parent="."]
+
+[node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
+position = Vector2(107, 405)
+
+[node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
+position = Vector2(91, 125)
+
+[node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
+position = Vector2(93, 295)
+
+[node name="spatulaAbove" type="Node2D" parent="."]
+position = Vector2(107, 405)

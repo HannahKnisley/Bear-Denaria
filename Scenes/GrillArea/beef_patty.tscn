@@ -27,9 +27,9 @@ mesh = SubResource("SphereMesh_073w4")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11)
+scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_5hv6k")
 
 [node name="cookTimer" type="Timer" parent="."]
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]

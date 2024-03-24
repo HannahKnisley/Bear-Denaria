@@ -10,6 +10,8 @@ var bottomCook = 0
 var flipping = false
 var up = true
 
+var sliding = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	snapPos = self.global_position
@@ -25,14 +27,15 @@ func _physics_process(delta):
 		checkMouse()
 		
 	if Input.is_action_pressed("mouseClick"):
-		if mouseCollide and !flipping:
+		if mouseCollide and !flipping and !sliding:
 			$cookTimer.stop()
 			self.set_collision_mask_value(1, false)
 			self.set_collision_mask_value(2, true)
 			move_and_collide(burgerToMouse()) 
 		
 	if Input.is_action_just_released("mouseClick"):
-		if !flipping:
+		if !flipping and !sliding:
+			await get_tree().create_timer(0.1).timeout
 			move_and_collide((burgerToGrill()))
 			await get_tree().create_timer(0.3).timeout
 			self.set_collision_mask_value(1, true)
@@ -73,8 +76,6 @@ func checkMouse():
 
 	
 func flippingAnimate(delta):
-	self.set_collision_mask_value(1, false)
-	self.set_collision_mask_value(2, true)
 	if self.global_position > (snapPos-Vector2(0,85)) and up:
 		move_and_collide(((snapPos-Vector2(0,90))-self.global_position)*delta*10)
 	
@@ -84,8 +85,6 @@ func flippingAnimate(delta):
 	if self.global_position < (snapPos-Vector2(0,5)) and !up:
 		move_and_collide((snapPos-self.global_position)*delta*10)
 	elif !up:
-		self.set_collision_mask_value(1, true)
-		self.set_collision_mask_value(2, false)
 		up = true
 		flipping = false
 		

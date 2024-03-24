@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8hns1ngiicnc"]
 
-[ext_resource type="Script" path="res://Scripts/grill_to_build.gd" id="1_fcps5"]
+[ext_resource type="Script" path="res://Scripts/grillArea/grill_to_build.gd" id="1_3uhwa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hksqf"]
 
@@ -8,7 +8,7 @@
 size = Vector2(148.375, 146)
 
 [node name="grillToBuild" type="Area2D"]
-script = ExtResource("1_fcps5")
+script = ExtResource("1_3uhwa")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0, 0.596078, 0.207843, 1)
