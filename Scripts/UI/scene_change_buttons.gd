@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_order_button_pressed():
-	pass # Replace with function body.
+	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/Order_screen.global_position + Vector2(576,324)
 
 
 func _on_grill_button_pressed():

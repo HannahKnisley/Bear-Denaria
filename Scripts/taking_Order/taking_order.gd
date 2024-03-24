@@ -9,7 +9,7 @@ func _ready():
 
 
 	
-	$/root/taking_Order/name.text = str(name_of_customer.name_of_customer)
+	$/root/taking_an_order/name.text = str(name_of_customer.name_of_customer)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
