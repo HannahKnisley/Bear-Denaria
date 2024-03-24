@@ -12,7 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_released("mouseClick"):
-		await get_tree().create_timer(0.05).timeout
+		await get_tree().create_timer(0.1).timeout
 		if canSpawn:
 			spawn_patty()
 

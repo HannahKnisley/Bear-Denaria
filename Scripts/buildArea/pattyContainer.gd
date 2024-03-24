@@ -13,6 +13,7 @@ func _process(delta):
 
 func _on_child_entered_tree(node):
 	print("collected")
+	node.sliding = false
 	node.setSnap(self.global_position)
+	await get_tree().create_timer(0.1).timeout
 	node.visible = false
-	self.get_child(0).visible = true
