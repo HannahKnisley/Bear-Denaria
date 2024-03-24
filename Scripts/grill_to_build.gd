@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("mouseClick"):
 		if pattyIn:
-			myPatty.snapToGrill(self.global_position)
+			myPatty.setSnap(self.global_position)
 			self.add_child(myPatty)
 			sliding = true
 	
@@ -41,13 +41,15 @@ func slideOutAnimate(delta):
 		myPatty.global_position = self.global_position
 	else:
 		out = false
+		myPatty.sendToBuild()
+		myPatty.reparent($/root/WorldRoot/build_area/pattyContainer)
 		
 		
-		
-	if self.global_position > (defaultPos-Vector2(0,5)) and !out:
+	if self.global_position > (defaultPos+Vector2(7,0)) and !out:
 		self.translate((defaultPos-self.global_position)*delta*10)
 	elif !out:
 		self.set_collision_mask_value(1, true)
 		self.set_collision_mask_value(2, false)
 		out = true
 		sliding = false
+		print("meow")

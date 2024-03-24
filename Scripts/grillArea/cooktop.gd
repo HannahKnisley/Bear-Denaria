@@ -2,7 +2,8 @@ extends Area2D
 
 
 var canHoldPatty = true
-var heldPatty
+var collidingPatty = false
+var heldPatty = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,17 +12,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_released("mouseClick"):
+		if canHoldPatty and collidingPatty:
+			print("meowmeow")
+			heldPatty.snapToGrill(self.global_position)
+			canHoldPatty = false
+		
+		
 
 
 
 
 
 func _on_body_entered(body):
-	if canHoldPatty and body.is_in_group("patty"):
-		canHoldPatty = false
-		body.snapToGrill(self.global_position)
+	if body.is_in_group("patty") and canHoldPatty:
+		print("enter")
 		heldPatty = body
+		collidingPatty = true
 		
 
 			
@@ -29,4 +36,7 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body == heldPatty:
+		print("exit")
 		canHoldPatty = true
+		collidingPatty = false
+		

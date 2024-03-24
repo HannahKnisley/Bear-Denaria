@@ -16,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("mouseClick") and mouseIn:
-		self.global_position = get_viewport().get_mouse_position()
+		self.global_position = get_global_mouse_position()
 	if Input.is_action_just_released("mouseClick"):
 		if onPatty:
 			self.global_position = myPatty.global_position

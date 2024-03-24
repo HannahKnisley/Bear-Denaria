@@ -10,7 +10,6 @@
 radius = 28.0179
 
 [node name="BeefPatty" type="RigidBody2D" groups=["patty"]]
-sleeping = true
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_kgj8g")

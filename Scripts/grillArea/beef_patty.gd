@@ -49,7 +49,7 @@ func burgerToGrill():
 	return moveVec
 	
 func burgerToMouse():
-	var targetoPos = get_viewport().get_mouse_position()
+	var targetoPos = get_global_mouse_position()
 	var myPos = self.global_position
 	var moveVec = targetoPos-myPos
 	return moveVec
@@ -58,11 +58,15 @@ func snapToGrill(pos):
 	snapPos = pos
 	onGrill = true
 	$cookTimer.start()
+	
+func setSnap(pos):
+	snapPos = pos
 
 func checkMouse():
-	var mousePos = get_viewport().get_mouse_position()
-	if mousePos.x > self.global_position.x-60 and mousePos.x<self.global_position.x+60:
-		if mousePos.y > self.global_position.y-60 and mousePos.y<self.global_position.x+60:
+	var mousePos = get_global_mouse_position()
+	var myPos = self.global_position
+	if mousePos.x > myPos.x-60 and mousePos.x<myPos.x+60:
+		if mousePos.y > myPos.y-60 and mousePos.y<myPos.y+60:
 			mouseCollide = true
 	else:
 		mouseCollide = false
@@ -99,5 +103,5 @@ func _on_cook_timer_timeout():
 	
 	
 func sendToBuild():
-	$cookTimer.start()
-	self.translate(Vector2(0,100))
+	onGrill = false
+	$cookTimer.stop()

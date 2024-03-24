@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=2 format=3 uid="uid://bbv7j14qeefkv"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
 
 [node name="build_area" type="Node2D"]
 
@@ -9,3 +11,7 @@ color = Color(0, 0, 0.431373, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="pattyContainer" type="Node2D" parent="."]
+position = Vector2(107, 552)
+script = ExtResource("1_jn5iw")
+
+[connection signal="child_entered_tree" from="pattyContainer" to="pattyContainer" method="_on_child_entered_tree"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://6v3p1p6eibu0"]
+[gd_scene load_steps=7 format=3 uid="uid://6v3p1p6eibu0"]
 
 [ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
 [ext_resource type="PackedScene" uid="uid://cocyyg8ps4hq5" path="res://Scenes/GrillArea/cooktop.tscn" id="2_wnctg"]
 [ext_resource type="PackedScene" uid="uid://cyic7t5yfpo8n" path="res://Scenes/GrillArea/spatula.tscn" id="3_upwfe"]
 [ext_resource type="PackedScene" uid="uid://b8hns1ngiicnc" path="res://Scenes/GrillArea/grill_to_build.tscn" id="4_x3esj"]
+[ext_resource type="PackedScene" uid="uid://cll14i0d7ol1g" path="res://Scenes/GrillArea/chicken_patty_spawner.tscn" id="5_cpdi6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ha7ct"]
 
@@ -32,6 +33,9 @@ position = Vector2(107, 405)
 
 [node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
 position = Vector2(91, 125)
+
+[node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
+position = Vector2(93, 295)
 
 [node name="spatulaAbove" type="Node2D" parent="."]
 position = Vector2(107, 405)

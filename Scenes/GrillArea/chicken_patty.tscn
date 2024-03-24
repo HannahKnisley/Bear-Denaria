@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://d16qytf4rw7hu"]
+
+[ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_suist"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ehwye"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6c55f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_arlu3"]
+radius = 28.0179
+
+[node name="chicken_patty" type="RigidBody2D" groups=["patty"]]
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_suist")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0.984314, 0.772549, 0.694118, 1)
+self_modulate = Color(0.615686, 0.615686, 0.615686, 1)
+rotation = -3.14159
+scale = Vector2(104.949, -89)
+mesh = SubResource("SphereMesh_ehwye")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MeshInstance2D2"]
+position = Vector2(9.16303e-09, -0.123596)
+mesh = SubResource("SphereMesh_6c55f")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_arlu3")
+
+[node name="cookTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]
