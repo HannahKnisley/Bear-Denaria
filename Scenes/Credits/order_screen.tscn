@@ -1,21 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://0y4pnqcluso"]
+[gd_scene load_steps=20 format=3 uid="uid://0y4pnqcluso"]
 
 [ext_resource type="Script" path="res://Scripts/Order/order_screen.gd" id="1_irgff"]
-[ext_resource type="PackedScene" path="res://Scenes/Order_screen/customer.tscn" id="2_fbsxm"]
+[ext_resource type="PackedScene" uid="uid://cs1t1sudl5fu6" path="res://Scenes/Order_screen/customer.tscn" id="2_fbsxm"]
 [ext_resource type="Script" path="res://Scripts/Order/counter.gd" id="3_38j0b"]
 [ext_resource type="Script" path="res://Scripts/Order/order.gd" id="4_ivjny"]
-[ext_resource type="PackedScene" path="res://Scenes/main_hud/main_hud.tscn" id="5_yy8ji"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pitrp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cx1k"]
-size = Vector2(105.75, 604)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgl8n"]
-albedo_color = Color(0.32549, 0.156863, 0.0156863, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_40u5m"]
-material = SubResource("StandardMaterial3D_lgl8n")
+[ext_resource type="PackedScene" uid="uid://by4q8d5e34iiu" path="res://Scenes/Credits/main_hud.tscn" id="5_wpm08"]
+[ext_resource type="Script" path="res://Scripts/Order/People_counter.gd" id="6_7wt35"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mm0r4"]
 
@@ -34,90 +24,101 @@ colors = PackedColorArray(0.20784, 0.201889, 0.247291, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_afn2g"]
 gradient = SubResource("Gradient_ohbx4")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_je70f"]
-size = Vector2(80, 54)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pitrp"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_6a4as"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cx1k"]
+size = Vector2(114.875, 446)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgl8n"]
+albedo_color = Color(0.32549, 0.156863, 0.0156863, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_40u5m"]
+material = SubResource("StandardMaterial3D_lgl8n")
+
+[sub_resource type="BoxMesh" id="BoxMesh_h30vo"]
+
+[sub_resource type="Gradient" id="Gradient_i7w5v"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lv7pc"]
+gradient = SubResource("Gradient_i7w5v")
 
 [node name="Order_screen" type="Node2D"]
-position = Vector2(523, 303)
+position = Vector2(2, 10)
 script = ExtResource("1_irgff")
 Customer = ExtResource("2_fbsxm")
 
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 12.0
-autostart = true
+[node name="main_hud" parent="." instance=ExtResource("5_wpm08")]
+anchors_preset = -1
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -14.0
+offset_top = -51.0
+offset_right = 1217.0
+offset_bottom = 664.0
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -526.0
-offset_top = -309.0
-offset_right = 682.0
-offset_bottom = 362.0
+[node name="order" type="Area2D" parent="." groups=["counter", "counterrr"]]
+position = Vector2(975, 58)
+script = ExtResource("4_ivjny")
 
-[node name="counter" type="Area2D" parent="Control"]
-material = SubResource("CanvasItemMaterial_pitrp")
-position = Vector2(203, 20)
-script = ExtResource("3_38j0b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/counter" groups=["counterr"]]
-modulate = Color(1, 0.188235, 1, 1)
-self_modulate = Color(0, 0.0941176, 0.631373, 1)
-position = Vector2(147, 251)
-shape = SubResource("RectangleShape2D_1cx1k")
-debug_color = Color(0.282353, 0.0588235, 0.0627451, 1)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Control/counter/CollisionShape2D"]
-position = Vector2(-8, 5)
-scale = Vector2(90, 283.25)
-mesh = SubResource("CylinderMesh_40u5m")
-
-[node name="you" type="StaticBody2D" parent="Control"]
-position = Vector2(57, 202)
+[node name="you" type="StaticBody2D" parent="."]
+position = Vector2(147, -2)
 physics_material_override = SubResource("PhysicsMaterial_mm0r4")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Control/you"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="you"]
 material = SubResource("CanvasItemMaterial_gjis8")
-position = Vector2(143, 92)
+position = Vector2(-42, 305)
 scale = Vector2(-102.022, -128.328)
 mesh = SubResource("CapsuleMesh_xlakx")
 texture = SubResource("GradientTexture1D_afn2g")
 
-[node name="order" type="Area2D" parent="Control" groups=["counter", "counterrr"]]
-position = Vector2(850, 178)
-script = ExtResource("4_ivjny")
+[node name="counter" type="Area2D" parent="."]
+material = SubResource("CanvasItemMaterial_pitrp")
+position = Vector2(293, -184)
+script = ExtResource("3_38j0b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/order" groups=["customer"]]
-position = Vector2(37, 139)
-shape = SubResource("RectangleShape2D_je70f")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="counter" groups=["counterr"]]
+modulate = Color(1, 0.188235, 1, 1)
+self_modulate = Color(0, 0.0941176, 0.631373, 1)
+position = Vector2(-25, 476)
+shape = SubResource("RectangleShape2D_1cx1k")
+debug_color = Color(0.282353, 0.0588235, 0.0627451, 1)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Control/order"]
-position = Vector2(32, 80)
-rotation = -3.14159
-scale = Vector2(47.3268, 150.671)
-mesh = SubResource("PrismMesh_6a4as")
+[node name="MeshInstance2D" type="MeshInstance2D" parent="counter/CollisionShape2D"]
+position = Vector2(-6.00003, 22)
+scale = Vector2(90, 283.25)
+mesh = SubResource("CylinderMesh_40u5m")
 
-[node name="Order_button" type="Button" parent="Control"]
+[node name="stringforticket" type="MeshInstance2D" parent="."]
+position = Vector2(575, 0.999998)
+rotation = 3.14159
+scale = Vector2(1149, 13)
+mesh = SubResource("BoxMesh_h30vo")
+texture = SubResource("GradientTexture2D_lv7pc")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 11.0
+autostart = true
+
+[node name="Order_button" type="Button" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 361.0
-offset_top = 128.0
-offset_right = 453.0
-offset_bottom = 159.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 365.0
+offset_top = 133.0
+offset_right = 488.0
+offset_bottom = 175.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Take order"
 
-[node name="main_hud" parent="Control" instance=ExtResource("5_yy8ji")]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.897
-offset_left = -17.0
-offset_right = 0.05896
-offset_bottom = -59.0
-size_flags_horizontal = 4
-size_flags_vertical = 6
+[node name="People_counter" type="Node2D" parent="." groups=["People_counter"]]
+script = ExtResource("6_7wt35")
 
+[connection signal="area_shape_entered" from="order" to="order" method="_on_area_shape_entered"]
+[connection signal="body_entered" from="counter" to="counter" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="body_entered" from="Control/counter" to="Control/counter" method="_on_body_entered"]
-[connection signal="area_shape_entered" from="Control/order" to="Control/order" method="_on_area_shape_entered"]
-[connection signal="child_entered_tree" from="Control/order/CollisionShape2D" to="Control/order" method="_on_collision_shape_2d_child_entered_tree"]
+[connection signal="pressed" from="Order_button" to="." method="_on_order_button_pressed"]

@@ -28,7 +28,7 @@ func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index)
 	print(area_shape_index)
 	counterr = true 
 	if(area_shape_index == 0):
-		$/root/Order_screen/Control/Order_button.visible = true
+		$/root/Order_screen/Order_button.visible = true
 	
 
 
