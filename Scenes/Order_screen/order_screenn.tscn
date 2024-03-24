@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqkrceq700rfj"]
+
+[ext_resource type="Script" path="res://Scripts/Order/order_screen.gd" id="1_e0ad2"]
+[ext_resource type="PackedScene" uid="uid://cs1t1sudl5fu6" path="res://Scenes/Order_screen/customer.tscn" id="2_rkd65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tik3v"]
+size = Vector2(98, 595)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hbnh6"]
+
+[sub_resource type="Gradient" id="Gradient_wtsxp"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.498039, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4y6jg"]
+gradient = SubResource("Gradient_wtsxp")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mfhj7"]
+
+[sub_resource type="Gradient" id="Gradient_mkyba"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.829616, 0.46856, 0.131187, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vdd6l"]
+gradient = SubResource("Gradient_mkyba")
+
+[node name="Order_screen" type="Node2D"]
+script = ExtResource("1_e0ad2")
+Customer = ExtResource("2_rkd65")
+
+[node name="Counter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Counter"]
+position = Vector2(260, 315)
+shape = SubResource("RectangleShape2D_tik3v")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Counter/CollisionShape2D"]
+position = Vector2(2, -1)
+scale = Vector2(79.25, 572)
+mesh = SubResource("BoxMesh_hbnh6")
+texture = SubResource("GradientTexture2D_4y6jg")
+
+[node name="you" type="MeshInstance2D" parent="."]
+position = Vector2(68.25, 180.5)
+scale = Vector2(137.5, 181.5)
+mesh = SubResource("CapsuleMesh_mfhj7")
+texture = SubResource("GradientTexture2D_vdd6l")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Order_button" type="Button" parent="."]
+visible = false
+offset_left = 413.0
+offset_top = 108.0
+offset_right = 539.0
+offset_bottom = 139.0
+text = "Ready to Order
+"
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="pressed" from="Order_button" to="." method="_on_order_button_pressed"]

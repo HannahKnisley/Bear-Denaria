@@ -26,4 +26,7 @@ func _on_spawn_timer_timeout():
 
 
 func _on_order_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Taking_order/taking_order.tscn")
+	print("hi")
+	get_tree().change_scene_to_file("res://Scenes/Order_screen/taking_an_order.tscn")
+
+
