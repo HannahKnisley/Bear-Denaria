@@ -1,4 +1,7 @@
 extends Node2D
+var dragging = false 
+var of = Vector2(0,0)
+var mouseEnerted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,4 +14,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if dragging:
+		position = get_global_mouse_position()
+	
+
+func _on_button_button_down():
+	dragging = true
+	print("hshhhh")
+
+
+func _on_button_button_up():
+	dragging=false
+
+
+func _on_ticket_mouse_entered():
+	mouseEnerted = true

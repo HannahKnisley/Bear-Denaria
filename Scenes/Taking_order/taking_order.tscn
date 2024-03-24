@@ -1,6 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkb7gdp2gd8qe"]
+[gd_scene load_steps=38 format=3 uid="uid://bkb7gdp2gd8qe"]
 
 [ext_resource type="Script" path="res://Scripts/taking_Order/taking_order.gd" id="1_fy2wk"]
+[ext_resource type="Script" path="res://Scripts/taking_Order/ticket.gd" id="2_f66ao"]
+[ext_resource type="PackedScene" uid="uid://by4q8d5e34iiu" path="res://Scenes/Credits/main_hud.tscn" id="2_t2oh7"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_tmyly"]
+
+[sub_resource type="Gradient" id="Gradient_wdp04"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.883019, 1, 0.870498, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4rxc8"]
+gradient = SubResource("Gradient_wdp04")
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_b50e0"]
 
@@ -20,7 +31,7 @@ gradient = SubResource("Gradient_0hcht")
 fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yabxh"]
-size = Vector2(221, 312)
+size = Vector2(223.5, 424)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0uhob"]
 
@@ -31,8 +42,79 @@ colors = PackedColorArray(0.969016, 0.835732, 0.745969, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kj8sd"]
 gradient = SubResource("Gradient_n044v")
 
+[sub_resource type="SphereMesh" id="SphereMesh_d7uwg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hb14d"]
+
+[sub_resource type="Gradient" id="Gradient_321b1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.831373, 0.839216, 0.27451, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uie6c"]
+gradient = SubResource("Gradient_321b1")
+
+[sub_resource type="SphereMesh" id="SphereMesh_sfxfn"]
+
+[sub_resource type="Gradient" id="Gradient_pncxy"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.941176, 0.372549, 0.305882, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2e7ti"]
+gradient = SubResource("Gradient_pncxy")
+
+[sub_resource type="SphereMesh" id="SphereMesh_pcalq"]
+
+[sub_resource type="Gradient" id="Gradient_0sfx3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x4iom"]
+gradient = SubResource("Gradient_0sfx3")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8bjq3"]
+
+[sub_resource type="Gradient" id="Gradient_bsl7m"]
+offsets = PackedFloat32Array(0.128713)
+colors = PackedColorArray(0.469502, 0.25592, 0.182043, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iurof"]
+gradient = SubResource("Gradient_bsl7m")
+
+[sub_resource type="SphereMesh" id="SphereMesh_rdy0l"]
+
+[sub_resource type="Gradient" id="Gradient_kodnw"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.933327, 3.27289e-06, 9.62615e-07, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ompee"]
+gradient = SubResource("Gradient_kodnw")
+
+[sub_resource type="SphereMesh" id="SphereMesh_fcq6j"]
+
+[sub_resource type="Gradient" id="Gradient_ncs0t"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.281997, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gjpdo"]
+gradient = SubResource("Gradient_ncs0t")
+
+[sub_resource type="SphereMesh" id="SphereMesh_exa8x"]
+
+[sub_resource type="Gradient" id="Gradient_vxm7i"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c33jk"]
+gradient = SubResource("Gradient_vxm7i")
+
 [node name="taking_Order" type="Node2D"]
 script = ExtResource("1_fy2wk")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(542, 355.837)
+scale = Vector2(-426.736, -314.951)
+mesh = SubResource("PrismMesh_tmyly")
+texture = SubResource("GradientTexture2D_4rxc8")
 
 [node name="counter" type="MeshInstance2D" parent="."]
 position = Vector2(574, 565)
@@ -46,17 +128,73 @@ scale = Vector2(1138, 12)
 mesh = SubResource("BoxMesh_yvxut")
 
 [node name="ticket" type="Area2D" parent="."]
+position = Vector2(1001, 184)
+script = ExtResource("2_f66ao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ticket"]
-position = Vector2(1037, 167)
+position = Vector2(32, 46)
 shape = SubResource("RectangleShape2D_yabxh")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="ticket/CollisionShape2D"]
-position = Vector2(0.999939, -4)
+position = Vector2(8.00006, -5)
 rotation = 3.14159
-scale = Vector2(193.434, -294.997)
+scale = Vector2(202.343, -400.123)
 mesh = SubResource("BoxMesh_0uhob")
 texture = SubResource("GradientTexture2D_kj8sd")
+
+[node name="Bun" type="MeshInstance2D" parent="ticket"]
+position = Vector2(4.68738, 207.25)
+rotation = -3.14159
+scale = Vector2(74.0537, -39.1855)
+mesh = SubResource("SphereMesh_d7uwg")
+
+[node name="mustard" type="MeshInstance2D" parent="ticket"]
+position = Vector2(-17.3126, -95.3927)
+rotation = -3.14159
+scale = Vector2(54.4317, 11.1872)
+mesh = SubResource("CapsuleMesh_hb14d")
+texture = SubResource("GradientTexture2D_uie6c")
+
+[node name="ketchup" type="MeshInstance2D" parent="ticket"]
+position = Vector2(-17.3126, -55.75)
+rotation = -3.14159
+scale = Vector2(54.4317, 31.9524)
+mesh = SubResource("SphereMesh_sfxfn")
+texture = SubResource("GradientTexture2D_2e7ti")
+
+[node name="pickle" type="MeshInstance2D" parent="ticket"]
+position = Vector2(-10.3126, 54.25)
+rotation = -3.14159
+scale = Vector2(54.4317, 31.9524)
+mesh = SubResource("SphereMesh_pcalq")
+texture = SubResource("GradientTexture2D_x4iom")
+
+[node name="Burger" type="MeshInstance2D" parent="ticket"]
+position = Vector2(2.34131, 148.662)
+rotation = 3.14159
+scale = Vector2(41.981, -16.2159)
+mesh = SubResource("CapsuleMesh_8bjq3")
+texture = SubResource("GradientTexture2D_iurof")
+
+[node name="tomato" type="MeshInstance2D" parent="ticket"]
+position = Vector2(-9.11255, 93.849)
+rotation = -3.14159
+scale = Vector2(54.4317, -26.607)
+mesh = SubResource("SphereMesh_rdy0l")
+texture = SubResource("GradientTexture2D_ompee")
+
+[node name="letteace" type="MeshInstance2D" parent="ticket"]
+position = Vector2(-15.3127, -2.75)
+rotation = 3.14159
+scale = Vector2(41.0464, 33)
+mesh = SubResource("SphereMesh_fcq6j")
+texture = SubResource("GradientTexture2D_gjpdo")
+
+[node name="top_bun" type="MeshInstance2D" parent="ticket"]
+position = Vector2(-4.3125, -134.75)
+scale = Vector2(93.4807, 42.5)
+mesh = SubResource("SphereMesh_exa8x")
+texture = SubResource("GradientTexture2D_c33jk")
 
 [node name="name" type="Label" parent="."]
 offset_left = 427.0
@@ -66,3 +204,17 @@ offset_bottom = 523.0
 theme_override_font_sizes/font_size = 45
 text = "text
 "
+
+[node name="main_hud" parent="." instance=ExtResource("2_t2oh7")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -2.0
+offset_top = -10.0
+offset_right = 1349.0
+offset_bottom = 656.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="input_event" from="ticket" to="ticket" method="_on_input_event"]
+[connection signal="mouse_entered" from="ticket" to="ticket" method="_on_mouse_entered"]

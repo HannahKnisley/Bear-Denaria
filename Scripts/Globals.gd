@@ -1,6 +1,14 @@
 extends Node2D
 
 var name_of_customer = "Bob"
+var burger_type
+var tomato = false
+var letteace = false
+var pickle = false
+var pickey = false
+var kitchup = false
+var mustard = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
