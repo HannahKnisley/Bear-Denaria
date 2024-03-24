@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwl3yt5o5e816"]
 
-[ext_resource type="Script" path="res://Scenes/GrillArea/beef_patty.gd" id="1_q6l5v"]
+[ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_kgj8g"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_w3olk"]
 
@@ -13,7 +13,7 @@ radius = 28.0179
 sleeping = true
 freeze = true
 freeze_mode = 1
-script = ExtResource("1_q6l5v")
+script = ExtResource("1_kgj8g")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
 modulate = Color(0.839216, 0.572549, 0.4, 1)

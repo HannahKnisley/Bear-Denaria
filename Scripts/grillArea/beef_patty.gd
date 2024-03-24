@@ -96,3 +96,8 @@ func flipBurger():
 func _on_cook_timer_timeout():
 	bottomCook += 1
 	print(bottomCook)
+	
+	
+func sendToBuild():
+	$cookTimer.start()
+	self.translate(Vector2(0,100))

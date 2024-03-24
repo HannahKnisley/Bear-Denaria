@@ -1,31 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://6v3p1p6eibu0"]
+[gd_scene load_steps=6 format=3 uid="uid://6v3p1p6eibu0"]
 
 [ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
 [ext_resource type="PackedScene" uid="uid://cocyyg8ps4hq5" path="res://Scenes/GrillArea/cooktop.tscn" id="2_wnctg"]
 [ext_resource type="PackedScene" uid="uid://cyic7t5yfpo8n" path="res://Scenes/GrillArea/spatula.tscn" id="3_upwfe"]
+[ext_resource type="PackedScene" uid="uid://b8hns1ngiicnc" path="res://Scenes/GrillArea/grill_to_build.tscn" id="4_x3esj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ha7ct"]
 
 [node name="GrillArea" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 645.0
+size_flags_horizontal = 4
+color = Color(0, 0.6, 1, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.521569, 0, 0.521569, 1)
-position = Vector2(631, 320.75)
-scale = Vector2(806, 472.5)
+position = Vector2(619.5, 305.25)
+scale = Vector2(675, 441.5)
 mesh = SubResource("BoxMesh_ha7ct")
+
+[node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
+position = Vector2(1062, 560)
 
 [node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
 position = Vector2(107, 405)
-scale = Vector2(1, 1)
 
 [node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
 position = Vector2(91, 125)
 
 [node name="spatulaAbove" type="Node2D" parent="."]
 position = Vector2(107, 405)
-scale = Vector2(1, 1)
 
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
 position = Vector2(344, 197)
