@@ -8,14 +8,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("mouseClick") and mouseEnerted:
-		get_tree().change_scene_to_file("res://Scenes/Order_screen/taking_an_order.tscn")
+	pass
 
 
-func _on_ordering_pressed():
-	print("ahhhh")
-	get_tree().change_scene_to_file("res://Scenes/Order_screen/taking_an_order.tscn")
+
+
 
 
 func _on_mouse_entered():
 	mouseEnerted = true
+
+
+func _on_ordering_pressed():
+	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/taking_an_order.global_position + Vector2(576,324)
+	$/root/WorldRoot/taking_an_order.visible = true
+	$/root/WorldRoot/CanvasLayer/TakingOrderButton.visible = false
+	var name_of_customer = get_node("/root/Globals")
+	name_of_customer.pressed_order = true
+

@@ -9,23 +9,12 @@ func _ready():
 
 
 	
-	$/root/taking_an_order/name.text = str(name_of_customer.name_of_customer)
-
+	$/root/WorldRoot/taking_an_order/name.text = str(name_of_customer.name_of_customer)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if dragging:
-		position = get_global_mouse_position()
+	pass
 	
 
-func _on_button_button_down():
-	dragging = true
-	print("hshhhh")
 
-
-func _on_button_button_up():
-	dragging=false
-
-
-func _on_ticket_mouse_entered():
-	mouseEnerted = true

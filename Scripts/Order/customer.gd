@@ -12,11 +12,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	var name_of_customer = get_node("/root/Globals")
+	name_of_customer.customertype = "nice"
 	if counterr == false:
 		translate(Vector2(-delta*55, 0))
 	else:
 		$/root/WorldRoot/CanvasLayer/TakingOrderButton.visible = true
+	if name_of_customer.pressed_order == true:
+		$/root/WorldRoot/CanvasLayer/TakingOrderButton.visible = false
+		
 
 
 func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):

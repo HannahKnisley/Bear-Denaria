@@ -29,6 +29,7 @@ script = ExtResource("1_e0ad2")
 Customer = ExtResource("2_rkd65")
 
 [node name="Counter" type="Area2D" parent="."]
+position = Vector2(-2, -21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Counter"]
 position = Vector2(260, 315)
