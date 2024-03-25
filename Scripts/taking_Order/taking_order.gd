@@ -8,6 +8,7 @@ func _ready():
 	var name_of_customer = get_node("/root/Globals")
 	
 	$/root/WorldRoot/taking_an_order/name.text = str(name_of_customer.name_of_customer)
+	
 	var mob = ticket.instantiate()
 	
 	add_child(mob)
