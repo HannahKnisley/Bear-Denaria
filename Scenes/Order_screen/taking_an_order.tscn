@@ -1,7 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://d1tu7ywdngl7a"]
+[gd_scene load_steps=12 format=3 uid="uid://d1tu7ywdngl7a"]
 
 [ext_resource type="Script" path="res://Scripts/taking_Order/taking_order.gd" id="1_wnp10"]
-[ext_resource type="Script" path="res://Scripts/taking_Order/ticket.gd" id="2_4qvys"]
+[ext_resource type="PackedScene" uid="uid://vxh7usjqilv2" path="res://Scenes/ticket.tscn" id="2_akdi8"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_n8iig"]
 
@@ -29,63 +29,6 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_2o2pv"]
 gradient = SubResource("Gradient_62bye")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_acx0v"]
-size = Vector2(224, 483.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_1h1kp"]
-
-[sub_resource type="Gradient" id="Gradient_3iqeg"]
-offsets = PackedFloat32Array(0.326733)
-colors = PackedColorArray(0.99607, 0.881246, 0.652466, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7mfo6"]
-gradient = SubResource("Gradient_3iqeg")
-
-[sub_resource type="BoxMesh" id="BoxMesh_riovm"]
-
-[sub_resource type="Gradient" id="Gradient_xa2oh"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.981296, 0.902281, 0.82608, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2oyxv"]
-gradient = SubResource("Gradient_xa2oh")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_j7w0x"]
-
-[sub_resource type="Gradient" id="Gradient_u7w22"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.440938, 0.315538, 0.0628393, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p1ifu"]
-gradient = SubResource("Gradient_u7w22")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_lmcrg"]
-
-[sub_resource type="Gradient" id="Gradient_qs5ce"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0.827936, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fu1ii"]
-gradient = SubResource("Gradient_qs5ce")
-
-[sub_resource type="BoxMesh" id="BoxMesh_kstau"]
-
-[sub_resource type="Gradient" id="Gradient_n36lc"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.839216, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kho78"]
-gradient = SubResource("Gradient_n36lc")
-
-[sub_resource type="BoxMesh" id="BoxMesh_u4jsk"]
-
-[sub_resource type="Gradient" id="Gradient_df1ty"]
-offsets = PackedFloat32Array(0.019802)
-colors = PackedColorArray(0.933333, 0.847059, 0.0901961, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fu80l"]
-gradient = SubResource("Gradient_df1ty")
 
 [node name="taking_an_order" type="Node2D"]
 script = ExtResource("1_wnp10")
@@ -117,67 +60,6 @@ scale = Vector2(1501, 15.5)
 mesh = SubResource("BoxMesh_64yrk")
 texture = SubResource("GradientTexture1D_2o2pv")
 
-[node name="ticket" type="Area2D" parent="."]
-position = Vector2(21, 21)
-script = ExtResource("2_4qvys")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ticket"]
-position = Vector2(1851, 262)
-shape = SubResource("RectangleShape2D_acx0v")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1849, 262.5)
-scale = Vector2(192, 429)
-mesh = SubResource("BoxMesh_1h1kp")
-texture = SubResource("GradientTexture2D_7mfo6")
-
-[node name="bun" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1804.87, 417)
-scale = Vector2(41, 12)
-mesh = SubResource("BoxMesh_riovm")
-texture = SubResource("GradientTexture2D_2oyxv")
-
-[node name="buntop" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1794.87, 183)
-scale = Vector2(41, 12)
-mesh = SubResource("BoxMesh_riovm")
-texture = SubResource("GradientTexture2D_2oyxv")
-
-[node name="pattie" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1807.94, 373.6)
-scale = Vector2(33.875, 12.6)
-mesh = SubResource("CapsuleMesh_j7w0x")
-texture = SubResource("GradientTexture2D_p1ifu")
-
-[node name="lettatcue" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1803.87, 337)
-scale = Vector2(26.75, 9.00001)
-mesh = SubResource("CapsuleMesh_lmcrg")
-texture = SubResource("GradientTexture2D_fu1ii")
-
-[node name="piclke" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1802.87, 278.25)
-scale = Vector2(22, 11.25)
-mesh = SubResource("CapsuleMesh_lmcrg")
-texture = SubResource("GradientTexture2D_fu1ii")
-
-[node name="tomato" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1803.87, 314.193)
-scale = Vector2(-60.9323, 14.4847)
-mesh = SubResource("BoxMesh_kstau")
-texture = SubResource("GradientTexture2D_kho78")
-
-[node name="ketchup" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1803.87, 246.515)
-scale = Vector2(-60.9323, -4.99327)
-mesh = SubResource("BoxMesh_kstau")
-texture = SubResource("GradientTexture2D_kho78")
-
-[node name="mustard" type="MeshInstance2D" parent="ticket"]
-position = Vector2(1793.94, 210.5)
-scale = Vector2(45.875, 5)
-mesh = SubResource("BoxMesh_u4jsk")
-texture = SubResource("GradientTexture2D_fu80l")
-
-[connection signal="mouse_entered" from="ticket" to="ticket" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ticket" to="ticket" method="_on_mouse_exited"]
+[node name="ticket2" parent="." instance=ExtResource("2_akdi8")]
+offset_top = -9.0
+offset_bottom = -9.0

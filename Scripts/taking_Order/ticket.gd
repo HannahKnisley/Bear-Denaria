@@ -11,6 +11,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var name_of_customer = get_node("/root/Globals")
+	if name_of_customer.customertype == "nice":
+		name_of_customer.tomato = true
+		name_of_customer.letteace = true
+		name_of_customer.pickle = false
+		name_of_customer.pickey = false
+		name_of_customer.kitchup = true
+		name_of_customer.mustard = true
+		$/root/WorldRoot/taking_an_order/ticket2/ticket/tomato.visible = true
+		$/root/WorldRoot/taking_an_order/ticket2/ticket/lettatcue.visible = true
+		$/root/WorldRoot/taking_an_order/ticket2/ticket/piclke.visible = false
+		$/root/WorldRoot/taking_an_order/ticket2/ticket/ketchup.visible = true
+		$/root/WorldRoot/taking_an_order/ticket2/ticket/mustard.visible = true
+		
 	if Input.is_action_just_pressed("mouseClick") and mouseEnerted:
 		followMouse = true
 	if Input.is_action_pressed("mouseClick") and followMouse:
