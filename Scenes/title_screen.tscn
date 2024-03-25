@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck6wujen710bn"]
+[gd_scene load_steps=10 format=3 uid="uid://ck6wujen710bn"]
 
 [ext_resource type="Script" path="res://Scenes/Titlescreen/title_screen.gd" id="1_o8nbo"]
 [ext_resource type="Texture2D" uid="uid://c1llw3bmcm3be" path="res://Assets2D/TitleScreen.PNG" id="2_lo3tk"]
+[ext_resource type="Texture2D" uid="uid://db5oneijwdere" path="res://Assets2D/menu/Play_Plate.PNG" id="3_r3x0o"]
+[ext_resource type="Texture2D" uid="uid://cipekpx1etfjd" path="res://Assets2D/menu/Play_Translucent.PNG" id="4_6jhvl"]
+[ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="5_2x5ih"]
+[ext_resource type="Texture2D" uid="uid://dogc5mu5of23f" path="res://Assets2D/menu/Credits_Menu.PNG" id="6_vyafc"]
+[ext_resource type="Texture2D" uid="uid://ca4synxkehpad" path="res://Assets2D/menu/Credits_Translucent.PNG" id="7_x4rgk"]
+[ext_resource type="Texture2D" uid="uid://c720ynw73g7cb" path="res://Assets2D/menu/Exit_Button.PNG" id="8_11e4p"]
+[ext_resource type="Texture2D" uid="uid://ce3q3igk0bjx7" path="res://Assets2D/menu/Exit_Translucent.PNG" id="9_0maup"]
 
 [node name="title_screen" type="Control"]
 layout_mode = 3
@@ -15,12 +22,13 @@ script = ExtResource("1_o8nbo")
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.978
+anchor_right = 0.999
 anchor_bottom = 1.0
-offset_right = 0.343994
-offset_bottom = 6.0
+offset_right = 0.999878
+offset_bottom = -3.0
 texture = ExtResource("2_lo3tk")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -29,10 +37,10 @@ anchor_left = 0.004
 anchor_top = 0.767
 anchor_right = 1.0
 anchor_bottom = 0.886
-offset_left = -3.556
-offset_top = 2.98395
-offset_right = -13.912
-offset_bottom = 2.87201
+offset_left = 398.0
+offset_top = 3.19995
+offset_right = -318.0
+offset_bottom = 2.59998
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -48,6 +56,79 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Start
 "
+
+[node name="HSplitContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.235854
+anchor_top = 0.643571
+anchor_right = 0.75363
+anchor_bottom = 0.909286
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="startButton" type="TextureButton" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_r3x0o")
+texture_hover = ExtResource("4_6jhvl")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/startButton"]
+visible = false
+layout_mode = 0
+anchor_left = 0.236842
+anchor_top = 0.354839
+anchor_right = 0.780702
+anchor_bottom = 0.653226
+offset_bottom = -13.0
+theme = ExtResource("5_2x5ih")
+text = "Start
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="creditsButton" type="TextureButton" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_vyafc")
+texture_hover = ExtResource("7_x4rgk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/creditsButton"]
+visible = false
+layout_mode = 0
+anchor_left = 0.181287
+anchor_top = 0.354839
+anchor_right = 0.798246
+anchor_bottom = 0.653226
+offset_bottom = 1.52588e-05
+theme = ExtResource("5_2x5ih")
+text = "Credits"
+metadata/_edit_use_anchors_ = true
+
+[node name="creditsButton2" type="TextureButton" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_11e4p")
+texture_hover = ExtResource("9_0maup")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/creditsButton2"]
+visible = false
+layout_mode = 0
+anchor_left = 0.397661
+anchor_top = 0.373656
+anchor_right = 0.725146
+anchor_bottom = 0.672043
+offset_right = 1.52588e-05
+theme = ExtResource("5_2x5ih")
+text = "Exit"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="HBoxContainer/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="HBoxContainer/Start" to="." method="_on_start_pressed"]

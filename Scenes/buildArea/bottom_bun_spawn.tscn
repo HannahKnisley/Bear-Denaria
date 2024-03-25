@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj1ve1ok5j6oh"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/toppingSpawner.gd" id="1_n1yt3"]
+[ext_resource type="PackedScene" uid="uid://da3n8lnlsmu6t" path="res://Scenes/buildArea/bottom_patty.tscn" id="2_swosw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_norwf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nrqpb"]
+
+[node name="bottomBunSpawn" type="Area2D"]
+script = ExtResource("1_n1yt3")
+topping = ExtResource("2_swosw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_norwf")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(50, 50)
+mesh = SubResource("SphereMesh_nrqpb")
