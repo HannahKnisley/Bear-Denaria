@@ -31,8 +31,8 @@ func _process(delta):
 			
 	# WE ARE CLOSED FOR EBOLA >:(
 	if flipping:
-		if self.global_position > (snapPos-Vector2(0,85)) and up:
-			self.translate(((snapPos-Vector2(0,90))-self.global_position)*delta*10)
+		if self.global_position > (snapPos-Vector2(0,65)) and up:
+			self.translate(((snapPos-Vector2(0,70))-self.global_position)*delta*10)
 		else:
 			up = false
 			self.reparent(get_node("../../spatulaAbove"))

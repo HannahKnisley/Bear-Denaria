@@ -40,6 +40,7 @@ position = Vector2(718, 414)
 
 [node name="Cooktop6" parent="." instance=ExtResource("2_wnctg")]
 position = Vector2(534, 414)
+scale = Vector2(1.01381, 0.996506)
 
 [node name="Cooktop7" parent="." instance=ExtResource("2_wnctg")]
 position = Vector2(904, 415)
@@ -53,13 +54,13 @@ position = Vector2(1062, 560)
 [node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
-position = Vector2(107, 405)
+position = Vector2(1068, 245)
 
 [node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
-position = Vector2(91, 125)
+position = Vector2(113, 173)
 
 [node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
-position = Vector2(93, 295)
+position = Vector2(117, 408)
 
 [node name="spatulaAbove" type="Node2D" parent="."]
 position = Vector2(107, 405)

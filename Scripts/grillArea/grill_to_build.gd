@@ -18,7 +18,6 @@ func _process(delta):
 		if pattyIn:
 			myPatty.reparent(self)
 			myPatty.setSnap(self.global_position)
-			await get_tree().create_timer(0.1).timeout
 			myPatty.sliding = true
 			sliding = true
 	

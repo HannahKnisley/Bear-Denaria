@@ -12,8 +12,8 @@ func _process(delta):
 
 
 func _on_child_entered_tree(node):
-	print("collected")
 	node.sliding = false
+	node.sendToBuild()
 	node.setSnap(self.global_position)
 	await get_tree().create_timer(0.1).timeout
 	node.visible = false

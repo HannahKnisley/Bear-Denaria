@@ -21,6 +21,15 @@ func _ready():
 func _process(delta):
 	if flipping:
 		flippingAnimate(delta)
+		
+	elif !flipping and !sliding and !Input.is_action_pressed("mouseClick"):
+		if self.global_position != snapPos:
+			self.set_collision_mask_value(1, false)
+			self.set_collision_mask_value(2, true)
+			move_and_collide(burgerToGrill()) 	
+		else:
+			self.set_collision_mask_value(1, true)
+			self.set_collision_mask_value(2, false)
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("mouseClick"):
@@ -35,13 +44,12 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_released("mouseClick"):
 		if !flipping and !sliding:
-			await get_tree().create_timer(0.1).timeout
 			move_and_collide((burgerToGrill()))
-			await get_tree().create_timer(0.3).timeout
 			self.set_collision_mask_value(1, true)
 			self.set_collision_mask_value(2, false)
 		if onGrill:
 			$cookTimer.start()
+		checkMouse()
 		
 		
 	
@@ -61,9 +69,13 @@ func snapToGrill(pos):
 	snapPos = pos
 	onGrill = true
 	$cookTimer.start()
+	move_and_collide((burgerToGrill()))
+	await get_tree().create_timer(0.1).timeout
 	
 func setSnap(pos):
 	snapPos = pos
+	move_and_collide((burgerToGrill()))
+	await get_tree().create_timer(0.1).timeout
 
 func checkMouse():
 	var mousePos = get_global_mouse_position()
@@ -76,8 +88,8 @@ func checkMouse():
 
 	
 func flippingAnimate(delta):
-	if self.global_position > (snapPos-Vector2(0,85)) and up:
-		move_and_collide(((snapPos-Vector2(0,90))-self.global_position)*delta*10)
+	if self.global_position > (snapPos-Vector2(0,65)) and up:
+		move_and_collide(((snapPos-Vector2(0,70))-self.global_position)*delta*10)
 	
 	else:
 		up = false
@@ -87,6 +99,7 @@ func flippingAnimate(delta):
 	elif !up:
 		up = true
 		flipping = false
+		move_and_collide((burgerToGrill()))
 		
 
 func flipBurger():
@@ -104,3 +117,4 @@ func _on_cook_timer_timeout():
 func sendToBuild():
 	onGrill = false
 	$cookTimer.stop()
+

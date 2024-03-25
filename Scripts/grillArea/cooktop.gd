@@ -18,7 +18,9 @@ func _process(delta):
 			heldPatty.snapToGrill(self.global_position)
 			canHoldPatty = false
 		
-		
+	elif !Input.is_action_just_released("mouseClick") and !Input.is_action_pressed("mouseClick"):
+		if collidingPatty:
+			canHoldPatty = false
 
 
 
