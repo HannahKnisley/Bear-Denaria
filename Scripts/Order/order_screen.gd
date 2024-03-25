@@ -14,19 +14,22 @@ func _process(delta):
 
 func _on_spawn_timer_timeout():
 	var mob = Customer.instantiate()
-	mob_num+=1
-	print(mob_num)
-	mob.position = Vector2(50,30)
 	
-	add_child(mob)
+	
 	if mob_num >= 3:
-		print("gone")
+		
 		remove_child(mob)
+	else:
+		
+		mob_num+=1
+		print(mob_num)
+		mob.position = Vector2(50,30)
+		add_child(mob)
 		
 
 
 func _on_order_button_pressed():
-	print("hi")
+	
 	get_tree().change_scene_to_file("res://Scenes/Order_screen/taking_an_order.tscn")
 
 

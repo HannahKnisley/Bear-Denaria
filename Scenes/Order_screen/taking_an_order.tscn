@@ -32,6 +32,7 @@ gradient = SubResource("Gradient_62bye")
 
 [node name="taking_an_order" type="Node2D"]
 script = ExtResource("1_wnp10")
+ticket = ExtResource("2_akdi8")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
 position = Vector2(913, 590)
@@ -55,11 +56,13 @@ theme_override_font_sizes/font_size = 45
 text = "t"
 
 [node name="line" type="MeshInstance2D" parent="."]
+visible = false
 position = Vector2(1219.5, 7.25)
 scale = Vector2(1501, 15.5)
 mesh = SubResource("BoxMesh_64yrk")
 texture = SubResource("GradientTexture1D_2o2pv")
 
 [node name="ticket2" parent="." instance=ExtResource("2_akdi8")]
+visible = false
 offset_top = -9.0
 offset_bottom = -9.0
