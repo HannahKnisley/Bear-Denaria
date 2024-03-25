@@ -23,8 +23,8 @@ Globals="*res://Scenes/Globals.tscn"
 
 window/size/viewport_width=1000
 window/size/viewport_height=700
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/size/initial_position_type=3
+window/stretch/mode="canvas_items"
 
 [input]
 
