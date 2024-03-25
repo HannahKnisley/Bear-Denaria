@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5hv6k"]
 radius = 28.0179
 
-[node name="BeefPatty" type="RigidBody2D" groups=["patty"]]
+[node name="BeefPatty" type="RigidBody2D" groups=["patty", "topping"]]
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_kgj8g")

@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_arlu3"]
 radius = 28.0179
 
-[node name="chicken_patty" type="RigidBody2D" groups=["patty"]]
+[node name="chicken_patty" type="RigidBody2D" groups=["patty", "topping"]]
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_suist")

@@ -10,3 +10,15 @@ func _ready():
 func _process(delta):
 	pass
 
+
+
+func _on_start_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/dayscreen/dayscreen.tscn")
+
+
+func _on_credits_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Credits/credits.tscn")
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()

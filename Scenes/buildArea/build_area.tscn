@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=4 format=3 uid="uid://bbv7j14qeefkv"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
+[ext_resource type="PackedScene" uid="uid://cj1ve1ok5j6oh" path="res://Scenes/buildArea/bottom_bun_spawn.tscn" id="2_5wc8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu8bm"]
+size = Vector2(197, 516.25)
 
 [node name="build_area" type="Node2D"]
 
@@ -13,5 +17,14 @@ metadata/_edit_use_anchors_ = true
 [node name="pattyContainer" type="Node2D" parent="."]
 position = Vector2(107, 552)
 script = ExtResource("1_jn5iw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(565, 286.125)
+shape = SubResource("RectangleShape2D_hu8bm")
+
+[node name="bottomBunSpawn" parent="." instance=ExtResource("2_5wc8b")]
+position = Vector2(102, 417)
 
 [connection signal="child_entered_tree" from="pattyContainer" to="pattyContainer" method="_on_child_entered_tree"]
