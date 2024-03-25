@@ -10,6 +10,7 @@ var kitchup = false
 var mustard = false
 var pressed_order = false
 var customertype = "nice"
+var ticket_move = false
 
 
 # Called when the node enters the scene tree for the first time.

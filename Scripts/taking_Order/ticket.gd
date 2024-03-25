@@ -29,6 +29,7 @@ func _process(delta):
 		followMouse = true
 	if Input.is_action_pressed("mouseClick") and followMouse:
 		self.position = get_local_mouse_position()
+		name_of_customer.ticket_move = true
 	if Input.is_action_just_released("mouseClick"):
 		followMouse = false
 		self.position = Vector2(0,0)

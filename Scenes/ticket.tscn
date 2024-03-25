@@ -59,7 +59,7 @@ colors = PackedColorArray(0.933333, 0.847059, 0.0901961, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_iigg6"]
 gradient = SubResource("Gradient_4vfcu")
 
-[node name="ticket" type="Control"]
+[node name="ticket" type="Control" groups=["ticket"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
