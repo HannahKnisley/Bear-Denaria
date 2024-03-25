@@ -93,6 +93,7 @@ func flippingAnimate(delta):
 	
 	else:
 		up = false
+		updateAppearance()
 		
 	if self.global_position < (snapPos-Vector2(0,5)) and !up:
 		move_and_collide((snapPos-self.global_position)*delta*10)
@@ -110,11 +111,64 @@ func flipBurger():
 
 
 func _on_cook_timer_timeout():
-	bottomCook += 1
-	print(bottomCook)
+	if bottomCook < 100:
+		bottomCook += 2
+		print(bottomCook)
+		if bottomCook == 26:
+			self.updateAppearance()
+		elif bottomCook == 50:
+			self.updateAppearance()
+		elif bottomCook == 76:
+			self.updateAppearance()
+		elif bottomCook == 100:
+			self.updateAppearance()
 	
 	
 func sendToBuild():
 	onGrill = false
 	$cookTimer.stop()
+	
+func updateAppearance():
+	if bottomCook < 25:
+		$Bottoms/burntBottom.visible = false
+		$Bottoms/overBottom.visible = false
+		$Bottoms/goodBottom.visible = false
+		$Bottoms/underBottom.visible = false
+	if bottomCook >= 25:
+		$Bottoms/burntBottom.visible = false
+		$Bottoms/overBottom.visible = false
+		$Bottoms/goodBottom.visible = false
+		$Bottoms/underBottom.visible = true
+	if bottomCook >= 50:
+		$Bottoms/burntBottom.visible = false
+		$Bottoms/overBottom.visible = false
+		$Bottoms/goodBottom.visible = true
+	if bottomCook >= 75:
+		$Bottoms/burntBottom.visible = false
+		$Bottoms/overBottom.visible = true
+	if bottomCook == 100:
+		$Bottoms/burntBottom.visible = true
+		
+	if topCook < 25:
+		$Tops/burntTop.visible = false
+		$Tops/overTop.visible = false
+		$Tops/goodTop.visible = false
+		$Tops/underTop.visible = false
+	if topCook >= 25:
+		$Tops/burntTop.visible = false
+		$Tops/overTop.visible = false
+		$Tops/goodTop.visible = false
+		$Tops/underTop.visible = true
+	if topCook >= 50:
+		$Tops/burntTop.visible = false
+		$Tops/overTop.visible = false
+		$Tops/goodTop.visible = true
+	if topCook >= 75:
+		$Tops/burntTop.visible = false
+		$Tops/overTop.visible = true
+	if topCook == 100:
+		$Tops/burntTop.visible = true
+		
+		
+	
 

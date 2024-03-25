@@ -1,66 +1,53 @@
 [gd_scene load_steps=7 format=3 uid="uid://6v3p1p6eibu0"]
 
+[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/grill.png" id="1_a1rfs"]
 [ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
 [ext_resource type="PackedScene" uid="uid://cocyyg8ps4hq5" path="res://Scenes/GrillArea/cooktop.tscn" id="2_wnctg"]
 [ext_resource type="PackedScene" uid="uid://cyic7t5yfpo8n" path="res://Scenes/GrillArea/spatula.tscn" id="3_upwfe"]
 [ext_resource type="PackedScene" uid="uid://b8hns1ngiicnc" path="res://Scenes/GrillArea/grill_to_build.tscn" id="4_x3esj"]
 [ext_resource type="PackedScene" uid="uid://cll14i0d7ol1g" path="res://Scenes/GrillArea/chicken_patty_spawner.tscn" id="5_cpdi6"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ha7ct"]
-
 [node name="GrillArea" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1153.0
-offset_bottom = 645.0
-size_flags_horizontal = 4
-color = Color(0, 0.6, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0.521569, 0, 0.521569, 1)
-position = Vector2(619.5, 305.25)
-scale = Vector2(675, 441.5)
-mesh = SubResource("BoxMesh_ha7ct")
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2019.0
+offset_bottom = 1415.0
+texture = ExtResource("1_a1rfs")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(344, 197)
+position = Vector2(774, 416)
 
 [node name="Cooktop2" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(350, 414)
+position = Vector2(756, 681)
 
 [node name="Cooktop3" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(708, 204)
+position = Vector2(739, 929)
 
 [node name="Cooktop4" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(525, 201)
+position = Vector2(1231, 420)
 
 [node name="Cooktop5" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(718, 414)
+position = Vector2(1255, 676)
 
 [node name="Cooktop6" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(534, 414)
+position = Vector2(1282, 921)
 scale = Vector2(1.01381, 0.996506)
 
-[node name="Cooktop7" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(904, 415)
-
-[node name="Cooktop8" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(898, 212)
-
 [node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
-position = Vector2(1062, 560)
+position = Vector2(1778, 410)
 
 [node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
-position = Vector2(1068, 245)
+position = Vector2(1824, 750)
 
 [node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
-position = Vector2(113, 173)
+position = Vector2(166, 456)
 
 [node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
-position = Vector2(117, 408)
+position = Vector2(132, 899)
 
 [node name="spatulaAbove" type="Node2D" parent="."]
 position = Vector2(107, 405)

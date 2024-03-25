@@ -1,24 +1,33 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8hns1ngiicnc"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/grill_to_build.gd" id="1_3uhwa"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_hksqf"]
+[ext_resource type="Texture2D" uid="uid://bip82l6tlix62" path="res://Assets2D/grillAssets/Plate.png" id="2_7fflh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nafqh"]
-size = Vector2(148.375, 146)
+size = Vector2(457.5, 312.5)
 
 [node name="grillToBuild" type="Area2D"]
 script = ExtResource("1_3uhwa")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0, 0.596078, 0.207843, 1)
-position = Vector2(1.81248, 0)
-scale = Vector2(150.375, 150.25)
-mesh = SubResource("BoxMesh_hksqf")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.8125, 0)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_nafqh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = -332.0
+offset_right = 316.0
+offset_bottom = 339.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7fflh")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

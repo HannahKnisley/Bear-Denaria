@@ -37,8 +37,8 @@ func _on_body_exited(body):
 		pattyIn = false
 
 func slideOutAnimate(delta):
-	if self.global_position < (defaultPos+Vector2(195,0)) and out:
-		self.translate(((defaultPos+Vector2(200,0))-self.global_position)*delta*10)
+	if self.global_position < (defaultPos+Vector2(495,0)) and out:
+		self.translate(((defaultPos+Vector2(500,0))-self.global_position)*delta*10)
 		myPatty.move_and_collide(self.global_position-myPatty.global_position)
 	else:
 		out = false

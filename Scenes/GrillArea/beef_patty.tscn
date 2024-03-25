@@ -1,35 +1,202 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwl3yt5o5e816"]
+[gd_scene load_steps=13 format=3 uid="uid://cwl3yt5o5e816"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_kgj8g"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_w3olk"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_073w4"]
+[ext_resource type="Texture2D" uid="uid://bdnn0q6dwdoun" path="res://Assets2D/grillAssets/beefPatties/TopBurgerRaw.png" id="2_11a2w"]
+[ext_resource type="Texture2D" uid="uid://0m3p2giru2on" path="res://Assets2D/grillAssets/beefPatties/TopBurgerUnderCooked.png" id="3_jxi00"]
+[ext_resource type="Texture2D" uid="uid://4i13lp2c2gpc" path="res://Assets2D/grillAssets/beefPatties/TopBurgerCooked.png" id="4_xkm18"]
+[ext_resource type="Texture2D" uid="uid://bjmvwmid7i83u" path="res://Assets2D/grillAssets/beefPatties/TopBurgerOverCooked.png" id="5_8femw"]
+[ext_resource type="Texture2D" uid="uid://batlxix54uih" path="res://Assets2D/grillAssets/beefPatties/TopBurgerBurnt.png" id="6_75lbk"]
+[ext_resource type="Texture2D" uid="uid://ddb3h7fudlow0" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerRaw.png" id="7_y7wwl"]
+[ext_resource type="Texture2D" uid="uid://b6yttj0aip2il" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerUndercooked.png" id="8_h78c1"]
+[ext_resource type="Texture2D" uid="uid://co43dbjuv8rww" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerCooked.png" id="9_ntesk"]
+[ext_resource type="Texture2D" uid="uid://526wmruiolv6" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerOvercooked.png" id="10_uo70p"]
+[ext_resource type="Texture2D" uid="uid://b1xinjxc80b2j" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerBurnt.png" id="11_r5btd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5hv6k"]
-radius = 28.0179
+radius = 49.4569
 
 [node name="BeefPatty" type="RigidBody2D" groups=["patty", "topping"]]
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_kgj8g")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-modulate = Color(0.839216, 0.572549, 0.4, 1)
-self_modulate = Color(0.615686, 0.615686, 0.615686, 1)
-rotation = -3.14159
-scale = Vector2(104.949, -89)
-mesh = SubResource("SphereMesh_w3olk")
+[node name="cookTimer" type="Timer" parent="."]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="MeshInstance2D2"]
-position = Vector2(9.16303e-09, -0.123596)
-mesh = SubResource("SphereMesh_073w4")
+[node name="Tops" type="Node2D" parent="."]
+
+[node name="rawTop" type="TextureRect" parent="Tops"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_11a2w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="underTop" type="TextureRect" parent="Tops"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jxi00")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="goodTop" type="TextureRect" parent="Tops"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xkm18")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="overTop" type="TextureRect" parent="Tops"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_8femw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="burntTop" type="TextureRect" parent="Tops"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_75lbk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bottoms" type="Node2D" parent="."]
+
+[node name="rawBottom" type="TextureRect" parent="Bottoms"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_y7wwl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="underBottom" type="TextureRect" parent="Bottoms"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_h78c1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="goodBottom" type="TextureRect" parent="Bottoms"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ntesk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="overBottom" type="TextureRect" parent="Bottoms"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_uo70p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="burntBottom" type="TextureRect" parent="Bottoms"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -170.0
+offset_right = 177.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_r5btd")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(1, 7)
 scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_5hv6k")
-
-[node name="cookTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]
