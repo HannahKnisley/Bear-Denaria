@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwk5iio8qi5bc"]
+[gd_scene load_steps=7 format=3 uid="uid://cwk5iio8qi5bc"]
 
 [ext_resource type="PackedScene" uid="uid://dwps88i147nc5" path="res://Scenes/UI/scene_change_buttons.tscn" id="1_f11s7"]
 [ext_resource type="PackedScene" uid="uid://6v3p1p6eibu0" path="res://Scenes/GrillArea/grill_area.tscn" id="1_v3hge"]
+[ext_resource type="PackedScene" uid="uid://qhixsv4fke00" path="res://Scenes/Order_screen/taking_order_button.tscn" id="3_5wmmf"]
 [ext_resource type="PackedScene" uid="uid://bbv7j14qeefkv" path="res://Scenes/buildArea/build_area.tscn" id="3_57xvk"]
+[ext_resource type="PackedScene" uid="uid://cqkrceq700rfj" path="res://Scenes/Order_screen/order_screenn.tscn" id="5_qg03r"]
+[ext_resource type="PackedScene" uid="uid://d1tu7ywdngl7a" path="res://Scenes/Order_screen/taking_an_order.tscn" id="6_we4cx"]
 
 [node name="WorldRoot" type="Node2D"]
 
@@ -10,12 +13,26 @@
 position = Vector2(2, 4)
 
 [node name="GrillArea" parent="." instance=ExtResource("1_v3hge")]
-position = Vector2(2872, -6)
+position = Vector2(3729, 5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="sceneChangeButtons" parent="CanvasLayer" instance=ExtResource("1_f11s7")]
 metadata/_edit_use_anchors_ = true
 
+[node name="TakingOrderButton" parent="CanvasLayer" instance=ExtResource("3_5wmmf")]
+visible = false
+offset_left = 1325.0
+offset_top = -76.0
+offset_right = 1325.0
+offset_bottom = -76.0
+
 [node name="build_area" parent="." instance=ExtResource("3_57xvk")]
-position = Vector2(4227, -1)
+position = Vector2(4959, 10)
+
+[node name="Order_screen" parent="." instance=ExtResource("5_qg03r")]
+position = Vector2(1159, 49)
+
+[node name="taking_an_order" parent="." instance=ExtResource("6_we4cx")]
+visible = false
+position = Vector2(1627, 0)

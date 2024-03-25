@@ -8,6 +8,8 @@ var pickle = false
 var pickey = false
 var kitchup = false
 var mustard = false
+var pressed_order = false
+var customertype = "nice"
 
 
 # Called when the node enters the scene tree for the first time.
