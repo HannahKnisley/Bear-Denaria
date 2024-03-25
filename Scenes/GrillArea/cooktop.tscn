@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/grillArea/cooktop.gd" id="1_m85fm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jkx0o"]
-radius = 12.0185
+radius = 7.00793
 
 [node name="Cooktop" type="Area2D" groups=["cooktop"]]
 collision_layer = 3

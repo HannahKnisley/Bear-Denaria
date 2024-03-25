@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bip82l6tlix62" path="res://Assets2D/grillAssets/Plate.png" id="2_7fflh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nafqh"]
-size = Vector2(457.5, 312.5)
+size = Vector2(168, 111)
 
 [node name="grillToBuild" type="Area2D"]
 script = ExtResource("1_3uhwa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(-2, 10.5)
 shape = SubResource("RectangleShape2D_nafqh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -19,10 +19,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.0
-offset_top = -332.0
-offset_right = 316.0
-offset_bottom = 339.0
+offset_left = -163.0
+offset_top = -153.0
+offset_right = 152.0
+offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_7fflh")

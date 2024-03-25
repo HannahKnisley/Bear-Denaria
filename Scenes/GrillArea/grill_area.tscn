@@ -10,44 +10,45 @@
 [node name="GrillArea" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 2019.0
-offset_bottom = 1415.0
+offset_right = 1000.0
+offset_bottom = 700.0
 texture = ExtResource("1_a1rfs")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(774, 416)
+position = Vector2(382, 210)
 
 [node name="Cooktop2" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(756, 681)
+position = Vector2(369, 327)
 
 [node name="Cooktop3" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(739, 929)
+position = Vector2(353, 446)
 
 [node name="Cooktop4" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(1231, 420)
+position = Vector2(607, 210)
 
 [node name="Cooktop5" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(1255, 676)
+position = Vector2(615, 329)
 
 [node name="Cooktop6" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(1282, 921)
+position = Vector2(629, 441)
 scale = Vector2(1.01381, 0.996506)
 
 [node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
-position = Vector2(1778, 410)
+position = Vector2(883, 168)
 
 [node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
-position = Vector2(1824, 750)
+position = Vector2(906, 350)
 
 [node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
-position = Vector2(166, 456)
+position = Vector2(121, 216)
 
 [node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
-position = Vector2(132, 899)
+position = Vector2(79, 438)
 
 [node name="spatulaAbove" type="Node2D" parent="."]
 position = Vector2(107, 405)
