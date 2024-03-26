@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_order_button_pressed():
-	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/Order_screen.global_position + Vector2(1000,700)
+	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/Order_screen.global_position + Vector2(500,350)
 
 
 func _on_grill_button_pressed():

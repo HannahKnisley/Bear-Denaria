@@ -35,23 +35,23 @@ script = ExtResource("1_wnp10")
 ticket = ExtResource("2_akdi8")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-position = Vector2(913, 590)
+position = Vector2(516, 416)
 rotation = 3.14159
 scale = Vector2(270.695, 362.765)
 mesh = SubResource("PrismMesh_n8iig")
 texture = SubResource("GradientTexture2D_phjv6")
 
 [node name="counter" type="MeshInstance2D" parent="."]
-position = Vector2(1199, 736)
-scale = Vector2(-1540.73, 147.047)
+position = Vector2(500.807, 655)
+scale = Vector2(-1010.34, 147.047)
 mesh = SubResource("BoxMesh_6urms")
 texture = SubResource("GradientTexture2D_cauk3")
 
 [node name="name" type="Label" parent="."]
-offset_left = 841.0
-offset_top = 702.0
-offset_right = 1077.0
-offset_bottom = 781.0
+offset_left = 444.0
+offset_top = 616.0
+offset_right = 680.0
+offset_bottom = 695.0
 theme_override_font_sizes/font_size = 45
 text = "t"
 
@@ -64,5 +64,12 @@ texture = SubResource("GradientTexture1D_2o2pv")
 
 [node name="ticket2" parent="." instance=ExtResource("2_akdi8")]
 visible = false
-offset_top = -9.0
-offset_bottom = -9.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -1072.0
+offset_top = -42.0
+offset_right = -1072.0
+offset_bottom = -42.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwps88i147nc5"]
+[gd_scene load_steps=5 format=3 uid="uid://dwps88i147nc5"]
 
 [ext_resource type="Script" path="res://Scripts/UI/scene_change_buttons.gd" id="1_1dxrr"]
 [ext_resource type="Texture2D" uid="uid://c8127jq1ar1n" path="res://Assets2D/jotchua.jpeg" id="1_wg6fy"]
 [ext_resource type="AudioStream" uid="uid://cfarnpabp7ocg" path="res://OtherAssets/Sound/cookingbackground.wav" id="3_xg5rt"]
+[ext_resource type="PackedScene" uid="uid://gvg7rc0pk5ul" path="res://Scenes/rope.tscn" id="4_j6fch"]
 
 [node name="sceneChangeButtons" type="Control"]
 layout_mode = 3
@@ -62,8 +63,22 @@ stretch_mode = 5
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xg5rt")
 autoplay = true
-stream_paused = true
+
+[node name="rope" parent="." instance=ExtResource("4_j6fch")]
+position = Vector2(-126, 168)
+
+[node name="Area2D" parent="rope" index="0"]
+ticket = null
+
+[node name="CollisionShape2D" parent="rope/Area2D" index="0"]
+position = Vector2(617, -143)
+
+[node name="MeshInstance2D" parent="rope/Area2D/CollisionShape2D" index="0"]
+position = Vector2(29.1585, -6)
+scale = Vector2(-1061.96, -20.7795)
 
 [connection signal="pressed" from="HBoxContainer/orderButton" to="." method="_on_order_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/grillButton" to="." method="_on_grill_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/buildButton" to="." method="_on_build_button_pressed"]
+
+[editable path="rope"]

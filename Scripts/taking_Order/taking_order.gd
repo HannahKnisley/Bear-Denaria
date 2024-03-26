@@ -10,7 +10,7 @@ func _ready():
 	$/root/WorldRoot/taking_an_order/name.text = str(name_of_customer.name_of_customer)
 	
 	var mob = ticket.instantiate()
-	
+	#mob.position = local
 	add_child(mob)
 	
 	
