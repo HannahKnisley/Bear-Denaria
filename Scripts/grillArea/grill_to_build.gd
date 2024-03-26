@@ -16,6 +16,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("mouseClick") and !sliding:
 		if pattyIn:
+			myPatty.set_collision_mask_value(1, false)
+			myPatty.set_collision_mask_value(2, true)
 			myPatty.reparent(self)
 			myPatty.setSnap(self.global_position)
 			myPatty.sliding = true
@@ -42,14 +44,14 @@ func slideOutAnimate(delta):
 		myPatty.move_and_collide(self.global_position-myPatty.global_position)
 	else:
 		out = false
+		myPatty.set_collision_mask_value(1, true)
+		myPatty.set_collision_mask_value(2, false)
 		myPatty.reparent($/root/WorldRoot/build_area/pattyContainer)
 		await get_tree().create_timer(0.1).timeout
 		
 	if self.global_position > (defaultPos+Vector2(7,0)) and !out:
 		self.translate((defaultPos-self.global_position)*delta*10)
 	elif !out:
-		self.set_collision_mask_value(1, true)
-		self.set_collision_mask_value(2, false)
 		out = true
 		sliding = false
 		print("meow")
