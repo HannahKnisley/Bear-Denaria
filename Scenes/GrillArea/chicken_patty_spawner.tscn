@@ -1,11 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cll14i0d7ol1g"]
+[gd_scene load_steps=4 format=3 uid="uid://cll14i0d7ol1g"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/chicken_patty_spawner.gd" id="1_p0yrb"]
 [ext_resource type="PackedScene" uid="uid://d16qytf4rw7hu" path="res://Scenes/GrillArea/chicken_patty.tscn" id="2_juvl6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ogfqb"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_omsil"]
 
 [node name="chickenPattySpawner" type="Area2D"]
 script = ExtResource("1_p0yrb")
@@ -14,10 +12,6 @@ patty = ExtResource("2_juvl6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_ogfqb")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(50, 50)
-mesh = SubResource("SphereMesh_omsil")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

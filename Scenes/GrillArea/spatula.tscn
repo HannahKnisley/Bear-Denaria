@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ltu0x01rbltu" path="res://Assets2D/grillAssets/Spatula.png" id="2_4yjks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om5ob"]
-size = Vector2(80, 80)
+size = Vector2(73, 79)
 
 [node name="spatula" type="Area2D"]
 position = Vector2(0, 4)
@@ -12,7 +12,7 @@ script = ExtResource("1_e2jqn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(0.435294, 0.435294, 0.435294, 1)
-position = Vector2(-1, 5)
+position = Vector2(-1.5, 4.5)
 shape = SubResource("RectangleShape2D_om5ob")
 
 [node name="TextureRect" type="TextureRect" parent="."]

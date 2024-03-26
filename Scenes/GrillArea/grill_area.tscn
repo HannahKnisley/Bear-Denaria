@@ -18,34 +18,34 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(382, 210)
+position = Vector2(391, 210)
 
 [node name="Cooktop2" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(369, 327)
+position = Vector2(378, 333)
 
 [node name="Cooktop3" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(353, 446)
+position = Vector2(360, 456)
 
 [node name="Cooktop4" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(607, 210)
+position = Vector2(601, 210)
 
 [node name="Cooktop5" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(615, 329)
+position = Vector2(610, 333)
 
 [node name="Cooktop6" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(629, 441)
+position = Vector2(628, 456)
 scale = Vector2(1.01381, 0.996506)
 
 [node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
-position = Vector2(883, 168)
+position = Vector2(882, 199)
 
 [node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
-position = Vector2(906, 350)
+position = Vector2(895, 363)
 
 [node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
-position = Vector2(121, 216)
+position = Vector2(112, 227)
 
 [node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
 position = Vector2(79, 438)
