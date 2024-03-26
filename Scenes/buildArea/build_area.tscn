@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=5 format=3 uid="uid://bbv7j14qeefkv"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
 [ext_resource type="PackedScene" uid="uid://cj1ve1ok5j6oh" path="res://Scenes/buildArea/bottom_bun_spawn.tscn" id="2_5wc8b"]
+[ext_resource type="Script" path="res://Scripts/buildArea/buildArea.gd" id="2_thha8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu8bm"]
 size = Vector2(197, 516.25)
@@ -18,9 +19,10 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(107, 552)
 script = ExtResource("1_jn5iw")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="buildArea" type="Area2D" parent="." groups=["buildArea"]]
+script = ExtResource("2_thha8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buildArea"]
 position = Vector2(565, 286.125)
 shape = SubResource("RectangleShape2D_hu8bm")
 

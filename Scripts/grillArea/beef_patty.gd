@@ -101,9 +101,13 @@ func flippingAnimate(delta):
 		up = true
 		flipping = false
 		move_and_collide((burgerToGrill()))
+		self.set_collision_mask_value(1, true)
+		self.set_collision_mask_value(2, false)
 		
 
 func flipBurger():
+	self.set_collision_mask_value(1, false)
+	self.set_collision_mask_value(2, true)
 	flipping = true
 	var oldBottom = bottomCook
 	bottomCook = topCook

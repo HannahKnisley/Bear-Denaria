@@ -16,7 +16,7 @@ func _on_body_entered(body):
 	if body.is_in_group("ticket"):
 		print("yup")
 
-
+'''
 func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	var name_of_customer = get_node("/root/Globals")
 	name_of_customer.ticket_move = true
@@ -28,4 +28,5 @@ func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index)
 		print(num)
 		add_child(mob)
 		$/root/WorldRoot/taking_an_order.visible = false
-	
+
+'''

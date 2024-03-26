@@ -37,12 +37,12 @@ position = Vector2(628, 456)
 scale = Vector2(1.01381, 0.996506)
 
 [node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
-position = Vector2(883, 168)
+position = Vector2(882, 199)
 
 [node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
-position = Vector2(906, 350)
+position = Vector2(895, 363)
 
 [node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
 position = Vector2(112, 227)

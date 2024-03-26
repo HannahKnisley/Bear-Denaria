@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b1xinjxc80b2j" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerBurnt.png" id="11_r5btd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5hv6k"]
-radius = 32.2414
+radius = 23.3399
 
 [node name="BeefPatty" type="RigidBody2D" groups=["patty", "topping"]]
 freeze = true
@@ -195,7 +195,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(1, 7)
 scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_5hv6k")
 
