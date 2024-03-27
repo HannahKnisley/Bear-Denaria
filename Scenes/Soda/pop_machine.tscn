@@ -65,11 +65,11 @@ mesh = SubResource("BoxMesh_pln8p")
 texture = SubResource("GradientTexture2D_5vfwl")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-45, 372)
+position = Vector2(72, 614)
 script = ExtResource("1_snenu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(118.5, 253.25)
+position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_qnuhr")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D/CollisionShape2D"]
