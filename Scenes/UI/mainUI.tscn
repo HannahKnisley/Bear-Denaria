@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwps88i147nc5"]
+[gd_scene load_steps=7 format=3 uid="uid://dwps88i147nc5"]
 
 [ext_resource type="Script" path="res://Scripts/UI/scene_change_buttons.gd" id="1_1dxrr"]
 [ext_resource type="Texture2D" uid="uid://c8127jq1ar1n" path="res://Assets2D/jotchua.jpeg" id="1_wg6fy"]
 [ext_resource type="AudioStream" uid="uid://cfarnpabp7ocg" path="res://OtherAssets/Sound/cookingbackground.wav" id="3_xg5rt"]
-[ext_resource type="PackedScene" uid="uid://gvg7rc0pk5ul" path="res://Scenes/rope.tscn" id="4_j6fch"]
+[ext_resource type="Texture2D" uid="uid://b18sd7rimju8m" path="res://Assets2D/UIAssets/Big_Rope_Guy.PNG" id="4_r2c6h"]
 
-[node name="sceneChangeButtons" type="Control"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljkxt"]
+size = Vector2(642, 692)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bubi"]
+size = Vector2(168, 129)
+
+[node name="MainUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,21 +70,30 @@ stretch_mode = 5
 stream = ExtResource("3_xg5rt")
 autoplay = true
 
-[node name="rope" parent="." instance=ExtResource("4_j6fch")]
-position = Vector2(-126, 168)
+[node name="OrderLine" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_top = -0.0314286
+anchor_right = 1.002
+anchor_bottom = 0.26
+texture = ExtResource("4_r2c6h")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" parent="rope" index="0"]
-ticket = null
+[node name="Line" type="Area2D" parent="OrderLine" groups=["line"]]
+position = Vector2(0, 39)
 
-[node name="CollisionShape2D" parent="rope/Area2D" index="0"]
-position = Vector2(617, -143)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrderLine/Line"]
+position = Vector2(423, 325)
+shape = SubResource("RectangleShape2D_ljkxt")
 
-[node name="MeshInstance2D" parent="rope/Area2D/CollisionShape2D" index="0"]
-position = Vector2(29.1585, -6)
-scale = Vector2(-1061.96, -20.7795)
+[node name="bigHold" type="Area2D" parent="OrderLine" groups=["bigHold"]]
+position = Vector2(892, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrderLine/bigHold"]
+position = Vector2(18, 21.5)
+shape = SubResource("RectangleShape2D_8bubi")
 
 [connection signal="pressed" from="HBoxContainer/orderButton" to="." method="_on_order_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/grillButton" to="." method="_on_grill_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/buildButton" to="." method="_on_build_button_pressed"]
-
-[editable path="rope"]

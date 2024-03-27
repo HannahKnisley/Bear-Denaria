@@ -1,0 +1,498 @@
+[gd_scene load_steps=11 format=3 uid="uid://be1133xfpyrwl"]
+
+[ext_resource type="Texture2D" uid="uid://biv7a60ft30u0" path="res://Assets2D/orderAssets/bottomBun.jpg" id="1_0knjn"]
+[ext_resource type="Script" path="res://Scripts/orderingArea/ticket.gd" id="1_u0aco"]
+[ext_resource type="Texture2D" uid="uid://cvphamrornmct" path="res://Assets2D/orderAssets/beefPatty.jpg" id="2_num5a"]
+[ext_resource type="Texture2D" uid="uid://1k2h4tp75gie" path="res://Assets2D/orderAssets/chickenPatty.webp" id="3_oqsm3"]
+[ext_resource type="Texture2D" uid="uid://dkuch2b66fojq" path="res://Assets2D/orderAssets/lettuce.webp" id="5_52i22"]
+[ext_resource type="Texture2D" uid="uid://l2exkexsnrfb" path="res://Assets2D/orderAssets/tomato.png" id="6_qii7u"]
+[ext_resource type="Texture2D" uid="uid://dug8u5t8hik0m" path="res://Assets2D/orderAssets/pickle.webp" id="7_hix2l"]
+[ext_resource type="Texture2D" uid="uid://c04vq0gj2bxat" path="res://Assets2D/orderAssets/onion.jpg" id="8_rf8h6"]
+[ext_resource type="Texture2D" uid="uid://bslpldiyd70f0" path="res://Assets2D/orderAssets/hamburger-bun-top-x7EWrE9-600.jpg" id="9_50gxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk3to"]
+size = Vector2(49, 100)
+
+[node name="ticket" type="Area2D"]
+script = ExtResource("1_u0aco")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 45)
+shape = SubResource("RectangleShape2D_dk3to")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = -0.074
+anchor_top = -0.0314286
+offset_left = -25.0
+offset_top = -5.0
+offset_right = 25.0
+offset_bottom = 95.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Item1" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.874046
+anchor_right = 0.793333
+anchor_bottom = 0.984733
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomBun" type="TextureRect" parent="ColorRect/Item1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_0knjn")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Item2" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.751908
+anchor_right = 0.793333
+anchor_bottom = 0.862595
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="beefPatty" type="TextureRect" parent="ColorRect/Item2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_num5a")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="chickenPatty" type="TextureRect" parent="ColorRect/Item2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_oqsm3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Item3" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.610687
+anchor_right = 0.793333
+anchor_bottom = 0.721374
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="lettuce" type="TextureRect" parent="ColorRect/Item3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_52i22")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="tomato" type="TextureRect" parent="ColorRect/Item3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_qii7u")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="pickle" type="TextureRect" parent="ColorRect/Item3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_hix2l")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="onion" type="TextureRect" parent="ColorRect/Item3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_rf8h6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="topPatty" type="TextureRect" parent="ColorRect/Item3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_50gxh")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Item4" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.492366
+anchor_right = 0.793333
+anchor_bottom = 0.603053
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="lettuce" type="TextureRect" parent="ColorRect/Item4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_52i22")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="tomato" type="TextureRect" parent="ColorRect/Item4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_qii7u")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="pickle" type="TextureRect" parent="ColorRect/Item4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_hix2l")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="onion" type="TextureRect" parent="ColorRect/Item4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_rf8h6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="topPatty" type="TextureRect" parent="ColorRect/Item4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_50gxh")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Item5" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.377863
+anchor_right = 0.793333
+anchor_bottom = 0.48855
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="lettuce" type="TextureRect" parent="ColorRect/Item5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_52i22")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="tomato" type="TextureRect" parent="ColorRect/Item5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_qii7u")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="pickle" type="TextureRect" parent="ColorRect/Item5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_hix2l")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="onion" type="TextureRect" parent="ColorRect/Item5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_rf8h6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="topPatty" type="TextureRect" parent="ColorRect/Item5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_50gxh")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Item6" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.263359
+anchor_right = 0.793333
+anchor_bottom = 0.374046
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="lettuce" type="TextureRect" parent="ColorRect/Item6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_52i22")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="tomato" type="TextureRect" parent="ColorRect/Item6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_qii7u")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="pickle" type="TextureRect" parent="ColorRect/Item6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_hix2l")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="onion" type="TextureRect" parent="ColorRect/Item6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_rf8h6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="topPatty" type="TextureRect" parent="ColorRect/Item6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_50gxh")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Item7" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.145038
+anchor_right = 0.793333
+anchor_bottom = 0.255725
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="lettuce" type="TextureRect" parent="ColorRect/Item7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_52i22")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="tomato" type="TextureRect" parent="ColorRect/Item7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_qii7u")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="pickle" type="TextureRect" parent="ColorRect/Item7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_hix2l")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="onion" type="TextureRect" parent="ColorRect/Item7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_rf8h6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="topPatty" type="TextureRect" parent="ColorRect/Item7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_50gxh")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
