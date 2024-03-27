@@ -1,10 +1,10 @@
 extends Node2D
 @export var Customer: PackedScene
 var mob_num = 0
-var name_customer = "bob"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var name_customer = "bob"
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,7 +24,8 @@ func _on_spawn_timer_timeout():
 		mob_num+=1
 		print(mob_num)
 		self.add_child(mob)
-		mob.global_position = $spawnHere.global_position
+		mob.global_position = $orderLine.global_position
 		
+
 
 

@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1dxrr")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="screenButtons" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.210938
@@ -35,35 +35,35 @@ grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="orderButton" type="TextureButton" parent="HBoxContainer"]
+[node name="orderButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("2_tum0r")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="grillButton" type="TextureButton" parent="HBoxContainer"]
+[node name="grillButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_exoh7")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="buildButton" type="TextureButton" parent="HBoxContainer"]
+[node name="buildButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("4_vrb21")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="fryButton" type="TextureButton" parent="HBoxContainer"]
+[node name="fryButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("5_7sirv")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="drinkButton" type="TextureButton" parent="HBoxContainer"]
+[node name="drinkButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("6_4q0v4")
@@ -98,6 +98,22 @@ position = Vector2(892, 64)
 position = Vector2(18, 21.5)
 shape = SubResource("RectangleShape2D_8bubi")
 
-[connection signal="pressed" from="HBoxContainer/orderButton" to="." method="_on_order_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/grillButton" to="." method="_on_grill_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/buildButton" to="." method="_on_build_button_pressed"]
+[node name="ticketContainer" type="Node2D" parent="."]
+
+[node name="takeOrder" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.262
+anchor_top = 0.0657143
+anchor_right = 0.392
+anchor_bottom = 0.14
+text = "Take Order"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="screenButtons/orderButton" to="." method="_on_order_button_pressed"]
+[connection signal="pressed" from="screenButtons/grillButton" to="." method="_on_grill_button_pressed"]
+[connection signal="pressed" from="screenButtons/buildButton" to="." method="_on_build_button_pressed"]
+[connection signal="pressed" from="screenButtons/fryButton" to="." method="_on_fry_button_pressed"]
+[connection signal="pressed" from="screenButtons/drinkButton" to="." method="_on_drink_button_pressed"]
+[connection signal="pressed" from="takeOrder" to="." method="_on_take_order_pressed"]

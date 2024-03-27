@@ -1,6 +1,9 @@
 extends Node2D
 
-var name_of_customer = "Bob"
+var firstCustomer
+var customerAtCounter = false
+
+
 var burger_type
 var tomato = false
 var letteace = false

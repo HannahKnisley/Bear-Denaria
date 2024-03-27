@@ -51,7 +51,10 @@ texture = SubResource("GradientTexture2D_vdd6l")
 wait_time = 4.0
 autostart = true
 
-[node name="spawnHere" type="Node2D" parent="."]
+[node name="orderLine" type="Node2D" parent="."]
 position = Vector2(1073, 162)
+
+[node name="waitLine" type="Node2D" parent="."]
+position = Vector2(1081, 463)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

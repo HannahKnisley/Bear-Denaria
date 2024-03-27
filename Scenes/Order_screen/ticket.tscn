@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://be1133xfpyrwl"]
+[gd_scene load_steps=12 format=3 uid="uid://be1133xfpyrwl"]
 
 [ext_resource type="Texture2D" uid="uid://biv7a60ft30u0" path="res://Assets2D/orderAssets/bottomBun.jpg" id="1_0knjn"]
-[ext_resource type="Script" path="res://Scripts/orderingArea/ticket.gd" id="1_u0aco"]
+[ext_resource type="Script" path="res://Scripts/Order/ticket.gd" id="1_h3l7e"]
 [ext_resource type="Texture2D" uid="uid://cvphamrornmct" path="res://Assets2D/orderAssets/beefPatty.jpg" id="2_num5a"]
 [ext_resource type="Texture2D" uid="uid://1k2h4tp75gie" path="res://Assets2D/orderAssets/chickenPatty.webp" id="3_oqsm3"]
 [ext_resource type="Texture2D" uid="uid://dkuch2b66fojq" path="res://Assets2D/orderAssets/lettuce.webp" id="5_52i22"]
@@ -9,13 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://dug8u5t8hik0m" path="res://Assets2D/orderAssets/pickle.webp" id="7_hix2l"]
 [ext_resource type="Texture2D" uid="uid://c04vq0gj2bxat" path="res://Assets2D/orderAssets/onion.jpg" id="8_rf8h6"]
 [ext_resource type="Texture2D" uid="uid://bslpldiyd70f0" path="res://Assets2D/orderAssets/hamburger-bun-top-x7EWrE9-600.jpg" id="9_50gxh"]
+[ext_resource type="Texture2D" uid="uid://cwnymgbxwk75k" path="res://Assets2D/orderAssets/cheese.jpg" id="9_xinbc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dk3to"]
 size = Vector2(49, 100)
 
 [node name="ticket" type="Area2D"]
 scale = Vector2(3, 3)
-script = ExtResource("1_u0aco")
+script = ExtResource("1_h3l7e")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 45)
@@ -42,6 +43,7 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="BottomBun" type="TextureRect" parent="ColorRect/Item1"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -66,6 +68,7 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="beefPatty" type="TextureRect" parent="ColorRect/Item2"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -80,6 +83,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="chickenPatty" type="TextureRect" parent="ColorRect/Item2"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -104,6 +108,7 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="lettuce" type="TextureRect" parent="ColorRect/Item3"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -118,6 +123,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato" type="TextureRect" parent="ColorRect/Item3"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -132,6 +138,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="pickle" type="TextureRect" parent="ColorRect/Item3"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -146,6 +153,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="onion" type="TextureRect" parent="ColorRect/Item3"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -159,7 +167,23 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="cheese" type="TextureRect" parent="ColorRect/Item3"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_xinbc")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="topPatty" type="TextureRect" parent="ColorRect/Item3"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -184,6 +208,7 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="lettuce" type="TextureRect" parent="ColorRect/Item4"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -198,6 +223,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato" type="TextureRect" parent="ColorRect/Item4"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -212,6 +238,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="pickle" type="TextureRect" parent="ColorRect/Item4"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -226,6 +253,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="onion" type="TextureRect" parent="ColorRect/Item4"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -239,7 +267,23 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="cheese" type="TextureRect" parent="ColorRect/Item4"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_xinbc")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="topPatty" type="TextureRect" parent="ColorRect/Item4"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -264,6 +308,7 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="lettuce" type="TextureRect" parent="ColorRect/Item5"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -278,6 +323,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato" type="TextureRect" parent="ColorRect/Item5"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -292,6 +338,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="pickle" type="TextureRect" parent="ColorRect/Item5"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -306,6 +353,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="onion" type="TextureRect" parent="ColorRect/Item5"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -319,7 +367,23 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="cheese" type="TextureRect" parent="ColorRect/Item5"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_xinbc")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="topPatty" type="TextureRect" parent="ColorRect/Item5"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -344,6 +408,7 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="lettuce" type="TextureRect" parent="ColorRect/Item6"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -358,6 +423,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato" type="TextureRect" parent="ColorRect/Item6"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -372,6 +438,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="pickle" type="TextureRect" parent="ColorRect/Item6"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -386,6 +453,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="onion" type="TextureRect" parent="ColorRect/Item6"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -399,7 +467,23 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="cheese" type="TextureRect" parent="ColorRect/Item6"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_xinbc")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="topPatty" type="TextureRect" parent="ColorRect/Item6"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -424,6 +508,7 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="lettuce" type="TextureRect" parent="ColorRect/Item7"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -438,6 +523,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato" type="TextureRect" parent="ColorRect/Item7"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -452,6 +538,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="pickle" type="TextureRect" parent="ColorRect/Item7"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -466,6 +553,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="onion" type="TextureRect" parent="ColorRect/Item7"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
@@ -479,7 +567,23 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="cheese" type="TextureRect" parent="ColorRect/Item7"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213483
+anchor_top = -0.137931
+anchor_right = 0.786517
+anchor_bottom = 1.03448
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_xinbc")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="topPatty" type="TextureRect" parent="ColorRect/Item7"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.213483
