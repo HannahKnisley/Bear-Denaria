@@ -11,7 +11,7 @@ func _ready():
 	
 	var mob = ticket.instantiate()
 	#mob.position = local
-	add_child(mob)
+	self.add_child(mob)
 	
 	
 

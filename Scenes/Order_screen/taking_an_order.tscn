@@ -64,6 +64,8 @@ texture = SubResource("GradientTexture1D_2o2pv")
 
 [node name="ticket2" parent="." instance=ExtResource("2_akdi8")]
 visible = false
+light_mask = 3
+visibility_layer = 3
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

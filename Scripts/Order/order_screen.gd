@@ -23,13 +23,8 @@ func _on_spawn_timer_timeout():
 		
 		mob_num+=1
 		print(mob_num)
-		mob.position = Vector2(50,30)
-		add_child(mob)
+		self.add_child(mob)
+		mob.global_position = $spawnHere.global_position
 		
-
-
-func _on_order_button_pressed():
-	
-	get_tree().change_scene_to_file("res://Scenes/Order_screen/taking_an_order.tscn")
 
 

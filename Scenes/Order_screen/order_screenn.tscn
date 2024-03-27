@@ -28,7 +28,7 @@ gradient = SubResource("Gradient_mkyba")
 script = ExtResource("1_e0ad2")
 Customer = ExtResource("2_rkd65")
 
-[node name="Counter" type="Area2D" parent="."]
+[node name="Counter" type="Area2D" parent="." groups=["counter"]]
 position = Vector2(-2, -21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Counter"]
@@ -51,14 +51,7 @@ texture = SubResource("GradientTexture2D_vdd6l")
 wait_time = 4.0
 autostart = true
 
-[node name="Order_button" type="Button" parent="."]
-visible = false
-offset_left = 413.0
-offset_top = 108.0
-offset_right = 539.0
-offset_bottom = 139.0
-text = "Ready to Order
-"
+[node name="spawnHere" type="Node2D" parent="."]
+position = Vector2(1073, 162)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="pressed" from="Order_button" to="." method="_on_order_button_pressed"]

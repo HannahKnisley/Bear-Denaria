@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwps88i147nc5"]
+[gd_scene load_steps=11 format=3 uid="uid://dwps88i147nc5"]
 
 [ext_resource type="Script" path="res://Scripts/UI/scene_change_buttons.gd" id="1_1dxrr"]
-[ext_resource type="Texture2D" uid="uid://c8127jq1ar1n" path="res://Assets2D/jotchua.jpeg" id="1_wg6fy"]
+[ext_resource type="Texture2D" uid="uid://cuw5xp1sii5ng" path="res://Assets2D/UIAssets/Order_Station_Button.PNG" id="2_tum0r"]
+[ext_resource type="Texture2D" uid="uid://j54mhpmo0wg1" path="res://Assets2D/UIAssets/Grill_Station_Button.PNG" id="3_exoh7"]
 [ext_resource type="AudioStream" uid="uid://cfarnpabp7ocg" path="res://OtherAssets/Sound/cookingbackground.wav" id="3_xg5rt"]
 [ext_resource type="Texture2D" uid="uid://b18sd7rimju8m" path="res://Assets2D/UIAssets/Big_Rope_Guy.PNG" id="4_r2c6h"]
+[ext_resource type="Texture2D" uid="uid://dn3nk4s7rru6t" path="res://Assets2D/UIAssets/Assembly_Station_Button.PNG" id="4_vrb21"]
+[ext_resource type="Texture2D" uid="uid://bqd3gfw44ufg6" path="res://Assets2D/UIAssets/Fry_Station_Button.PNG" id="5_7sirv"]
+[ext_resource type="Texture2D" uid="uid://bg1o7n3wax442" path="res://Assets2D/UIAssets/DrinkCookie_Station_Button.PNG" id="6_4q0v4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljkxt"]
 size = Vector2(642, 692)
@@ -34,35 +38,35 @@ metadata/_edit_use_anchors_ = true
 [node name="orderButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("1_wg6fy")
+texture_normal = ExtResource("2_tum0r")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="grillButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("1_wg6fy")
+texture_normal = ExtResource("3_exoh7")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="buildButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("1_wg6fy")
+texture_normal = ExtResource("4_vrb21")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="fryButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("1_wg6fy")
+texture_normal = ExtResource("5_7sirv")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="drinkButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("1_wg6fy")
+texture_normal = ExtResource("6_4q0v4")
 ignore_texture_size = true
 stretch_mode = 5
 

@@ -17,3 +17,11 @@ func _on_child_entered_tree(node):
 	node.setSnap(self.global_position)
 	await get_tree().create_timer(0.1).timeout
 	node.visible = false
+
+
+
+
+
+
+func _on_build_area_body_entered(body):
+	pass # Replace with function body.

@@ -35,6 +35,7 @@ func _physics_process(delta):
 		await get_tree().create_timer(0.5).timeout
 		if self.global_position == first:
 			self.freeze = true
+			get_node("../../builtBurger").sendBurger()
 	
 	
 		
@@ -64,7 +65,4 @@ func checkMouse():
 			mouseCollide = true
 	else:
 		mouseCollide = false
-
-
-
 

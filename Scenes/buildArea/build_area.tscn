@@ -1,32 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=7 format=3 uid="uid://bbv7j14qeefkv"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
 [ext_resource type="PackedScene" uid="uid://cj1ve1ok5j6oh" path="res://Scenes/buildArea/bottom_bun_spawn.tscn" id="2_5wc8b"]
-[ext_resource type="Script" path="res://Scripts/buildArea/buildArea.gd" id="2_thha8"]
+[ext_resource type="Texture2D" uid="uid://bip82l6tlix62" path="res://Assets2D/grillAssets/Plate.png" id="4_01dm8"]
+[ext_resource type="PackedScene" uid="uid://bdjls1rn4qic6" path="res://Scenes/buildArea/built_burger.tscn" id="4_7axt8"]
+[ext_resource type="PackedScene" uid="uid://b1hhfr5pm8oqd" path="res://Scenes/buildArea/top_bun_spawn.tscn" id="5_c5fhj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu8bm"]
-size = Vector2(197, 516.25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4sa1"]
+size = Vector2(458, 20)
 
 [node name="build_area" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1153.0
-offset_bottom = 646.0
-color = Color(0, 0, 0.431373, 1)
-metadata/_edit_use_anchors_ = true
+offset_right = 999.0
+offset_bottom = 709.0
+color = Color(0.309804, 0.607843, 1, 1)
+
+[node name="Plate" type="StaticBody2D" parent="."]
+
+[node name="plateCollision" type="CollisionShape2D" parent="Plate"]
+position = Vector2(530, 625)
+shape = SubResource("RectangleShape2D_c4sa1")
+
+[node name="platePic" type="TextureRect" parent="Plate"]
+offset_left = 371.0
+offset_top = 443.0
+offset_right = 684.0
+offset_bottom = 736.0
+texture = ExtResource("4_01dm8")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="pattyContainer" type="Node2D" parent="."]
 position = Vector2(107, 552)
 script = ExtResource("1_jn5iw")
 
-[node name="buildArea" type="Area2D" parent="." groups=["buildArea"]]
-script = ExtResource("2_thha8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="buildArea"]
-position = Vector2(565, 286.125)
-shape = SubResource("RectangleShape2D_hu8bm")
-
 [node name="bottomBunSpawn" parent="." instance=ExtResource("2_5wc8b")]
-position = Vector2(102, 417)
+position = Vector2(108, 457)
+
+[node name="builtBurger" parent="." instance=ExtResource("4_7axt8")]
+position = Vector2(530, 311)
+
+[node name="topBunSpawn" parent="." instance=ExtResource("5_c5fhj")]
+position = Vector2(106, 143)
 
 [connection signal="child_entered_tree" from="pattyContainer" to="pattyContainer" method="_on_child_entered_tree"]

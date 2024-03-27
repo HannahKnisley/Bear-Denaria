@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceitx1gvpvn38"]
+
+[ext_resource type="Texture2D" uid="uid://bslpldiyd70f0" path="res://Assets2D/orderAssets/hamburger-bun-top-x7EWrE9-600.jpg" id="1_4f63c"]
+[ext_resource type="Script" path="res://Scripts/buildArea/top_bun.gd" id="1_g6mu1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ofqs"]
+size = Vector2(50, 5)
+
+[node name="topBun" type="RigidBody2D"]
+contact_monitor = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_g6mu1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -55.0
+offset_top = -49.0
+offset_right = 52.0
+offset_bottom = 27.0
+texture = ExtResource("1_4f63c")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+scale = Vector2(1.8, 1.8)
+shape = SubResource("RectangleShape2D_7ofqs")

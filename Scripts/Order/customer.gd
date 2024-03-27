@@ -16,14 +16,19 @@ func _process(delta):
 	name_of_customer.customertype = "nice"
 	if counterr == false:
 		translate(Vector2(-delta*55, 0))
-	else:
-		$/root/WorldRoot/CanvasLayer/TakingOrderButton.visible = true
-	if name_of_customer.pressed_order == true:
-		$/root/WorldRoot/CanvasLayer/TakingOrderButton.visible = false
 		
 
 
 func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	print("owey")
-	print(area_shape_index)
-	counterr=true
+	if area.is_in_group("counter") or area.is_in_group("customer"):
+		print("owey")
+		print(area_shape_index)
+		counterr=true
+	if area.is_in_group("counter"):
+		$takeOrder.visible = true
+
+
+func _on_take_order_pressed():
+	$/root/WorldRoot/Camera.global_position =  $/root/WorldRoot/taking_an_order.global_position + Vector2(500,350)
+	var name_of_customer = get_node("/root/Globals")
+	name_of_customer.pressed_order = true

@@ -20,9 +20,5 @@ func _on_mouse_entered():
 
 
 func _on_ordering_pressed():
-	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/taking_an_order.global_position + Vector2(576,324)
-	$/root/WorldRoot/taking_an_order.visible = true
-	$/root/WorldRoot/CanvasLayer/TakingOrderButton.visible = false
-	var name_of_customer = get_node("/root/Globals")
-	name_of_customer.pressed_order = true
+	
 
