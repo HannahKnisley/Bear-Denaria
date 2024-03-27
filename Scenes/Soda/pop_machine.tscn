@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://b6vnl073pnt1k"]
+
+[ext_resource type="Script" path="res://Scripts/soda_machine/button for machine soda.gd" id="1_snenu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ui0ip"]
+
+[sub_resource type="Gradient" id="Gradient_umcrc"]
+offsets = PackedFloat32Array(0.00717703)
+colors = PackedColorArray(0.18359, 0.18359, 0.18359, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a7vot"]
+gradient = SubResource("Gradient_umcrc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1iqx"]
+size = Vector2(86.5, 36)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pln8p"]
+
+[sub_resource type="Gradient" id="Gradient_td2r3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.255485, 0.566191, 0.254031, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5vfwl"]
+gradient = SubResource("Gradient_td2r3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnuhr"]
+size = Vector2(73, 112.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7iehw"]
+
+[sub_resource type="Gradient" id="Gradient_ploa3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.419608, 0.72549, 0.862745, 0.0470588)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_clxe0"]
+gradient = SubResource("Gradient_ploa3")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t8crv"]
+radius = 57.0
+
+[node name="pop_machine" type="Node2D"]
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(549, 141)
+scale = Vector2(132, 292)
+mesh = SubResource("BoxMesh_ui0ip")
+texture = SubResource("GradientTexture2D_a7vot")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(399, 141.75)
+scale = Vector2(132, 295.5)
+mesh = SubResource("BoxMesh_ui0ip")
+texture = SubResource("GradientTexture2D_a7vot")
+
+[node name="button for machine soda" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button for machine soda"]
+position = Vector2(394, 248)
+shape = SubResource("RectangleShape2D_s1iqx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="button for machine soda/CollisionShape2D"]
+position = Vector2(0.25, 0)
+scale = Vector2(68.5, 24.5)
+mesh = SubResource("BoxMesh_pln8p")
+texture = SubResource("GradientTexture2D_5vfwl")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-45, 372)
+script = ExtResource("1_snenu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(118.5, 253.25)
+shape = SubResource("RectangleShape2D_qnuhr")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D/CollisionShape2D"]
+position = Vector2(-0.5, 7.75)
+scale = Vector2(-50.3081, 96.075)
+mesh = SubResource("BoxMesh_7iehw")
+texture = SubResource("GradientTexture2D_clxe0")
+
+[node name="button for machine water" type="Area2D" parent="."]
+position = Vector2(19, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button for machine water"]
+position = Vector2(529, 239)
+shape = SubResource("RectangleShape2D_s1iqx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="button for machine water/CollisionShape2D"]
+scale = Vector2(68.5, 24.5)
+mesh = SubResource("BoxMesh_pln8p")
+texture = SubResource("GradientTexture2D_5vfwl")
+
+[node name="plate for cup" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plate for cup"]
+position = Vector2(379, 439)
+shape = SubResource("CircleShape2D_t8crv")
+
+[node name="plate for cup2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plate for cup2"]
+position = Vector2(545, 436)
+shape = SubResource("CircleShape2D_t8crv")
+
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="plate for cup" to="Area2D" method="_on_plate_for_cup_mouse_entered"]
