@@ -12,6 +12,9 @@ var up = true
 
 var sliding = false
 
+var inBuildArea = false
+var placedInBuild = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	snapPos = self.global_position
@@ -22,7 +25,7 @@ func _process(delta):
 	if flipping:
 		flippingAnimate(delta)
 		
-	elif !flipping and !sliding and !Input.is_action_pressed("mouseClick"):
+	elif !flipping and !sliding and !Input.is_action_pressed("mouseClick") and !inBuildArea:
 		if self.global_position != snapPos:
 			self.set_collision_mask_value(1, false)
 			self.set_collision_mask_value(2, true)
@@ -38,18 +41,27 @@ func _physics_process(delta):
 	if Input.is_action_pressed("mouseClick"):
 		if mouseCollide and !flipping and !sliding:
 			$cookTimer.stop()
-			self.set_collision_mask_value(1, false)
-			self.set_collision_mask_value(2, true)
-			move_and_collide(burgerToMouse()) 
+			if inBuildArea:
+				self.set_collision_mask_value(1, true)
+				self.set_collision_mask_value(2, false)
+			else:
+				self.set_collision_mask_value(1, false)
+				self.set_collision_mask_value(2, true)
+			if !placedInBuild:
+				move_and_collide(burgerToMouse()) 
 		
 	if Input.is_action_just_released("mouseClick"):
-		if !flipping and !sliding:
+		if inBuildArea and mouseCollide:
+			placedInBuild = true
+			setSnap(self.global_position)
+			self.freeze = false
+		elif !flipping and !sliding and !inBuildArea:
 			move_and_collide((burgerToGrill()))
 			self.set_collision_mask_value(1, true)
 			self.set_collision_mask_value(2, false)
 		if onGrill:
 			$cookTimer.start()
-		checkMouse()
+		mouseCollide = false
 		
 	if !Input.is_action_pressed("mouseClick") and onGrill:
 		checkMouse()
@@ -59,6 +71,12 @@ func _physics_process(delta):
 			$cookingMeter.visible = false
 	else:
 		$cookingMeter.visible = false
+		
+	if self.freeze == false:
+		var first = self.global_position
+		await get_tree().create_timer(0.5).timeout
+		if self.global_position == first:
+			self.freeze = true
 		
 		
 	
@@ -143,6 +161,8 @@ func _on_cook_timer_timeout():
 func sendToBuild():
 	onGrill = false
 	$cookTimer.stop()
+	$collision.disabled = true
+	$buildCollision.disabled = false
 	
 func updateAppearance():
 	if bottomCook < 25:

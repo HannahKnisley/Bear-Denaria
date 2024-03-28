@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgjpyudlqnhxa"]
+[gd_scene load_steps=6 format=3 uid="uid://cgjpyudlqnhxa"]
 
 [ext_resource type="Script" path="res://Scripts/credits/credits.gd" id="1_ldpqh"]
+[ext_resource type="Texture2D" uid="uid://bh11v2nk351ig" path="res://Assets2D/Exit_Button.PNG" id="2_sa47e"]
+[ext_resource type="Texture2D" uid="uid://ce3q3igk0bjx7" path="res://Assets2D/menu/Exit_Translucent.PNG" id="3_sham1"]
 
 [sub_resource type="Gradient" id="Gradient_hmqi3"]
 colors = PackedColorArray(0, 0.0901961, 0.105882, 0.509804, 1, 1, 1, 1)
@@ -40,15 +42,14 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 65
 text = "Credits"
 
-[node name="exit" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.077
-anchor_bottom = 0.11
-offset_right = -51.704
-offset_bottom = -40.28
-theme_override_font_sizes/font_size = 45
-text = "Exit
-"
+[node name="exitButton" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_right = 0.094
+anchor_bottom = 0.141429
+texture_normal = ExtResource("2_sa47e")
+texture_hover = ExtResource("3_sham1")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="exitButton" to="." method="_on_exit_button_pressed"]

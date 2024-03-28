@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=6 format=3 uid="uid://bbv7j14qeefkv"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
-[ext_resource type="PackedScene" uid="uid://cj1ve1ok5j6oh" path="res://Scenes/buildArea/bottom_bun_spawn.tscn" id="2_5wc8b"]
 [ext_resource type="Texture2D" uid="uid://bip82l6tlix62" path="res://Assets2D/grillAssets/Plate.png" id="4_01dm8"]
 [ext_resource type="PackedScene" uid="uid://bdjls1rn4qic6" path="res://Scenes/buildArea/built_burger.tscn" id="4_7axt8"]
-[ext_resource type="PackedScene" uid="uid://b1hhfr5pm8oqd" path="res://Scenes/buildArea/top_bun_spawn.tscn" id="5_c5fhj"]
+[ext_resource type="PackedScene" uid="uid://b1hhfr5pm8oqd" path="res://Scenes/buildArea/bunSpawn.tscn" id="5_c5fhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4sa1"]
 size = Vector2(458, 20)
@@ -31,17 +30,15 @@ texture = ExtResource("4_01dm8")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="builtBurger" parent="." instance=ExtResource("4_7axt8")]
+position = Vector2(531, 345)
+
 [node name="pattyContainer" type="Node2D" parent="."]
 position = Vector2(107, 552)
 script = ExtResource("1_jn5iw")
 
-[node name="bottomBunSpawn" parent="." instance=ExtResource("2_5wc8b")]
-position = Vector2(108, 457)
-
-[node name="builtBurger" parent="." instance=ExtResource("4_7axt8")]
-position = Vector2(530, 311)
-
-[node name="topBunSpawn" parent="." instance=ExtResource("5_c5fhj")]
-position = Vector2(106, 143)
+[node name="bunSpawn" parent="." instance=ExtResource("5_c5fhj")]
+position = Vector2(137, 263)
 
 [connection signal="child_entered_tree" from="pattyContainer" to="pattyContainer" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="pattyContainer" to="pattyContainer" method="_on_child_exiting_tree"]

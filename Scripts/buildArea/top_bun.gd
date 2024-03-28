@@ -63,6 +63,8 @@ func checkMouse():
 	if mousePos.x > myPos.x-60 and mousePos.x<myPos.x+60:
 		if mousePos.y > myPos.y-60 and mousePos.y<myPos.y+60:
 			mouseCollide = true
+		else:
+			mouseCollide = false
 	else:
 		mouseCollide = false
 

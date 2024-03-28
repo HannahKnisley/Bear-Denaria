@@ -11,6 +11,7 @@ size = Vector2(50, 5)
 
 [node name="buttomBun" type="RigidBody2D"]
 contact_monitor = true
+lock_rotation = true
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_k12uw")

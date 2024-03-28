@@ -32,25 +32,20 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="HSplitContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.235854
-anchor_top = 0.643571
-anchor_right = 0.75363
-anchor_bottom = 0.909286
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="startButton" type="TextureButton" parent="HSplitContainer"]
+[node name="startButton" type="TextureButton" parent="."]
 layout_mode = 2
+anchor_left = 0.391174
+anchor_top = 0.684286
+anchor_right = 0.650953
+anchor_bottom = 1.04286
 size_flags_horizontal = 3
 texture_normal = ExtResource("2_1hxj6")
 texture_hover = ExtResource("3_bhgkp")
 ignore_texture_size = true
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="HSplitContainer/startButton"]
+[node name="Label" type="Label" parent="startButton"]
 visible = false
 layout_mode = 0
 anchor_left = 0.236842
@@ -65,15 +60,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="creditsButton" type="TextureButton" parent="HSplitContainer"]
+[node name="creditsButton" type="TextureButton" parent="."]
 layout_mode = 2
+anchor_left = 0.84654
+anchor_top = -0.0114286
+anchor_right = 1.01605
+anchor_bottom = 0.254286
 size_flags_horizontal = 3
 texture_normal = ExtResource("4_teuuy")
 texture_hover = ExtResource("5_xupow")
 ignore_texture_size = true
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="HSplitContainer/creditsButton"]
+[node name="Label" type="Label" parent="creditsButton"]
 visible = false
 layout_mode = 0
 anchor_left = 0.181287
@@ -85,15 +85,20 @@ theme = ExtResource("5_ftxje")
 text = "Credits"
 metadata/_edit_use_anchors_ = true
 
-[node name="quitButton" type="TextureButton" parent="HSplitContainer"]
+[node name="quitButton" type="TextureButton" parent="."]
 layout_mode = 2
+anchor_left = -0.0180542
+anchor_top = -0.0328571
+anchor_right = 0.152457
+anchor_bottom = 0.232857
 size_flags_horizontal = 3
 texture_normal = ExtResource("6_8depg")
 texture_hover = ExtResource("7_lytn4")
 ignore_texture_size = true
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="HSplitContainer/quitButton"]
+[node name="Label" type="Label" parent="quitButton"]
 visible = false
 layout_mode = 0
 anchor_left = 0.397661
@@ -105,8 +110,8 @@ theme = ExtResource("5_ftxje")
 text = "Exit"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="mouse_entered" from="HSplitContainer/startButton" to="." method="_on_start_button_mouse_entered"]
-[connection signal="mouse_exited" from="HSplitContainer/startButton" to="." method="_on_start_button_mouse_exited"]
-[connection signal="pressed" from="HSplitContainer/startButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="HSplitContainer/creditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="HSplitContainer/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="startButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="startButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="creditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]

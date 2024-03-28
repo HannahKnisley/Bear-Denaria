@@ -11,5 +11,7 @@ func _process(delta):
 	pass
 
 
-func _on_exit_pressed():
-	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
+
+
+func _on_exit_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Titlescreen/title_screen.tscn")

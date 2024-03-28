@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwl3yt5o5e816"]
+[gd_scene load_steps=15 format=3 uid="uid://cwl3yt5o5e816"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_kgj8g"]
 [ext_resource type="Texture2D" uid="uid://bdnn0q6dwdoun" path="res://Assets2D/grillAssets/beefPatties/TopBurgerRaw.png" id="2_11a2w"]
@@ -16,7 +16,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5hv6k"]
 radius = 23.3399
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiw80"]
+size = Vector2(119, 20)
+
 [node name="BeefPatty" type="RigidBody2D" groups=["patty", "topping"]]
+contact_monitor = true
+lock_rotation = true
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_kgj8g")
@@ -198,6 +203,11 @@ stretch_mode = 5
 [node name="collision" type="CollisionShape2D" parent="."]
 scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_5hv6k")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_wiw80")
+disabled = true
 
 [node name="cookingMeter" parent="." instance=ExtResource("12_ybk1q")]
 visible = false

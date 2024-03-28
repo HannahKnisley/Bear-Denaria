@@ -5,6 +5,8 @@ var customerAtCounter = false
 
 var numOrders = 0
 
+var lastBun = "top"
+
 var burger_type
 var tomato = false
 var letteace = false
