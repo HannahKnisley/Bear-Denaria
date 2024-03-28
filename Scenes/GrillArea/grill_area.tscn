@@ -48,6 +48,7 @@ position = Vector2(895, 363)
 position = Vector2(112, 227)
 
 [node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
+visible = false
 position = Vector2(79, 438)
 
 [node name="spatulaAbove" type="Node2D" parent="."]

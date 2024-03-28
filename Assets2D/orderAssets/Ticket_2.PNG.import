@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwnymgbxwk75k"
-path="res://.godot/imported/cheese.jpg-570e4f273ad8975264cce321ef552232.ctex"
+uid="uid://dmyjvadlspbg0"
+path="res://.godot/imported/Ticket_2.PNG-071d272c7c533756df6b34c5cc457632.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/orderAssets/cheese.jpg"
-dest_files=["res://.godot/imported/cheese.jpg-570e4f273ad8975264cce321ef552232.ctex"]
+source_file="res://Assets2D/orderAssets/Ticket_2.PNG"
+dest_files=["res://.godot/imported/Ticket_2.PNG-071d272c7c533756df6b34c5cc457632.ctex"]
 
 [params]
 

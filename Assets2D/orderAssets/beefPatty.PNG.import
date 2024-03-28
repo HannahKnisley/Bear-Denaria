@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkuch2b66fojq"
-path="res://.godot/imported/lettuce.webp-1ce19fd63f09af444da62d13de419b6b.ctex"
+uid="uid://bkhnoet2ytbr6"
+path="res://.godot/imported/beefPatty.PNG-baaedaf8f29e62a52f9fb10dc3330413.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/orderAssets/lettuce.webp"
-dest_files=["res://.godot/imported/lettuce.webp-1ce19fd63f09af444da62d13de419b6b.ctex"]
+source_file="res://Assets2D/orderAssets/beefPatty.PNG"
+dest_files=["res://.godot/imported/beefPatty.PNG-baaedaf8f29e62a52f9fb10dc3330413.ctex"]
 
 [params]
 

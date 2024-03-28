@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biv7a60ft30u0"
-path="res://.godot/imported/bottomBun.jpg-28fc61ba1f493e8df690079908e38019.ctex"
+uid="uid://c5f0ebi8hkhhf"
+path="res://.godot/imported/bottomBun.PNG-e5eb147e1f4ef6f036ad0d0c1d6faf7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/orderAssets/bottomBun.jpg"
-dest_files=["res://.godot/imported/bottomBun.jpg-28fc61ba1f493e8df690079908e38019.ctex"]
+source_file="res://Assets2D/orderAssets/bottomBun.PNG"
+dest_files=["res://.godot/imported/bottomBun.PNG-e5eb147e1f4ef6f036ad0d0c1d6faf7e.ctex"]
 
 [params]
 

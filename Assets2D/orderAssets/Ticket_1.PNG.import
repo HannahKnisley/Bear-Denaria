@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c04vq0gj2bxat"
-path="res://.godot/imported/onion.jpg-722f9713e0527c510175275e7fbabc01.ctex"
+uid="uid://ct4v0udv1ioqf"
+path="res://.godot/imported/Ticket_1.PNG-1f91973e4c65aaaa574682b28838ccf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/orderAssets/onion.jpg"
-dest_files=["res://.godot/imported/onion.jpg-722f9713e0527c510175275e7fbabc01.ctex"]
+source_file="res://Assets2D/orderAssets/Ticket_1.PNG"
+dest_files=["res://.godot/imported/Ticket_1.PNG-1f91973e4c65aaaa574682b28838ccf0.ctex"]
 
 [params]
 

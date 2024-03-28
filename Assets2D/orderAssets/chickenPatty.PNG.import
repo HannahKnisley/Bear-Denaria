@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfu0evv387jr0"
-path="res://.godot/imported/tomato.PNG-ccb69f6affde0c855b1c17ec2135b406.ctex"
+uid="uid://cobx7mye58sqy"
+path="res://.godot/imported/chickenPatty.PNG-9defbd70976364e50e7ee688f1733a91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/orderAssets/tomato.PNG"
-dest_files=["res://.godot/imported/tomato.PNG-ccb69f6affde0c855b1c17ec2135b406.ctex"]
+source_file="res://Assets2D/orderAssets/chickenPatty.PNG"
+dest_files=["res://.godot/imported/chickenPatty.PNG-9defbd70976364e50e7ee688f1733a91.ctex"]
 
 [params]
 

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://3pgtymcr6hkb"]
+
+[ext_resource type="Script" path="res://Scripts/grillArea/cookingMeter.gd" id="1_ibqqm"]
+[ext_resource type="Texture2D" uid="uid://bqft055ok751t" path="res://Assets2D/grillAssets/Meter_Cooking.PNG" id="2_gsy5i"]
+[ext_resource type="Texture2D" uid="uid://c15ickna7pk2i" path="res://Assets2D/grillAssets/Pointer_Guy.PNG" id="3_8cqyl"]
+
+[node name="cookingMeter" type="Node2D"]
+position = Vector2(0, -8)
+script = ExtResource("1_ibqqm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -24.0
+offset_top = -42.0
+offset_right = 26.0
+offset_bottom = 58.0
+texture = ExtResource("2_gsy5i")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="guy" type="TextureRect" parent="."]
+offset_left = -6.0
+offset_top = 37.0
+offset_right = 30.0
+offset_bottom = 52.0
+texture = ExtResource("3_8cqyl")
+expand_mode = 1
+stretch_mode = 5

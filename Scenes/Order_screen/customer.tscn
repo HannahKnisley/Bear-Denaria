@@ -22,3 +22,4 @@ scale = Vector2(80.5, -78.75)
 mesh = SubResource("PrismMesh_5jquy")
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="Area2D" to="." method="_on_area_2d_area_shape_exited"]

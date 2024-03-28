@@ -23,7 +23,7 @@ func _on_spawn_timer_timeout():
 		
 		mob_num+=1
 		print(mob_num)
-		self.add_child(mob)
+		$orderLine.add_child(mob)
 		mob.global_position = $orderLine.global_position
 		
 

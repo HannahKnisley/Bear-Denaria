@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bslpldiyd70f0"
-path="res://.godot/imported/hamburger-bun-top-x7EWrE9-600.jpg-6a160a8887c5ab0d490166a3f7271109.ctex"
+uid="uid://cs7wv76va0phf"
+path="res://.godot/imported/topBun.PNG-86af81cacca4fe3478cb62d9948e6448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/orderAssets/hamburger-bun-top-x7EWrE9-600.jpg"
-dest_files=["res://.godot/imported/hamburger-bun-top-x7EWrE9-600.jpg-6a160a8887c5ab0d490166a3f7271109.ctex"]
+source_file="res://Assets2D/orderAssets/topBun.PNG"
+dest_files=["res://.godot/imported/topBun.PNG-86af81cacca4fe3478cb62d9948e6448.ctex"]
 
 [params]
 

@@ -51,6 +51,15 @@ func _physics_process(delta):
 			$cookTimer.start()
 		checkMouse()
 		
+	if !Input.is_action_pressed("mouseClick") and onGrill:
+		checkMouse()
+		if mouseCollide:
+			$cookingMeter.visible = true
+		else:
+			$cookingMeter.visible = false
+	else:
+		$cookingMeter.visible = false
+		
 		
 	
 func burgerToGrill():
@@ -83,6 +92,8 @@ func checkMouse():
 	if mousePos.x > myPos.x-60 and mousePos.x<myPos.x+60:
 		if mousePos.y > myPos.y-60 and mousePos.y<myPos.y+60:
 			mouseCollide = true
+		else:
+			mouseCollide = false
 	else:
 		mouseCollide = false
 
@@ -117,6 +128,7 @@ func flipBurger():
 func _on_cook_timer_timeout():
 	if bottomCook < 100:
 		bottomCook += 2
+		$cookingMeter.doStep()
 		print(bottomCook)
 		if bottomCook == 26:
 			self.updateAppearance()

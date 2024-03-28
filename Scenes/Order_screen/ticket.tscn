@@ -1,48 +1,96 @@
-[gd_scene load_steps=12 format=3 uid="uid://be1133xfpyrwl"]
+[gd_scene load_steps=18 format=3 uid="uid://be1133xfpyrwl"]
 
-[ext_resource type="Texture2D" uid="uid://biv7a60ft30u0" path="res://Assets2D/orderAssets/bottomBun.jpg" id="1_0knjn"]
 [ext_resource type="Script" path="res://Scripts/Order/ticket.gd" id="1_h3l7e"]
-[ext_resource type="Texture2D" uid="uid://cvphamrornmct" path="res://Assets2D/orderAssets/beefPatty.jpg" id="2_num5a"]
-[ext_resource type="Texture2D" uid="uid://1k2h4tp75gie" path="res://Assets2D/orderAssets/chickenPatty.webp" id="3_oqsm3"]
-[ext_resource type="Texture2D" uid="uid://dkuch2b66fojq" path="res://Assets2D/orderAssets/lettuce.webp" id="5_52i22"]
-[ext_resource type="Texture2D" uid="uid://l2exkexsnrfb" path="res://Assets2D/orderAssets/tomato.png" id="6_qii7u"]
-[ext_resource type="Texture2D" uid="uid://dug8u5t8hik0m" path="res://Assets2D/orderAssets/pickle.webp" id="7_hix2l"]
-[ext_resource type="Texture2D" uid="uid://c04vq0gj2bxat" path="res://Assets2D/orderAssets/onion.jpg" id="8_rf8h6"]
-[ext_resource type="Texture2D" uid="uid://bslpldiyd70f0" path="res://Assets2D/orderAssets/hamburger-bun-top-x7EWrE9-600.jpg" id="9_50gxh"]
-[ext_resource type="Texture2D" uid="uid://cwnymgbxwk75k" path="res://Assets2D/orderAssets/cheese.jpg" id="9_xinbc"]
+[ext_resource type="Texture2D" uid="uid://ct4v0udv1ioqf" path="res://Assets2D/orderAssets/Ticket_1.PNG" id="2_rxusl"]
+[ext_resource type="Texture2D" uid="uid://dmyjvadlspbg0" path="res://Assets2D/orderAssets/Ticket_2.PNG" id="3_2k781"]
+[ext_resource type="Texture2D" uid="uid://c5f0ebi8hkhhf" path="res://Assets2D/orderAssets/bottomBun.PNG" id="3_plggq"]
+[ext_resource type="Texture2D" uid="uid://coh8s88vtwust" path="res://Assets2D/orderAssets/Ticket_3.PNG" id="4_frfxd"]
+[ext_resource type="Texture2D" uid="uid://bkhnoet2ytbr6" path="res://Assets2D/orderAssets/beefPatty.PNG" id="4_j5obd"]
+[ext_resource type="Texture2D" uid="uid://cobx7mye58sqy" path="res://Assets2D/orderAssets/chickenPatty.PNG" id="5_iudfa"]
+[ext_resource type="Texture2D" uid="uid://dalh871vc2kx2" path="res://Assets2D/orderAssets/lettuce.PNG" id="6_rdei6"]
+[ext_resource type="Texture2D" uid="uid://bfu0evv387jr0" path="res://Assets2D/orderAssets/tomato.PNG" id="7_l3kgl"]
+[ext_resource type="Texture2D" uid="uid://ciab1ppcwrq4o" path="res://Assets2D/orderAssets/pickle.PNG" id="8_0xwad"]
+[ext_resource type="Texture2D" uid="uid://b83876kf7uj3u" path="res://Assets2D/orderAssets/onion.PNG" id="9_whpl8"]
+[ext_resource type="Texture2D" uid="uid://cjrvfxuwroyx" path="res://Assets2D/orderAssets/cheese.PNG" id="10_gmk3e"]
+[ext_resource type="Texture2D" uid="uid://cs7wv76va0phf" path="res://Assets2D/orderAssets/topBun.PNG" id="11_x4xhx"]
+[ext_resource type="Texture2D" uid="uid://p4sdqqcprcoc" path="res://Assets2D/orderAssets/fries.PNG" id="12_22yms"]
+[ext_resource type="Texture2D" uid="uid://cxiyqmm7nb3wr" path="res://Assets2D/orderAssets/drink.PNG" id="13_jlond"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dk3to"]
-size = Vector2(49, 100)
+size = Vector2(29, 111.333)
 
-[node name="ticket" type="Area2D"]
+[sub_resource type="SphereMesh" id="SphereMesh_b4ltv"]
+
+[node name="ticket" type="Area2D" groups=["ticket"]]
+position = Vector2(0, 42)
 scale = Vector2(3, 3)
 script = ExtResource("1_h3l7e")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 45)
+position = Vector2(-0.166667, 44)
 shape = SubResource("RectangleShape2D_dk3to")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = -1
-anchor_left = -0.074
-anchor_top = -0.0314286
-offset_left = -25.0
-offset_top = -5.0
-offset_right = 25.0
-offset_bottom = 95.0
+[node name="tickets" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -44.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = 18.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Item1" type="Control" parent="ColorRect"]
+[node name="ticket" type="TextureRect" parent="tickets"]
+visible = false
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 137.0
+texture = ExtResource("2_rxusl")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ticket2" type="TextureRect" parent="tickets"]
+visible = false
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 137.0
+texture = ExtResource("3_2k781")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ticket3" type="TextureRect" parent="tickets"]
+visible = false
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 137.0
+texture = ExtResource("4_frfxd")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ticketItems" type="TextureRect" parent="."]
+offset_left = -44.0
+offset_top = -22.0
+offset_right = 46.0
+offset_bottom = 115.0
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Item1" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
 anchor_top = 0.874046
 anchor_right = 0.793333
 anchor_bottom = 0.984733
+offset_top = -5.24428
+offset_bottom = -5.24428
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="BottomBun" type="TextureRect" parent="ColorRect/Item1"]
+[node name="BottomBun" type="TextureRect" parent="ticketItems/Item1"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -52,22 +100,24 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("1_0knjn")
+texture = ExtResource("3_plggq")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Item2" type="Control" parent="ColorRect"]
+[node name="Item2" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.751908
+anchor_top = 0.778673
 anchor_right = 0.793333
-anchor_bottom = 0.862595
+anchor_bottom = 0.88936
+offset_top = -4.51144
+offset_bottom = -4.51142
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="beefPatty" type="TextureRect" parent="ColorRect/Item2"]
+[node name="beefPatty" type="TextureRect" parent="ticketItems/Item2"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -77,12 +127,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_num5a")
+texture = ExtResource("4_j5obd")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="chickenPatty" type="TextureRect" parent="ColorRect/Item2"]
+[node name="chickenPatty" type="TextureRect" parent="ticketItems/Item2"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -92,22 +142,24 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("3_oqsm3")
+texture = ExtResource("5_iudfa")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Item3" type="Control" parent="ColorRect"]
+[node name="Item3" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.610687
+anchor_top = 0.669081
 anchor_right = 0.793333
-anchor_bottom = 0.721374
+anchor_bottom = 0.779768
+offset_top = -3.66412
+offset_bottom = -3.66412
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="lettuce" type="TextureRect" parent="ColorRect/Item3"]
+[node name="lettuce" type="TextureRect" parent="ticketItems/Item3"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -117,12 +169,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("5_52i22")
+texture = ExtResource("6_rdei6")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="tomato" type="TextureRect" parent="ColorRect/Item3"]
+[node name="tomato" type="TextureRect" parent="ticketItems/Item3"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -132,12 +184,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_qii7u")
+texture = ExtResource("7_l3kgl")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="pickle" type="TextureRect" parent="ColorRect/Item3"]
+[node name="pickle" type="TextureRect" parent="ticketItems/Item3"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -147,12 +199,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_hix2l")
+texture = ExtResource("8_0xwad")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="onion" type="TextureRect" parent="ColorRect/Item3"]
+[node name="onion" type="TextureRect" parent="ticketItems/Item3"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -162,12 +214,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("8_rf8h6")
+texture = ExtResource("9_whpl8")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="cheese" type="TextureRect" parent="ColorRect/Item3"]
+[node name="cheese" type="TextureRect" parent="ticketItems/Item3"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -177,12 +229,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_xinbc")
+texture = ExtResource("10_gmk3e")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="topPatty" type="TextureRect" parent="ColorRect/Item3"]
+[node name="topBun" type="TextureRect" parent="ticketItems/Item3"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -192,22 +244,24 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_50gxh")
+texture = ExtResource("11_x4xhx")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Item4" type="Control" parent="ColorRect"]
+[node name="Item4" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.492366
+anchor_top = 0.562926
 anchor_right = 0.793333
-anchor_bottom = 0.603053
+anchor_bottom = 0.673613
+offset_top = -2.95419
+offset_bottom = -2.95419
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="lettuce" type="TextureRect" parent="ColorRect/Item4"]
+[node name="lettuce" type="TextureRect" parent="ticketItems/Item4"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -217,12 +271,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("5_52i22")
+texture = ExtResource("6_rdei6")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="tomato" type="TextureRect" parent="ColorRect/Item4"]
+[node name="tomato" type="TextureRect" parent="ticketItems/Item4"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -232,12 +286,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_qii7u")
+texture = ExtResource("7_l3kgl")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="pickle" type="TextureRect" parent="ColorRect/Item4"]
+[node name="pickle" type="TextureRect" parent="ticketItems/Item4"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -247,12 +301,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_hix2l")
+texture = ExtResource("8_0xwad")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="onion" type="TextureRect" parent="ColorRect/Item4"]
+[node name="onion" type="TextureRect" parent="ticketItems/Item4"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -262,12 +316,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("8_rf8h6")
+texture = ExtResource("9_whpl8")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="cheese" type="TextureRect" parent="ColorRect/Item4"]
+[node name="cheese" type="TextureRect" parent="ticketItems/Item4"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -277,12 +331,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_xinbc")
+texture = ExtResource("10_gmk3e")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="topPatty" type="TextureRect" parent="ColorRect/Item4"]
+[node name="topBun" type="TextureRect" parent="ticketItems/Item4"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -292,22 +346,24 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_50gxh")
+texture = ExtResource("11_x4xhx")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Item5" type="Control" parent="ColorRect"]
+[node name="Item5" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.377863
+anchor_top = 0.460588
 anchor_right = 0.793333
-anchor_bottom = 0.48855
+anchor_bottom = 0.571275
+offset_top = -2.26718
+offset_bottom = -2.26717
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="lettuce" type="TextureRect" parent="ColorRect/Item5"]
+[node name="lettuce" type="TextureRect" parent="ticketItems/Item5"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -317,12 +373,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("5_52i22")
+texture = ExtResource("6_rdei6")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="tomato" type="TextureRect" parent="ColorRect/Item5"]
+[node name="tomato" type="TextureRect" parent="ticketItems/Item5"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -332,12 +388,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_qii7u")
+texture = ExtResource("7_l3kgl")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="pickle" type="TextureRect" parent="ColorRect/Item5"]
+[node name="pickle" type="TextureRect" parent="ticketItems/Item5"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -347,12 +403,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_hix2l")
+texture = ExtResource("8_0xwad")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="onion" type="TextureRect" parent="ColorRect/Item5"]
+[node name="onion" type="TextureRect" parent="ticketItems/Item5"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -362,12 +418,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("8_rf8h6")
+texture = ExtResource("9_whpl8")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="cheese" type="TextureRect" parent="ColorRect/Item5"]
+[node name="cheese" type="TextureRect" parent="ticketItems/Item5"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -377,12 +433,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_xinbc")
+texture = ExtResource("10_gmk3e")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="topPatty" type="TextureRect" parent="ColorRect/Item5"]
+[node name="topBun" type="TextureRect" parent="ticketItems/Item5"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -392,22 +448,24 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_50gxh")
+texture = ExtResource("11_x4xhx")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Item6" type="Control" parent="ColorRect"]
+[node name="Item6" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.263359
+anchor_top = 0.35095
 anchor_right = 0.793333
-anchor_bottom = 0.374046
+anchor_bottom = 0.461637
+offset_top = -1.58015
+offset_bottom = -1.58015
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="lettuce" type="TextureRect" parent="ColorRect/Item6"]
+[node name="lettuce" type="TextureRect" parent="ticketItems/Item6"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -417,12 +475,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("5_52i22")
+texture = ExtResource("6_rdei6")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="tomato" type="TextureRect" parent="ColorRect/Item6"]
+[node name="tomato" type="TextureRect" parent="ticketItems/Item6"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -432,12 +490,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_qii7u")
+texture = ExtResource("7_l3kgl")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="pickle" type="TextureRect" parent="ColorRect/Item6"]
+[node name="pickle" type="TextureRect" parent="ticketItems/Item6"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -447,12 +505,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_hix2l")
+texture = ExtResource("8_0xwad")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="onion" type="TextureRect" parent="ColorRect/Item6"]
+[node name="onion" type="TextureRect" parent="ticketItems/Item6"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -462,12 +520,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("8_rf8h6")
+texture = ExtResource("9_whpl8")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="cheese" type="TextureRect" parent="ColorRect/Item6"]
+[node name="cheese" type="TextureRect" parent="ticketItems/Item6"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -477,12 +535,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_xinbc")
+texture = ExtResource("10_gmk3e")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="topPatty" type="TextureRect" parent="ColorRect/Item6"]
+[node name="topBun" type="TextureRect" parent="ticketItems/Item6"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -492,22 +550,24 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_50gxh")
+texture = ExtResource("11_x4xhx")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Item7" type="Control" parent="ColorRect"]
+[node name="Item7" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.145038
+anchor_top = 0.252094
 anchor_right = 0.793333
-anchor_bottom = 0.255725
+anchor_bottom = 0.362781
+offset_top = -0.870228
+offset_bottom = -0.870224
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="lettuce" type="TextureRect" parent="ColorRect/Item7"]
+[node name="lettuce" type="TextureRect" parent="ticketItems/Item7"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -517,12 +577,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("5_52i22")
+texture = ExtResource("6_rdei6")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="tomato" type="TextureRect" parent="ColorRect/Item7"]
+[node name="tomato" type="TextureRect" parent="ticketItems/Item7"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -532,12 +592,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_qii7u")
+texture = ExtResource("7_l3kgl")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="pickle" type="TextureRect" parent="ColorRect/Item7"]
+[node name="pickle" type="TextureRect" parent="ticketItems/Item7"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -547,12 +607,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_hix2l")
+texture = ExtResource("8_0xwad")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="onion" type="TextureRect" parent="ColorRect/Item7"]
+[node name="onion" type="TextureRect" parent="ticketItems/Item7"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -562,12 +622,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("8_rf8h6")
+texture = ExtResource("9_whpl8")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="cheese" type="TextureRect" parent="ColorRect/Item7"]
+[node name="cheese" type="TextureRect" parent="ticketItems/Item7"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -577,12 +637,12 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_xinbc")
+texture = ExtResource("10_gmk3e")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="topPatty" type="TextureRect" parent="ColorRect/Item7"]
+[node name="topBun" type="TextureRect" parent="ticketItems/Item7"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -592,10 +652,40 @@ anchor_right = 0.786517
 anchor_bottom = 1.03448
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("9_50gxh")
+texture = ExtResource("11_x4xhx")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="fries" type="TextureRect" parent="ticketItems"]
+visible = false
+layout_mode = 0
+anchor_left = 0.181481
+anchor_top = 0.109489
+anchor_right = 0.437037
+anchor_bottom = 0.277372
+texture = ExtResource("12_22yms")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="drink" type="TextureRect" parent="ticketItems"]
+visible = false
+layout_mode = 0
+anchor_left = 0.6
+anchor_top = 0.0754258
+anchor_right = 0.822222
+anchor_bottom = 0.250608
+texture = ExtResource("13_jlond")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ticketItems"]
+modulate = Color(0.294118, 0.294118, 0.294118, 1)
+position = Vector2(44, 14.6667)
+scale = Vector2(5.58522, 5.58522)
+mesh = SubResource("SphereMesh_b4ltv")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

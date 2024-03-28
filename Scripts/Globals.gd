@@ -3,6 +3,7 @@ extends Node2D
 var firstCustomer
 var customerAtCounter = false
 
+var numOrders = 0
 
 var burger_type
 var tomato = false

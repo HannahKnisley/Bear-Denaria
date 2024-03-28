@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d16qytf4rw7hu"]
+[gd_scene load_steps=6 format=3 uid="uid://d16qytf4rw7hu"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_suist"]
+[ext_resource type="PackedScene" uid="uid://3pgtymcr6hkb" path="res://Scenes/GrillArea/cooking_meter.tscn" id="2_676fr"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ehwye"]
 
@@ -30,5 +31,9 @@ position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_arlu3")
 
 [node name="cookTimer" type="Timer" parent="."]
+
+[node name="cookingMeter" parent="." instance=ExtResource("2_676fr")]
+visible = false
+position = Vector2(83, -7)
 
 [connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]

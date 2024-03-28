@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dug8u5t8hik0m"
-path="res://.godot/imported/pickle.webp-462b9b6fa82469cfe2878c46da8b9b9a.ctex"
+uid="uid://cjrvfxuwroyx"
+path="res://.godot/imported/cheese.PNG-0db9c3de4d4927becd8b2c60c6d10e3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/orderAssets/pickle.webp"
-dest_files=["res://.godot/imported/pickle.webp-462b9b6fa82469cfe2878c46da8b9b9a.ctex"]
+source_file="res://Assets2D/orderAssets/cheese.PNG"
+dest_files=["res://.godot/imported/cheese.PNG-0db9c3de4d4927becd8b2c60c6d10e3e.ctex"]
 
 [params]
 

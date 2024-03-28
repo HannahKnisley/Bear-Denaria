@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwl3yt5o5e816"]
+[gd_scene load_steps=14 format=3 uid="uid://cwl3yt5o5e816"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_kgj8g"]
 [ext_resource type="Texture2D" uid="uid://bdnn0q6dwdoun" path="res://Assets2D/grillAssets/beefPatties/TopBurgerRaw.png" id="2_11a2w"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://co43dbjuv8rww" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerCooked.png" id="9_ntesk"]
 [ext_resource type="Texture2D" uid="uid://526wmruiolv6" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerOvercooked.png" id="10_uo70p"]
 [ext_resource type="Texture2D" uid="uid://b1xinjxc80b2j" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerBurnt.png" id="11_r5btd"]
+[ext_resource type="PackedScene" uid="uid://3pgtymcr6hkb" path="res://Scenes/GrillArea/cooking_meter.tscn" id="12_ybk1q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5hv6k"]
 radius = 23.3399
@@ -197,5 +198,9 @@ stretch_mode = 5
 [node name="collision" type="CollisionShape2D" parent="."]
 scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_5hv6k")
+
+[node name="cookingMeter" parent="." instance=ExtResource("12_ybk1q")]
+visible = false
+position = Vector2(95, -8)
 
 [connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1k2h4tp75gie"
-path="res://.godot/imported/chickenPatty.webp-c35ce050b32a71e1905ba311596ddb1b.ctex"
+uid="uid://ciab1ppcwrq4o"
+path="res://.godot/imported/pickle.PNG-007d96216ad3e3d554ae74f389c94a91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/orderAssets/chickenPatty.webp"
-dest_files=["res://.godot/imported/chickenPatty.webp-c35ce050b32a71e1905ba311596ddb1b.ctex"]
+source_file="res://Assets2D/orderAssets/pickle.PNG"
+dest_files=["res://.godot/imported/pickle.PNG-007d96216ad3e3d554ae74f389c94a91.ctex"]
 
 [params]
 

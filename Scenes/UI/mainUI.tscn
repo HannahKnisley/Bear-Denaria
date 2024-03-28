@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bg1o7n3wax442" path="res://Assets2D/UIAssets/DrinkCookie_Station_Button.PNG" id="6_4q0v4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljkxt"]
-size = Vector2(642, 692)
+size = Vector2(681, 676)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bubi"]
 size = Vector2(168, 129)
@@ -85,17 +85,19 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Line" type="Area2D" parent="OrderLine" groups=["line"]]
-position = Vector2(0, 39)
+position = Vector2(0, 41)
+collision_mask = 16777215
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrderLine/Line"]
-position = Vector2(423, 325)
+position = Vector2(418.5, 333)
 shape = SubResource("RectangleShape2D_ljkxt")
 
 [node name="bigHold" type="Area2D" parent="OrderLine" groups=["bigHold"]]
-position = Vector2(892, 64)
+position = Vector2(892, 80)
+collision_mask = 65535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrderLine/bigHold"]
-position = Vector2(18, 21.5)
+position = Vector2(18, 10.5)
 shape = SubResource("RectangleShape2D_8bubi")
 
 [node name="ticketContainer" type="Node2D" parent="."]
