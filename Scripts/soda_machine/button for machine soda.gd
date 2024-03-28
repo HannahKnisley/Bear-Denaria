@@ -14,9 +14,6 @@ var percent = 100
 @onready var timerr = $/root/pop_machine/Timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timerr.wait_time = 10
-	timerr.one_shot = false
-	timerr.autostart = true
 	defaultPosition = self.position
 
 
@@ -29,13 +26,12 @@ func _process(delta):
 		print("yup")
 		#print($/root/pop_machine/soda_bar.value)
 		#$/root/pop_machine/soda_bar.value+=0.6
-	if !pressedButton and !timerr.is_stopped():
-		timerr.stop()
+	
 		
 	if Input.is_action_just_pressed("mouseClick") and mouseEnerted and onPlate == false and onPlate2 == false:
 		followMouse = true
 	if Input.is_action_pressed("mouseClick") and followMouse and onPlate == false and onPlate2 == false:
-		self.position = get_global_mouse_position()
+		self.global_position = get_global_mouse_position()
 		
 	if Input.is_action_just_released("mouseClick"):
 		followMouse = false

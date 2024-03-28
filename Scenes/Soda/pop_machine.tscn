@@ -15,7 +15,7 @@ colors = PackedColorArray(0.18359, 0.18359, 0.18359, 1)
 gradient = SubResource("Gradient_umcrc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnuhr"]
-size = Vector2(73, 112.5)
+size = Vector2(85.5, 112.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7iehw"]
 
@@ -57,7 +57,7 @@ position = Vector2(72, 614)
 script = ExtResource("1_snenu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cup"]
-position = Vector2(0, -1)
+position = Vector2(6.25, -1)
 shape = SubResource("RectangleShape2D_qnuhr")
 
 [node name="cup" type="MeshInstance2D" parent="cup/CollisionShape2D"]
@@ -67,10 +67,10 @@ mesh = SubResource("BoxMesh_7iehw")
 texture = SubResource("GradientTexture2D_clxe0")
 
 [node name="soda_bar" type="ProgressBar" parent="cup"]
-offset_left = -24.0
-offset_top = -36.0
-offset_right = -2.0
-offset_bottom = 6.0
+offset_left = -18.0
+offset_top = -32.0
+offset_right = 4.0
+offset_bottom = 10.0
 scale = Vector2(2, 2)
 theme_override_font_sizes/font_size = 15
 min_value = 1.0
@@ -80,10 +80,10 @@ fill_mode = 3
 script = ExtResource("2_0fucr")
 
 [node name="water_bar" type="ProgressBar" parent="cup"]
-offset_left = -20.0
-offset_top = -35.0
-offset_right = 2.0
-offset_bottom = 7.0
+offset_left = -12.0
+offset_top = -36.0
+offset_right = 10.0
+offset_bottom = 6.0
 scale = Vector2(2, 2)
 theme_override_font_sizes/font_size = 15
 min_value = 1.0

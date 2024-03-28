@@ -8,11 +8,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if $/root/pop_machine/cup/soda_bar.value == 1:
-		$/root/pop_machine/cup/soda_bar.visible = false
+	
+	if $/root/WorldRoot/pop_machine/cup/soda_bar.value == 1:
+		$/root/WorldRoot/pop_machine/cup/soda_bar.visible = false
 	else:
-		$/root/pop_machine/cup/soda_bar.visible = true
-	if $/root/pop_machine/cup/water_bar.value == 1:
-		$/root/pop_machine/cup/water_bar.visible = false
+		$/root/WorldRoot/pop_machine/cup/soda_bar.visible = true
+	if $/root/WorldRoot/pop_machine/cup/water_bar.value == 1:
+		$/root/WorldRoot/pop_machine/cup/water_bar.visible = false
 	else:
-		$/root/pop_machine/cup/water_bar.visible = true
+		$/root/WorldRoot/pop_machine/cup/water_bar.visible = true
