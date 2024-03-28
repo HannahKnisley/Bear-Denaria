@@ -6,31 +6,35 @@ var defaultPosition
 var snapPos
 var cupEntered = false
 var onPlate = false
+var onPlate2 = false
 var pressedButton = false
 var countButton = 0
 var no_more = false
+var percent = 100
 @onready var timerr = $/root/pop_machine/Timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timerr.wait_time = 1
+	timerr.wait_time = 10
 	timerr.one_shot = false
-	timerr.autostart = false
+	timerr.autostart = true
 	defaultPosition = self.position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if no_more:
-		return
-	if pressedButton and timerr.is_stopped():
+	print(pressedButton)
+	if pressedButton == true:
 		no_more = true
-		$/root/pop_machine/cup/sodalevel25.visible = true
+		#$/root/pop_machine/cup/sodalevel25.visible = true
+		print("yup")
+		#print($/root/pop_machine/soda_bar.value)
+		#$/root/pop_machine/soda_bar.value+=0.6
 	if !pressedButton and !timerr.is_stopped():
 		timerr.stop()
 		
-	if Input.is_action_just_pressed("mouseClick") and mouseEnerted and onPlate == false:
+	if Input.is_action_just_pressed("mouseClick") and mouseEnerted and onPlate == false and onPlate2 == false:
 		followMouse = true
-	if Input.is_action_pressed("mouseClick") and followMouse and onPlate == false:
+	if Input.is_action_pressed("mouseClick") and followMouse and onPlate == false and onPlate2 == false:
 		self.position = get_global_mouse_position()
 		
 	if Input.is_action_just_released("mouseClick"):
@@ -61,13 +65,15 @@ func _on_plate_for_cup_2_mouse_entered():
 	cupEntered = true
 	snapPos = defaultPosition
 	mouseEnerted = false
-	onPlate = true
+	onPlate2 = true
 
 
-func _on_soda_pressed():
+
+
+
+
+
+
+func _on_timer_timeout():
+	#$/root/pop_machine/soda_bar.value+=1
 	pass
-
-
-func _on_soda_button_down():
-	pressedButton = true
-	timerr.start()
