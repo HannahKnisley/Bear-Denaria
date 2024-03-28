@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6vnl073pnt1k"]
+[gd_scene load_steps=18 format=3 uid="uid://b6vnl073pnt1k"]
 
 [ext_resource type="Script" path="res://Scripts/soda_machine/button for machine soda.gd" id="1_snenu"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/soda_bar.gd" id="2_0fucr"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/Soda.gd" id="2_2xyqp"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/Water.gd" id="4_p7xw8"]
+[ext_resource type="Script" path="res://Scripts/soda_machine/area_to_put_cup.gd" id="5_3dhtu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ui0ip"]
 
@@ -37,6 +38,9 @@ colors = PackedColorArray(0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8k41s"]
 gradient = SubResource("Gradient_doiv2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moe7u"]
+size = Vector2(131.5, 235)
 
 [node name="pop_machine" type="Node2D"]
 
@@ -142,6 +146,14 @@ scale = Vector2(-103.4, 42.6651)
 mesh = SubResource("BoxMesh_0l0m4")
 texture = SubResource("GradientTexture2D_8k41s")
 
+[node name="area_to_put_cup" type="Area2D" parent="."]
+position = Vector2(838, 337)
+script = ExtResource("5_3dhtu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_to_put_cup"]
+position = Vector2(22.25, 70.5)
+shape = SubResource("RectangleShape2D_moe7u")
+
 [connection signal="mouse_entered" from="cup" to="cup" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="cup" to="cup" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="plate for cup" to="cup" method="_on_plate_for_cup_mouse_entered"]
@@ -154,3 +166,4 @@ texture = SubResource("GradientTexture2D_8k41s")
 [connection signal="button_down" from="CanvasLayer/Water" to="CanvasLayer/Water" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/Water" to="CanvasLayer/Water" method="_on_button_up"]
 [connection signal="timeout" from="Timer" to="cup" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="area_to_put_cup" to="cup" method="_on_area_to_put_cup_mouse_entered"]

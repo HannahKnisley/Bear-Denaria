@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if buttonDown == true and $/root/WorldRoot/pop_machine/cup.onPlate == true:
+	if buttonDown == true and $/root/WorldRoot/pop_machine/cup.onPlate == true and $/root/WorldRoot/pop_machine/cup.onPlate2 == false and $/root/WorldRoot/pop_machine/cup.countOnPlate1 == 1:
 		$/root/WorldRoot/pop_machine/cup/soda_bar.value+=delta*100
 		print($/root/WorldRoot/pop_machine/cup/soda_bar.value)
 		$/root/WorldRoot/pop_machine/cup/water_bar.visible = false
