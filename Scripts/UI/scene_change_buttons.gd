@@ -44,3 +44,4 @@ func _on_fry_button_pressed():
 
 func _on_drink_button_pressed():
 	atOrderScreen = false
+	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/pop_machine.global_position + Vector2(500,350)
