@@ -1,16 +1,21 @@
-[gd_scene load_steps=18 format=3 uid="uid://be1133xfpyrwl"]
+[gd_scene load_steps=23 format=3 uid="uid://be1133xfpyrwl"]
 
 [ext_resource type="Script" path="res://Scripts/Order/ticket.gd" id="1_h3l7e"]
-[ext_resource type="Texture2D" uid="uid://ct4v0udv1ioqf" path="res://Assets2D/orderAssets/Ticket_1.PNG" id="2_rxusl"]
-[ext_resource type="Texture2D" uid="uid://dmyjvadlspbg0" path="res://Assets2D/orderAssets/Ticket_2.PNG" id="3_2k781"]
+[ext_resource type="Texture2D" uid="uid://7k5ruvlr3q8j" path="res://Assets2D/orderAssets/Longer_Ticket_1.PNG" id="2_41k16"]
+[ext_resource type="Texture2D" uid="uid://bdonrxn7l8dki" path="res://Assets2D/orderAssets/Longer_Ticket_2.PNG" id="3_oq33j"]
 [ext_resource type="Texture2D" uid="uid://c5f0ebi8hkhhf" path="res://Assets2D/orderAssets/bottomBun.PNG" id="3_plggq"]
-[ext_resource type="Texture2D" uid="uid://coh8s88vtwust" path="res://Assets2D/orderAssets/Ticket_3.PNG" id="4_frfxd"]
 [ext_resource type="Texture2D" uid="uid://bkhnoet2ytbr6" path="res://Assets2D/orderAssets/beefPatty.PNG" id="4_j5obd"]
+[ext_resource type="Texture2D" uid="uid://drl6dfyrvytty" path="res://Assets2D/orderAssets/Longer_Ticket_3.PNG" id="4_v8gub"]
 [ext_resource type="Texture2D" uid="uid://cobx7mye58sqy" path="res://Assets2D/orderAssets/chickenPatty.PNG" id="5_iudfa"]
+[ext_resource type="Texture2D" uid="uid://b2ncx2mqbe1ja" path="res://Assets2D/orderAssets/Meter_Trashest_Customer.PNG" id="5_rtjt8"]
+[ext_resource type="Texture2D" uid="uid://7m7w2l67nv7q" path="res://Assets2D/orderAssets/Meter_MidTrash_Customer.PNG" id="6_i01c8"]
 [ext_resource type="Texture2D" uid="uid://dalh871vc2kx2" path="res://Assets2D/orderAssets/lettuce.PNG" id="6_rdei6"]
 [ext_resource type="Texture2D" uid="uid://bfu0evv387jr0" path="res://Assets2D/orderAssets/tomato.PNG" id="7_l3kgl"]
+[ext_resource type="Texture2D" uid="uid://cj5n73j7epr8j" path="res://Assets2D/orderAssets/Meter_Mid_Customer.PNG" id="7_op1n7"]
 [ext_resource type="Texture2D" uid="uid://ciab1ppcwrq4o" path="res://Assets2D/orderAssets/pickle.PNG" id="8_0xwad"]
+[ext_resource type="Texture2D" uid="uid://b4qhoc334i3gn" path="res://Assets2D/orderAssets/Meter_MidFresh_Customer.PNG" id="8_7miwx"]
 [ext_resource type="Texture2D" uid="uid://b83876kf7uj3u" path="res://Assets2D/orderAssets/onion.PNG" id="9_whpl8"]
+[ext_resource type="Texture2D" uid="uid://cpq4coy0j08dn" path="res://Assets2D/orderAssets/Meter_Freshest_Customer.PNG" id="9_xkmn3"]
 [ext_resource type="Texture2D" uid="uid://cjrvfxuwroyx" path="res://Assets2D/orderAssets/cheese.PNG" id="10_gmk3e"]
 [ext_resource type="Texture2D" uid="uid://cs7wv76va0phf" path="res://Assets2D/orderAssets/topBun.PNG" id="11_x4xhx"]
 [ext_resource type="Texture2D" uid="uid://p4sdqqcprcoc" path="res://Assets2D/orderAssets/fries.PNG" id="12_22yms"]
@@ -41,10 +46,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ticket" type="TextureRect" parent="tickets"]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.0666668
+anchor_bottom = -0.0666668
 offset_right = 90.0
 offset_bottom = 137.0
-texture = ExtResource("2_rxusl")
+texture = ExtResource("2_41k16")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -54,7 +62,7 @@ visible = false
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 137.0
-texture = ExtResource("3_2k781")
+texture = ExtResource("3_oq33j")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -64,7 +72,85 @@ visible = false
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 137.0
-texture = ExtResource("4_frfxd")
+texture = ExtResource("4_v8gub")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="pickyness" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -24.0
+offset_top = 96.0
+offset_right = 25.0
+offset_bottom = 110.0
+
+[node name="low" type="TextureRect" parent="pickyness"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.117647
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_rtjt8")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="midLow" type="TextureRect" parent="pickyness"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.117647
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_i01c8")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="mid" type="TextureRect" parent="pickyness"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.117647
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_op1n7")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="midHigh" type="TextureRect" parent="pickyness"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.117647
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_7miwx")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="high" type="TextureRect" parent="pickyness"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.117647
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_xkmn3")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -81,11 +167,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Item1" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.874046
+anchor_top = 0.774939
 anchor_right = 0.793333
-anchor_bottom = 0.984733
-offset_top = -5.24428
-offset_bottom = -5.24428
+anchor_bottom = 0.885627
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
@@ -108,11 +192,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Item2" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.778673
+anchor_top = 0.692215
 anchor_right = 0.793333
-anchor_bottom = 0.88936
-offset_top = -4.51144
-offset_bottom = -4.51142
+anchor_bottom = 0.802902
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
@@ -150,11 +232,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Item3" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.669081
+anchor_top = 0.596107
 anchor_right = 0.793333
-anchor_bottom = 0.779768
-offset_top = -3.66412
-offset_bottom = -3.66412
+anchor_bottom = 0.706794
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
@@ -252,11 +332,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Item4" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.562926
+anchor_top = 0.512165
 anchor_right = 0.793333
-anchor_bottom = 0.673613
-offset_top = -2.95419
-offset_bottom = -2.95419
+anchor_bottom = 0.622852
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
@@ -354,11 +432,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Item5" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.460588
+anchor_top = 0.427007
 anchor_right = 0.793333
-anchor_bottom = 0.571275
-offset_top = -2.26718
-offset_bottom = -2.26717
+anchor_bottom = 0.537695
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
@@ -456,11 +532,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Item6" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.35095
+anchor_top = 0.346715
 anchor_right = 0.793333
-anchor_bottom = 0.461637
-offset_top = -1.58015
-offset_bottom = -1.58015
+anchor_bottom = 0.457402
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
@@ -558,11 +632,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Item7" type="Control" parent="ticketItems"]
 layout_mode = 1
 anchor_left = 0.2
-anchor_top = 0.252094
+anchor_top = 0.26034
 anchor_right = 0.793333
-anchor_bottom = 0.362781
-offset_top = -0.870228
-offset_bottom = -0.870224
+anchor_bottom = 0.371027
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
@@ -659,11 +731,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="fries" type="TextureRect" parent="ticketItems"]
 visible = false
-layout_mode = 0
-anchor_left = 0.181481
-anchor_top = 0.109489
-anchor_right = 0.437037
-anchor_bottom = 0.277372
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.211111
+anchor_top = 0.121654
+anchor_right = 0.466667
+anchor_bottom = 0.289538
 texture = ExtResource("12_22yms")
 expand_mode = 1
 stretch_mode = 5
@@ -671,11 +744,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="drink" type="TextureRect" parent="ticketItems"]
 visible = false
-layout_mode = 0
-anchor_left = 0.6
-anchor_top = 0.0754258
-anchor_right = 0.822222
-anchor_bottom = 0.250608
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.548148
+anchor_top = 0.0997567
+anchor_right = 0.77037
+anchor_bottom = 0.274939
 texture = ExtResource("13_jlond")
 expand_mode = 1
 stretch_mode = 5

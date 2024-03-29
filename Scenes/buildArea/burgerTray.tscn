@@ -11,6 +11,7 @@
 script = ExtResource("1_nkrxw")
 
 [node name="ticketHolder" type="MeshInstance2D" parent="."]
+visible = false
 position = Vector2(181, 0)
 scale = Vector2(62.25, 126.75)
 mesh = SubResource("BoxMesh_6b2vf")

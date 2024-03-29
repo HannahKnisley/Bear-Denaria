@@ -24,6 +24,9 @@ func _on_spawn_timer_timeout():
 		print(mob_num)
 		$orderLine.add_child(mob)
 		mob.global_position = $orderLine.global_position
+	
+	
+		
 		
 
 

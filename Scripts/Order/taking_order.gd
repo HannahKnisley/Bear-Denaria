@@ -3,6 +3,7 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 var waitTime = 2
 
+var pickyLevels = []
 var ingredients = ["lettuce", "tomato", "onion", "cheese", "pickle"]
 var pattyType = ["beef", "chicken"]
 
@@ -26,6 +27,8 @@ func takeOrder(customer):
 	
 	toppingsAmount = rng.randi_range(1,5)
 	
+	await get_tree().create_timer(waitTime).timeout
+	newTicket.takeOrder(rng.randi_range(0,4))
 	await get_tree().create_timer(waitTime).timeout
 	newTicket.takeOrder("bottomBun")
 	await get_tree().create_timer(waitTime).timeout

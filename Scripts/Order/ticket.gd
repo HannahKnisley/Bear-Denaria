@@ -22,6 +22,8 @@ var snapPos
 var onCollection = false
 var canHold = true
 
+var pickyLevel = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	myOrderNum = Globals.numOrders
@@ -60,25 +62,28 @@ func _process(delta):
 
 func takeOrder(ingredient):
 	print(ingredient)
-	if ingredientNum == 0 and ingredient == "bottomBun":
+	if ingredientNum == 0:
+		$pickyness.get_child(ingredient).visible = true
+		pickyLevel = ingredient
+	if ingredientNum == 1 and ingredient == "bottomBun":
 		$ticketItems/Item1/BottomBun.visible = true
-	if ingredientNum == 1 and ingredient == "beef":
+	if ingredientNum == 2 and ingredient == "beef":
 		$ticketItems/Item2/beefPatty.visible = true
-	elif ingredientNum == 1 and ingredient == "chicken":
+	elif ingredientNum == 2 and ingredient == "chicken":
 		$ticketItems/Item2/chickenPatty.visible = true
 	
-	if ingredientNum > 1 and ingredient == "lettuce":
-		$ticketItems.get_child(ingredientNum).get_child(0).visible = true
-	elif ingredientNum > 1 and ingredient == "tomato":
-		$ticketItems.get_child(ingredientNum).get_child(1).visible = true
-	elif ingredientNum > 1 and ingredient == "pickle":
-		$ticketItems.get_child(ingredientNum).get_child(2).visible = true
-	elif ingredientNum > 1 and ingredient == "onion":
-		$ticketItems.get_child(ingredientNum).get_child(3).visible = true
-	elif ingredientNum > 1 and ingredient == "cheese":
-		$ticketItems.get_child(ingredientNum).get_child(4).visible = true
-	elif ingredientNum > 1 and ingredient == "topBun":
-		$ticketItems.get_child(ingredientNum).get_child(5).visible = true
+	if ingredientNum > 2 and ingredient == "lettuce":
+		$ticketItems.get_child(ingredientNum-1).get_child(0).visible = true
+	elif ingredientNum > 2 and ingredient == "tomato":
+		$ticketItems.get_child(ingredientNum-1).get_child(1).visible = true
+	elif ingredientNum > 2 and ingredient == "pickle":
+		$ticketItems.get_child(ingredientNum-1).get_child(2).visible = true
+	elif ingredientNum > 2 and ingredient == "onion":
+		$ticketItems.get_child(ingredientNum-1).get_child(3).visible = true
+	elif ingredientNum > 2 and ingredient == "cheese":
+		$ticketItems.get_child(ingredientNum-1).get_child(4).visible = true
+	elif ingredientNum > 2 and ingredient == "topBun":
+		$ticketItems.get_child(ingredientNum-1).get_child(5).visible = true
 	
 	if ingredientNum > 3 and ingredient == "fries":
 		$ticketItems/fries.visible = true
