@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 @export var topping: PackedScene
 
@@ -11,10 +11,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released("mouseClick"):
-		await get_tree().create_timer(0.1).timeout
-		if canSpawn:
-			spawn_item()
+	if self.get_child_count() == 0:
+		spawn_item()
 
 
 func spawn_item():
@@ -22,11 +20,3 @@ func spawn_item():
 	self.add_child(newTopping)
 	newTopping.global_position = self.global_position
 	
-
-
-func _on_body_entered(body):
-	canSpawn = false
-
-
-func _on_body_exited(body):
-	canSpawn = true

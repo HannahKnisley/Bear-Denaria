@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://6h7q1iuxo1v6"]
+
+[ext_resource type="Script" path="res://Scripts/fryArea/fryer.gd" id="1_1a4ya"]
+[ext_resource type="PackedScene" uid="uid://3pgtymcr6hkb" path="res://Scenes/GrillArea/cooking_meter.tscn" id="2_bnsui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu3si"]
+size = Vector2(116, 122)
+
+[node name="fryer" type="Area2D"]
+script = ExtResource("1_1a4ya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hu3si")
+
+[node name="cookTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="cookingMeter" parent="." instance=ExtResource("2_bnsui")]
+position = Vector2(78, -3)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]

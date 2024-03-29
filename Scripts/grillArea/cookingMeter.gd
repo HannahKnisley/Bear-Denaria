@@ -13,6 +13,10 @@ func doStep():
 	if count<maxSteps:
 		$guy.global_position.y -= step
 		count += step
+		
+func reset():
+	$guy.global_position.y += count
+	count = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

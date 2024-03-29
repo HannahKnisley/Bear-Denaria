@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://olv3du7cskf"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/toppingSpawner.gd" id="1_wie64"]
+[ext_resource type="PackedScene" uid="uid://c57l62shnoq4o" path="res://Scenes/fryArea/fries.tscn" id="2_07xsj"]
+
+[node name="frySpawner" type="Node2D"]
+script = ExtResource("1_wie64")
+topping = ExtResource("2_07xsj")

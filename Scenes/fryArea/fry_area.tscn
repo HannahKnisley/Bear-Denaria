@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://befklmitxuu1a"]
+[gd_scene load_steps=3 format=3 uid="uid://befklmitxuu1a"]
+
+[ext_resource type="PackedScene" uid="uid://olv3du7cskf" path="res://Scenes/fryArea/fry_spawner.tscn" id="1_f4aeh"]
+[ext_resource type="PackedScene" uid="uid://6h7q1iuxo1v6" path="res://Scenes/fryArea/fryer.tscn" id="2_va8au"]
 
 [node name="fryArea" type="Node2D"]
 
@@ -12,3 +15,12 @@ position = Vector2(-135, 172)
 
 [node name="curTray" type="Node2D" parent="."]
 position = Vector2(547, 178)
+
+[node name="frySpawner" parent="." instance=ExtResource("1_f4aeh")]
+position = Vector2(96, 468)
+
+[node name="fryer" parent="." instance=ExtResource("2_va8au")]
+position = Vector2(386, 494)
+
+[node name="fryer2" parent="." instance=ExtResource("2_va8au")]
+position = Vector2(580, 492)
