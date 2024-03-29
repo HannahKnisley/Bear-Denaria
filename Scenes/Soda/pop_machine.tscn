@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6vnl073pnt1k"]
+[gd_scene load_steps=30 format=3 uid="uid://b6vnl073pnt1k"]
 
 [ext_resource type="Script" path="res://Scripts/soda_machine/button for machine soda.gd" id="1_snenu"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/soda_bar.gd" id="2_0fucr"]
-[ext_resource type="Script" path="res://Scripts/soda_machine/Soda.gd" id="2_2xyqp"]
-[ext_resource type="Script" path="res://Scripts/soda_machine/Water.gd" id="4_p7xw8"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/area_to_put_cup.gd" id="5_3dhtu"]
+[ext_resource type="Script" path="res://Scripts/soda_machine/water_button.gd" id="6_2x2ud"]
+[ext_resource type="Script" path="res://Scripts/soda_machine/soda_button.gd" id="6_3aqo0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ui0ip"]
 
@@ -42,22 +42,58 @@ gradient = SubResource("Gradient_doiv2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moe7u"]
 size = Vector2(131.5, 235)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbvie"]
+size = Vector2(65, 23)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7l7yl"]
+
+[sub_resource type="Gradient" id="Gradient_6go4t"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.67451, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kmwjr"]
+gradient = SubResource("Gradient_6go4t")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2qkv"]
+size = Vector2(81, 28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2re35"]
+
+[sub_resource type="Gradient" id="Gradient_c0d7e"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.671875, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mnp6n"]
+gradient = SubResource("Gradient_c0d7e")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13inf"]
+radius = 103.019
+
+[sub_resource type="SphereMesh" id="SphereMesh_yfdc3"]
+
+[sub_resource type="Gradient" id="Gradient_rjrj4"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7fes2"]
+gradient = SubResource("Gradient_rjrj4")
+
 [node name="pop_machine" type="Node2D"]
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-position = Vector2(549, 141)
+[node name="pipetowater" type="MeshInstance2D" parent="."]
+position = Vector2(715, 149)
 scale = Vector2(132, 292)
 mesh = SubResource("BoxMesh_ui0ip")
 texture = SubResource("GradientTexture2D_a7vot")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(399, 141.75)
+[node name="pipetosoda" type="MeshInstance2D" parent="."]
+position = Vector2(549, 148)
 scale = Vector2(132, 295.5)
 mesh = SubResource("BoxMesh_ui0ip")
 texture = SubResource("GradientTexture2D_a7vot")
 
 [node name="cup" type="Area2D" parent="."]
-position = Vector2(72, 614)
+position = Vector2(413, 609)
 script = ExtResource("1_snenu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cup"]
@@ -82,6 +118,7 @@ step = 0.5
 value = 1.0
 fill_mode = 3
 script = ExtResource("2_0fucr")
+metadata/_edit_use_anchors_ = true
 
 [node name="water_bar" type="ProgressBar" parent="cup"]
 offset_left = -12.0
@@ -95,46 +132,21 @@ step = 0.5
 value = 1.0
 fill_mode = 3
 script = ExtResource("2_0fucr")
+metadata/_edit_use_anchors_ = true
 
 [node name="plate for cup" type="Area2D" parent="."]
-position = Vector2(398, 412)
+position = Vector2(536, 392)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plate for cup"]
-position = Vector2(1, 2)
+position = Vector2(4, -3)
 shape = SubResource("CircleShape2D_t8crv")
 
 [node name="plate for cup2" type="Area2D" parent="."]
-position = Vector2(553, 415)
+position = Vector2(708, 403)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plate for cup2"]
-position = Vector2(1, 1)
+position = Vector2(1, -2)
 shape = SubResource("CircleShape2D_t8crv")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Soda" type="Button" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.376
-anchor_top = 0.331
-anchor_right = 0.422
-anchor_bottom = 0.376
-offset_left = -3.05176e-05
-offset_top = 0.299973
-offset_right = -3.05176e-05
-offset_bottom = -0.200012
-text = "Soda"
-script = ExtResource("2_2xyqp")
-
-[node name="Water" type="Button" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.523
-anchor_top = 0.324
-anchor_right = 0.578
-anchor_bottom = 0.369
-offset_top = 0.199997
-offset_bottom = -0.300018
-text = "Water"
-script = ExtResource("4_p7xw8")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -147,23 +159,81 @@ mesh = SubResource("BoxMesh_0l0m4")
 texture = SubResource("GradientTexture2D_8k41s")
 
 [node name="area_to_put_cup" type="Area2D" parent="."]
-position = Vector2(838, 337)
+position = Vector2(831, 371)
 script = ExtResource("5_3dhtu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_to_put_cup"]
-position = Vector2(22.25, 70.5)
+position = Vector2(88, 79)
 shape = SubResource("RectangleShape2D_moe7u")
+
+[node name="water_button" type="Area2D" parent="."]
+position = Vector2(540, 250)
+script = ExtResource("6_2x2ud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_button"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rbvie")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="water_button/CollisionShape2D"]
+position = Vector2(-2, 0)
+scale = Vector2(53, 15)
+mesh = SubResource("BoxMesh_7l7yl")
+texture = SubResource("GradientTexture2D_kmwjr")
+
+[node name="Label" type="Label" parent="water_button/CollisionShape2D"]
+offset_left = -22.0
+offset_top = -12.0
+offset_right = 26.0
+offset_bottom = 14.0
+text = "Soda"
+
+[node name="soda_button" type="Area2D" parent="."]
+position = Vector2(689, 251)
+script = ExtResource("6_3aqo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soda_button"]
+position = Vector2(30.5, 4)
+shape = SubResource("RectangleShape2D_v2qkv")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="soda_button/CollisionShape2D"]
+position = Vector2(-0.5, 1)
+scale = Vector2(60, 17.75)
+mesh = SubResource("BoxMesh_2re35")
+texture = SubResource("GradientTexture2D_mnp6n")
+
+[node name="Label" type="Label" parent="soda_button/CollisionShape2D"]
+offset_left = -21.5
+offset_top = -13.0
+offset_right = 25.5
+offset_bottom = 13.0
+text = "Water"
+
+[node name="cookieplate" type="Area2D" parent="."]
+position = Vector2(121, 585)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cookieplate"]
+position = Vector2(7, 2)
+shape = SubResource("CircleShape2D_13inf")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="cookieplate/CollisionShape2D"]
+position = Vector2(2, 0)
+scale = Vector2(167.189, 151.882)
+mesh = SubResource("SphereMesh_yfdc3")
+texture = SubResource("GradientTexture2D_7fes2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D/CollisionShape2D"]
 
 [connection signal="mouse_entered" from="cup" to="cup" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="cup" to="cup" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="plate for cup" to="cup" method="_on_plate_for_cup_mouse_entered"]
-[connection signal="mouse_entered" from="plate for cup" to="CanvasLayer/Soda" method="_on_plate_for_cup_mouse_entered"]
 [connection signal="mouse_entered" from="plate for cup2" to="cup" method="_on_plate_for_cup_2_mouse_entered"]
-[connection signal="button_down" from="CanvasLayer/Soda" to="CanvasLayer/Soda" method="_on_button_down"]
-[connection signal="button_up" from="CanvasLayer/Soda" to="CanvasLayer/Soda" method="_on_button_up"]
-[connection signal="pressed" from="CanvasLayer/Soda" to="cup" method="_on_soda_pressed"]
-[connection signal="pressed" from="CanvasLayer/Soda" to="CanvasLayer/Soda" method="_on_pressed"]
-[connection signal="button_down" from="CanvasLayer/Water" to="CanvasLayer/Water" method="_on_button_down"]
-[connection signal="button_up" from="CanvasLayer/Water" to="CanvasLayer/Water" method="_on_button_up"]
 [connection signal="timeout" from="Timer" to="cup" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="area_to_put_cup" to="cup" method="_on_area_to_put_cup_mouse_entered"]
+[connection signal="mouse_entered" from="water_button" to="water_button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="water_button" to="water_button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="soda_button" to="soda_button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="soda_button" to="soda_button" method="_on_mouse_exited"]
