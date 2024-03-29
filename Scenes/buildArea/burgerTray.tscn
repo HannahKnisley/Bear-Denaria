@@ -1,21 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci34ayh2s65fo"]
+[gd_scene load_steps=5 format=3 uid="uid://ci34ayh2s65fo"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/burgerTray.gd" id="1_nkrxw"]
 [ext_resource type="Texture2D" uid="uid://dulofc0urj248" path="res://Assets2D/buildAssets/Tray.png" id="2_y8xdu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6b2vf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwhjo"]
 
 [node name="burgerTray" type="Area2D" groups=["burgerTray"]]
 script = ExtResource("1_nkrxw")
 
+[node name="ticketHolder" type="MeshInstance2D" parent="."]
+position = Vector2(181, 0)
+scale = Vector2(62.25, 126.75)
+mesh = SubResource("BoxMesh_6b2vf")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rwhjo")
 
 [node name="trays2" type="TextureRect" parent="."]
-offset_left = -133.0
-offset_top = -149.0
-offset_right = 121.0
-offset_bottom = 154.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -151.5
+offset_right = 127.0
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_y8xdu")
 expand_mode = 1
 stretch_mode = 5

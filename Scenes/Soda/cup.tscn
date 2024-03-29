@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://tle1fggglcxi"]
+
+[ext_resource type="Script" path="res://Scenes/Soda/cup.gd" id="1_81g6d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk07s"]
+size = Vector2(46, 75)
+
+[node name="cup" type="Area2D" groups=["cup"]]
+script = ExtResource("1_81g6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wk07s")
+
+[node name="cupFillGood" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -38.5
+offset_right = 23.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 3
+
+[node name="cupFillTrash" type="ProgressBar" parent="."]
+visible = false
+offset_left = -23.0
+offset_top = -52.0
+offset_right = 24.0
+offset_bottom = 25.0
+fill_mode = 3
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -5,21 +5,21 @@
 
 [sub_resource type="PrismMesh" id="PrismMesh_n8iig"]
 
-[sub_resource type="Gradient" id="Gradient_2e42h"]
+[sub_resource type="Gradient" id="Gradient_7axx4"]
 offsets = PackedFloat32Array(0.0990099)
 colors = PackedColorArray(0.829161, 0.884918, 0.949883, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_phjv6"]
-gradient = SubResource("Gradient_2e42h")
+gradient = SubResource("Gradient_7axx4")
 
 [sub_resource type="BoxMesh" id="BoxMesh_6urms"]
 
-[sub_resource type="Gradient" id="Gradient_vcceu"]
+[sub_resource type="Gradient" id="Gradient_nr2te"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 0.568627, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cauk3"]
-gradient = SubResource("Gradient_vcceu")
+gradient = SubResource("Gradient_nr2te")
 
 [node name="taking_an_order" type="Node2D"]
 script = ExtResource("1_0rh7d")

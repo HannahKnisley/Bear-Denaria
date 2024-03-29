@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://clovo222pgpcp"]
+
+[node name="noFries" type="Node2D" groups=["fries", "noFries"]]

@@ -7,6 +7,8 @@ var numOrders = 0
 
 var lastBun = "top"
 
+var readyForTicket = false
+
 var burger_type
 var tomato = false
 var letteace = false

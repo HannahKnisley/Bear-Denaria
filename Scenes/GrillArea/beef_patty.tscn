@@ -235,10 +235,10 @@ position = Vector2(95, -8)
 
 [node name="pattyParticles" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(2, -6)
-scale = Vector2(0.18075, 0.18025)
+position = Vector2(-0.312498, 0.0624895)
+scale = Vector2(0.163375, 0.164125)
 sprite_frames = SubResource("SpriteFrames_j7mhk")
 animation = &"pattyAnimation"
-frame_progress = 0.763814
+frame_progress = 0.76641
 
 [connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]

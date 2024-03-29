@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://beocquu6qif3w"]
+
+[ext_resource type="Script" path="res://Scripts/Order/giving_order.gd" id="1_sq53v"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_f8p2l"]
+
+[sub_resource type="Gradient" id="Gradient_2e42h"]
+offsets = PackedFloat32Array(0.0990099)
+colors = PackedColorArray(0.829161, 0.884918, 0.949883, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w8sga"]
+gradient = SubResource("Gradient_2e42h")
+
+[sub_resource type="BoxMesh" id="BoxMesh_onnjk"]
+
+[sub_resource type="Gradient" id="Gradient_vcceu"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.568627, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_apl1t"]
+gradient = SubResource("Gradient_vcceu")
+
+[node name="givingOrder" type="Node2D"]
+script = ExtResource("1_sq53v")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(516, 416)
+rotation = 3.14159
+scale = Vector2(270.695, 362.765)
+mesh = SubResource("PrismMesh_f8p2l")
+texture = SubResource("GradientTexture2D_w8sga")
+
+[node name="counter" type="MeshInstance2D" parent="."]
+position = Vector2(500.807, 655)
+scale = Vector2(-1010.34, 147.047)
+mesh = SubResource("BoxMesh_onnjk")
+texture = SubResource("GradientTexture2D_apl1t")
+
+[node name="name" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 588.0
+offset_right = 246.0
+offset_bottom = 667.0
+theme_override_font_sizes/font_size = 45
+text = "t"
+
+[node name="curTray" type="Node2D" parent="."]
+position = Vector2(513, 634)

@@ -20,7 +20,6 @@ func _on_spawn_timer_timeout():
 		
 		remove_child(mob)
 	else:
-		
 		mob_num+=1
 		print(mob_num)
 		$orderLine.add_child(mob)

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6q13l0atlu6i"]
+
+[ext_resource type="PackedScene" uid="uid://231vtmjttfef" path="res://Scenes/buildArea/item_spawner.tscn" id="1_x5gk2"]
+[ext_resource type="PackedScene" uid="uid://tle1fggglcxi" path="res://Scenes/Soda/cup.tscn" id="2_yucl1"]
+[ext_resource type="PackedScene" uid="uid://djb7sqnieo15j" path="res://Scenes/Soda/fill_station.tscn" id="3_l7cje"]
+[ext_resource type="Script" path="res://Scripts/soda_machine/fill_station_trash.gd" id="4_x5sih"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_eu8q1"]
+
+[node name="drinkArea" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -70.0
+offset_top = -74.0
+offset_right = 1077.0
+offset_bottom = 721.0
+color = Color(0.356863, 0, 0.356863, 1)
+
+[node name="trayHolder" type="Node2D" parent="."]
+position = Vector2(-332, 567)
+
+[node name="curTray" type="Node2D" parent="."]
+position = Vector2(487, 565)
+
+[node name="cupSpawner" parent="." instance=ExtResource("1_x5gk2")]
+position = Vector2(128, 553)
+topping = ExtResource("2_yucl1")
+
+[node name="fillStation" parent="." instance=ExtResource("3_l7cje")]
+position = Vector2(330, 252)
+
+[node name="fillStationTrash" parent="." instance=ExtResource("3_l7cje")]
+position = Vector2(639, 249)
+script = ExtResource("4_x5sih")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(330, 85)
+scale = Vector2(86.5, 77.5)
+mesh = SubResource("PrismMesh_eu8q1")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(636, 89)
+scale = Vector2(86.5, 77.5)
+mesh = SubResource("PrismMesh_eu8q1")

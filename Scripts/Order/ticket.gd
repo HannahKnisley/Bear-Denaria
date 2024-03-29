@@ -19,6 +19,9 @@ var ticketColliding
 
 var snapPos 
 
+var onCollection = false
+var canHold = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	myOrderNum = Globals.numOrders
@@ -32,10 +35,10 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("mouseClick") and mouseIn:
 		holding = true
-	if Input.is_action_pressed("mouseClick") and holding:
+	if Input.is_action_pressed("mouseClick") and holding and canHold:
 		self.global_position = get_global_mouse_position()
 		
-	if Input.is_action_just_released("mouseClick") and holding:
+	if Input.is_action_just_released("mouseClick") and holding and canHold:
 		holding = false
 		if onLine:
 			self.scale = Vector2(1,1)
@@ -44,8 +47,12 @@ func _process(delta):
 		elif onBig:
 			self.scale = Vector2(3,3)
 			snapPos = myArea.global_position
+		if onCollection:
+			self.scale = Vector2(1,1)
+			self.reparent($/root/WorldRoot/drinkArea/curTray.get_child(0))
+			canHold = false
 			
-	elif !Input.is_action_pressed("mouseClick"):
+	elif !Input.is_action_pressed("mouseClick") and canHold:
 		self.translate((snapPos-self.global_position)*delta*10)
 		
 	
@@ -102,7 +109,8 @@ func _on_area_entered(area):
 		if area.myOrderNum < myOrderNum: 
 			area.input_pickable = false
 			ticketColliding = area
-		
+	elif area.is_in_group("ticketCollect"):
+		onCollection = true
 
 
 func _on_area_exited(area):
@@ -113,3 +121,5 @@ func _on_area_exited(area):
 	elif area.is_in_group("ticket"):
 		if area == ticketColliding: 
 			area.input_pickable = true
+	elif area.is_in_group("ticketCollect"):
+		onCollection = false

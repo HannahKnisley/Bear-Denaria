@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwps88i147nc5"]
+[gd_scene load_steps=12 format=3 uid="uid://dwps88i147nc5"]
 
 [ext_resource type="Script" path="res://Scripts/UI/scene_change_buttons.gd" id="1_1dxrr"]
 [ext_resource type="Texture2D" uid="uid://cuw5xp1sii5ng" path="res://Assets2D/UIAssets/Order_Station_Button.PNG" id="2_tum0r"]
@@ -14,6 +14,9 @@ size = Vector2(681, 676)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bubi"]
 size = Vector2(168, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mgoi"]
+size = Vector2(62, 127)
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -112,6 +115,15 @@ anchor_right = 0.392
 anchor_bottom = 0.14
 text = "Take Order"
 metadata/_edit_use_anchors_ = true
+
+[node name="ticketCollect" type="Area2D" parent="." groups=["ticketCollect"]]
+visible = false
+position = Vector2(548, 469)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ticketCollect"]
+position = Vector2(174.25, -2.25)
+shape = SubResource("RectangleShape2D_0mgoi")
+disabled = true
 
 [connection signal="pressed" from="screenButtons/orderButton" to="." method="_on_order_button_pressed"]
 [connection signal="pressed" from="screenButtons/grillButton" to="." method="_on_grill_button_pressed"]

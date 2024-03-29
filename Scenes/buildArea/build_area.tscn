@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=17 format=3 uid="uid://bbv7j14qeefkv"]
 
 [ext_resource type="Texture2D" uid="uid://cfnjgyquldkgm" path="res://Assets2D/buildAssets/SetUpStation.png" id="1_asei2"]
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
 [ext_resource type="Texture2D" uid="uid://cmt1oye5nnkah" path="res://Assets2D/buildAssets/TrayStack.png" id="2_3o8wh"]
+[ext_resource type="Texture2D" uid="uid://bip82l6tlix62" path="res://Assets2D/grillAssets/Plate.png" id="4_01dm8"]
 [ext_resource type="PackedScene" uid="uid://bdjls1rn4qic6" path="res://Scenes/buildArea/built_burger.tscn" id="4_7axt8"]
 [ext_resource type="PackedScene" uid="uid://b1hhfr5pm8oqd" path="res://Scenes/buildArea/bunSpawn.tscn" id="5_c5fhj"]
 [ext_resource type="Script" path="res://Scripts/buildArea/traySpawner.gd" id="5_nj56j"]
@@ -18,7 +19,7 @@
 size = Vector2(165, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfnkl"]
-radius = 170.0
+radius = 177.045
 
 [node name="build_area" type="Node2D"]
 
@@ -39,6 +40,15 @@ texture = ExtResource("2_3o8wh")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="plate" type="TextureRect" parent="."]
+offset_left = 18.0
+offset_top = 494.0
+offset_right = 292.0
+offset_bottom = 790.0
+texture = ExtResource("4_01dm8")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Plate" type="StaticBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
@@ -47,12 +57,8 @@ collision_mask = 3
 position = Vector2(597.5, 504)
 shape = SubResource("RectangleShape2D_c4sa1")
 
-[node name="plateCollision2" type="CollisionShape2D" parent="Plate"]
-position = Vector2(510, 665)
-shape = SubResource("CircleShape2D_jfnkl")
-
 [node name="plateCollision3" type="CollisionShape2D" parent="Plate"]
-position = Vector2(679, 663)
+position = Vector2(597, 671)
 shape = SubResource("CircleShape2D_jfnkl")
 
 [node name="builtBurger" parent="." instance=ExtResource("4_7axt8")]

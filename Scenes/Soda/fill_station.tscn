@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://djb7sqnieo15j"]
+
+[ext_resource type="Script" path="res://Scripts/soda_machine/fill_station.gd" id="1_wxi0d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbgpc"]
+radius = 47.0425
+
+[node name="fillStation" type="Area2D" groups=["fillStation"]]
+script = ExtResource("1_wxi0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bbgpc")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
