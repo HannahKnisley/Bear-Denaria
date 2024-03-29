@@ -1,10 +1,9 @@
-extends Area2D
+extends Node2D
 
 @export var topBun: PackedScene
 @export var bottomBun: PackedScene
 
 var newTopping
-var canSpawn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,10 +12,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released("mouseClick"):
-		await get_tree().create_timer(0.1).timeout
-		if canSpawn:
-			spawn_item()
+	if self.get_child_count() == 0:
+		spawn_item()
 
 
 func spawn_item():
@@ -31,10 +28,3 @@ func spawn_item():
 	
 
 
-func _on_body_entered(body):
-	
-	canSpawn = false
-
-
-func _on_body_exited(body):
-	canSpawn = true

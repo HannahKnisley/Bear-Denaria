@@ -21,14 +21,19 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("mouseClick"):
 		if mouseCollide and canGrab:
+			self.set_collision_mask_value(1,false)
+			self.set_collision_mask_value(2, true)
 			move_and_collide(toppingToMouse())
 		
 	if Input.is_action_just_released("mouseClick"):
+		await get_tree().create_timer(0.1).timeout
 		if inBuildArea and canGrab:
 			setSnap(self.global_position)
 			self.freeze = false
 		elif canGrab:
 			move_and_collide(toppingToSnap())
+		self.set_collision_mask_value(1,true)
+		self.set_collision_mask_value(2, false)
 			
 	if self.freeze == false:
 		var first = self.global_position

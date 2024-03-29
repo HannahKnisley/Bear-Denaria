@@ -8,31 +8,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-		
+	if $curPatty.get_child_count() == 0 and self.get_child_count() > 1:
+		self.get_child(1).reparent($curPatty)
+		$curPatty.get_child(0).setSnap($curPatty.global_position)
+		$curPatty.get_child(0).visible = true
 
 
 func _on_child_entered_tree(node):
-	if self.get_child_count() > 0:
-		self.get_child(0).visible = false
-	node.sliding = false
-	node.sendToBuild()
-	node.setSnap(self.global_position)
-	await get_tree().create_timer(0.1).timeout
-	node.visible = false
-	self.get_child(0).visible = true
+	if node.is_in_group("patty"):
+		node.visible = false
+		node.sliding = false
+		node.sendToBuild()
+		node.setSnap(self.global_position)
 
 
-func _on_child_exiting_tree(node):
-	if self.get_child_count() > 0:
-		self.get_child(0).visible = true
-
-
-func _on_build_area_body_entered(body):
-	pass # Replace with function body.
-
-
-
-
-
-
+		

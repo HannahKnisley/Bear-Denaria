@@ -48,7 +48,7 @@ func _on_child_entered_tree(node):
 		sentToDrink = true
 		await get_tree().create_timer(1).timeout
 		self.reparent($/root/WorldRoot/pop_machine/trayHolder)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		self.visible = false
 		inDrinkWait = true
 

@@ -4,14 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://clg26k18eqb2q" path="res://Scenes/buildArea/the_burger.tscn" id="2_1n7nd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohtwd"]
-size = Vector2(96.25, 519.5)
+size = Vector2(96.25, 353.75)
 
 [node name="builtBurger" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_edb0f")
 theBurg = ExtResource("2_1n7nd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 3)
+position = Vector2(1, 0.875)
 shape = SubResource("RectangleShape2D_ohtwd")
 
 [node name="theBurger" parent="." instance=ExtResource("2_1n7nd")]

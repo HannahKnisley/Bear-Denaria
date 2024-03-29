@@ -34,3 +34,6 @@ func sendBurger():
 	theBurger.global_position = self.global_position+Vector2(0,160)
 
 
+
+
+

@@ -1,51 +1,99 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=16 format=3 uid="uid://bbv7j14qeefkv"]
 
+[ext_resource type="Texture2D" uid="uid://cfnjgyquldkgm" path="res://Assets2D/buildAssets/SetUpStation.png" id="1_asei2"]
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
-[ext_resource type="Texture2D" uid="uid://bip82l6tlix62" path="res://Assets2D/grillAssets/Plate.png" id="4_01dm8"]
+[ext_resource type="Texture2D" uid="uid://cmt1oye5nnkah" path="res://Assets2D/buildAssets/TrayStack.png" id="2_3o8wh"]
 [ext_resource type="PackedScene" uid="uid://bdjls1rn4qic6" path="res://Scenes/buildArea/built_burger.tscn" id="4_7axt8"]
 [ext_resource type="PackedScene" uid="uid://b1hhfr5pm8oqd" path="res://Scenes/buildArea/bunSpawn.tscn" id="5_c5fhj"]
 [ext_resource type="Script" path="res://Scripts/buildArea/traySpawner.gd" id="5_nj56j"]
 [ext_resource type="PackedScene" uid="uid://ci34ayh2s65fo" path="res://Scenes/buildArea/burgerTray.tscn" id="6_krcfv"]
+[ext_resource type="PackedScene" uid="uid://231vtmjttfef" path="res://Scenes/buildArea/item_spawner.tscn" id="6_q436k"]
+[ext_resource type="PackedScene" uid="uid://bvschwpnc07ja" path="res://Scenes/buildArea/lettuce.tscn" id="7_a2t4v"]
+[ext_resource type="PackedScene" uid="uid://cl8xi053agody" path="res://Scenes/buildArea/tomato.tscn" id="8_j1jf5"]
+[ext_resource type="PackedScene" uid="uid://bwx46htu77xwq" path="res://Scenes/buildArea/onion.tscn" id="9_ui2oi"]
+[ext_resource type="PackedScene" uid="uid://brjxgv8wy5a8w" path="res://Scenes/buildArea/cheese.tscn" id="10_l3405"]
+[ext_resource type="PackedScene" uid="uid://d0gh226kfwe60" path="res://Scenes/buildArea/pickle.tscn" id="11_pvgag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4sa1"]
-size = Vector2(458, 20)
+size = Vector2(165, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfnkl"]
+radius = 170.0
 
 [node name="build_area" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 999.0
-offset_bottom = 709.0
-color = Color(0.309804, 0.607843, 1, 1)
-
-[node name="Plate" type="StaticBody2D" parent="."]
-
-[node name="plateCollision" type="CollisionShape2D" parent="Plate"]
-position = Vector2(530, 625)
-shape = SubResource("RectangleShape2D_c4sa1")
-
-[node name="platePic" type="TextureRect" parent="Plate"]
-offset_left = 371.0
-offset_top = 443.0
-offset_right = 684.0
-offset_bottom = 736.0
-texture = ExtResource("4_01dm8")
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_right = 1030.0
+offset_bottom = 711.0
+texture = ExtResource("1_asei2")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="trays" type="TextureRect" parent="."]
+offset_left = 794.0
+offset_top = 194.0
+offset_right = 1048.0
+offset_bottom = 497.0
+texture = ExtResource("2_3o8wh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Plate" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="plateCollision" type="CollisionShape2D" parent="Plate"]
+position = Vector2(597.5, 504)
+shape = SubResource("RectangleShape2D_c4sa1")
+
+[node name="plateCollision2" type="CollisionShape2D" parent="Plate"]
+position = Vector2(510, 665)
+shape = SubResource("CircleShape2D_jfnkl")
+
+[node name="plateCollision3" type="CollisionShape2D" parent="Plate"]
+position = Vector2(679, 663)
+shape = SubResource("CircleShape2D_jfnkl")
+
 [node name="builtBurger" parent="." instance=ExtResource("4_7axt8")]
-position = Vector2(531, 345)
+position = Vector2(596, 305)
+
+[node name="goodToppings" type="Node2D" parent="."]
+position = Vector2(170, 508)
+
+[node name="bunSpawn" parent="goodToppings" instance=ExtResource("5_c5fhj")]
+position = Vector2(7, 16)
+
+[node name="lettuceSpawner" parent="goodToppings" instance=ExtResource("6_q436k")]
+position = Vector2(-129, -9)
+topping = ExtResource("7_a2t4v")
+
+[node name="tomatoSpawner" parent="goodToppings" instance=ExtResource("6_q436k")]
+position = Vector2(37, -139)
+topping = ExtResource("8_j1jf5")
+
+[node name="onionSpawner" parent="goodToppings" instance=ExtResource("6_q436k")]
+position = Vector2(-98, -155)
+topping = ExtResource("9_ui2oi")
+
+[node name="cheeseSpawner" parent="goodToppings" instance=ExtResource("6_q436k")]
+position = Vector2(52, -257)
+topping = ExtResource("10_l3405")
+
+[node name="pickleSpawner" parent="goodToppings" instance=ExtResource("6_q436k")]
+position = Vector2(-68, -258)
+topping = ExtResource("11_pvgag")
 
 [node name="pattyContainer" type="Node2D" parent="."]
-position = Vector2(107, 552)
+position = Vector2(-216, 624)
 script = ExtResource("1_jn5iw")
 
-[node name="bunSpawn" parent="." instance=ExtResource("5_c5fhj")]
-position = Vector2(137, 263)
+[node name="curPatty" type="Node2D" parent="pattyContainer"]
+position = Vector2(376, 12)
 
 [node name="traySpawner" type="Node2D" parent="."]
-position = Vector2(892, 496)
+position = Vector2(939, 328)
 script = ExtResource("5_nj56j")
 tray = ExtResource("6_krcfv")
 
 [connection signal="child_entered_tree" from="pattyContainer" to="pattyContainer" method="_on_child_entered_tree"]
-[connection signal="child_exiting_tree" from="pattyContainer" to="pattyContainer" method="_on_child_exiting_tree"]

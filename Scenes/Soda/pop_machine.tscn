@@ -154,6 +154,12 @@ script = ExtResource("5_3dhtu")
 position = Vector2(22.25, 70.5)
 shape = SubResource("RectangleShape2D_moe7u")
 
+[node name="trayHolder" type="Node2D" parent="."]
+position = Vector2(-189, 428)
+
+[node name="curTray" type="Node2D" parent="."]
+position = Vector2(142, 426)
+
 [connection signal="mouse_entered" from="cup" to="cup" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="cup" to="cup" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="plate for cup" to="cup" method="_on_plate_for_cup_mouse_entered"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvschwpnc07ja"]
+
+[ext_resource type="Texture2D" uid="uid://bs3t0kn44scrm" path="res://Assets2D/buildAssets/Lettuce.png" id="1_ng42m"]
+[ext_resource type="Script" path="res://Scripts/buildArea/toppings.gd" id="1_tqxo1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7afvo"]
+size = Vector2(119, 6)
+
+[node name="lettuce" type="RigidBody2D"]
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_tqxo1")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 55)
+shape = SubResource("RectangleShape2D_7afvo")
+
+[node name="temp" type="TextureRect" parent="."]
+offset_left = -80.0
+offset_top = -57.0
+offset_right = 74.0
+offset_bottom = 90.0
+texture = ExtResource("1_ng42m")
+expand_mode = 1
+stretch_mode = 5

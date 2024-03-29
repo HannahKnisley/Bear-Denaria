@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d16qytf4rw7hu"]
+[gd_scene load_steps=7 format=3 uid="uid://d16qytf4rw7hu"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_suist"]
 [ext_resource type="PackedScene" uid="uid://3pgtymcr6hkb" path="res://Scenes/GrillArea/cooking_meter.tscn" id="2_676fr"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_arlu3"]
 radius = 28.0179
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etu3a"]
+size = Vector2(119, 20)
 
 [node name="chicken_patty" type="RigidBody2D" groups=["patty", "topping"]]
 freeze = true
@@ -29,6 +32,12 @@ mesh = SubResource("SphereMesh_6c55f")
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_arlu3")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_etu3a")
+disabled = true
 
 [node name="cookTimer" type="Timer" parent="."]
 

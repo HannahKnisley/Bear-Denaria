@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0gh226kfwe60"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/toppings.gd" id="1_62har"]
+[ext_resource type="Texture2D" uid="uid://byub7uu84y0po" path="res://Assets2D/buildAssets/Pickles.png" id="2_sucnu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7afvo"]
+size = Vector2(119, 20)
+
+[node name="lettuce" type="RigidBody2D"]
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_62har")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_7afvo")
+
+[node name="temp" type="TextureRect" parent="."]
+offset_left = -80.0
+offset_top = -31.0
+offset_right = 74.0
+offset_bottom = 116.0
+texture = ExtResource("2_sucnu")
+expand_mode = 1
+stretch_mode = 5

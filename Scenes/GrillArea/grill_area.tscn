@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://6v3p1p6eibu0"]
 
-[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/grill.png" id="1_a1rfs"]
+[ext_resource type="Texture2D" uid="uid://ciobddeo0rdft" path="res://Assets2D/grillAssets/Grillhehe.png" id="1_obic3"]
 [ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
 [ext_resource type="PackedScene" uid="uid://cocyyg8ps4hq5" path="res://Scenes/GrillArea/cooktop.tscn" id="2_wnctg"]
 [ext_resource type="PackedScene" uid="uid://cyic7t5yfpo8n" path="res://Scenes/GrillArea/spatula.tscn" id="3_upwfe"]
@@ -12,40 +12,40 @@
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1000.0
 offset_bottom = 700.0
-texture = ExtResource("1_a1rfs")
+texture = ExtResource("1_obic3")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(391, 210)
+position = Vector2(338, 256)
 
 [node name="Cooktop2" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(378, 333)
+position = Vector2(325, 370)
 
 [node name="Cooktop3" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(360, 456)
+position = Vector2(307, 486)
 
 [node name="Cooktop4" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(601, 210)
+position = Vector2(548, 256)
 
 [node name="Cooktop5" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(610, 333)
+position = Vector2(557, 370)
 
 [node name="Cooktop6" parent="." instance=ExtResource("2_wnctg")]
-position = Vector2(628, 456)
+position = Vector2(575, 486)
 scale = Vector2(1.01381, 0.996506)
 
 [node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
-position = Vector2(882, 199)
+position = Vector2(908, 458)
 
 [node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
-position = Vector2(895, 363)
+position = Vector2(754, 389)
 
 [node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
-position = Vector2(112, 227)
+position = Vector2(87, 278)
 
 [node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
 visible = false

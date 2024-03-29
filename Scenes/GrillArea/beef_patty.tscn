@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwl3yt5o5e816"]
+[gd_scene load_steps=19 format=3 uid="uid://cwl3yt5o5e816"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_kgj8g"]
 [ext_resource type="Texture2D" uid="uid://bdnn0q6dwdoun" path="res://Assets2D/grillAssets/beefPatties/TopBurgerRaw.png" id="2_11a2w"]
@@ -12,12 +12,32 @@
 [ext_resource type="Texture2D" uid="uid://526wmruiolv6" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerOvercooked.png" id="10_uo70p"]
 [ext_resource type="Texture2D" uid="uid://b1xinjxc80b2j" path="res://Assets2D/grillAssets/beefPatties/BottomBurgerBurnt.png" id="11_r5btd"]
 [ext_resource type="PackedScene" uid="uid://3pgtymcr6hkb" path="res://Scenes/GrillArea/cooking_meter.tscn" id="12_ybk1q"]
+[ext_resource type="Texture2D" uid="uid://cqvlcagl2e4rg" path="res://Assets2D/particles/fries/Fry_Bubbles_1.PNG" id="13_m1cdh"]
+[ext_resource type="Texture2D" uid="uid://2hl6rfpqmkfr" path="res://Assets2D/particles/fries/Fry_Bubbles_2.PNG" id="14_njch6"]
+[ext_resource type="Texture2D" uid="uid://c8qunl4fs2nrr" path="res://Assets2D/particles/fries/Fry_Bubbles_3.PNG" id="15_i2vfa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5hv6k"]
 radius = 23.3399
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wiw80"]
 size = Vector2(119, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7mhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_m1cdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_njch6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i2vfa")
+}],
+"loop": true,
+"name": &"pattyAnimation",
+"speed": 10.0
+}]
 
 [node name="BeefPatty" type="RigidBody2D" groups=["patty", "topping"]]
 contact_monitor = true
@@ -36,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_11a2w")
@@ -53,10 +73,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_jxi00")
@@ -70,10 +90,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_xkm18")
@@ -87,10 +107,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_8femw")
@@ -104,10 +124,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_75lbk")
@@ -122,10 +142,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_y7wwl")
@@ -139,10 +159,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_h78c1")
@@ -156,10 +176,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_ntesk")
@@ -173,10 +193,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_uo70p")
@@ -190,10 +210,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -84.5
-offset_right = 82.5
-offset_bottom = 84.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_r5btd")
@@ -205,13 +225,20 @@ scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_5hv6k")
 
 [node name="buildCollision" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 48)
+position = Vector2(0, 43)
 shape = SubResource("RectangleShape2D_wiw80")
 disabled = true
 
 [node name="cookingMeter" parent="." instance=ExtResource("12_ybk1q")]
 visible = false
 position = Vector2(95, -8)
+
+[node name="pattyParticles" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(2, -6)
+scale = Vector2(0.18075, 0.18025)
+sprite_frames = SubResource("SpriteFrames_j7mhk")
+animation = &"pattyAnimation"
+frame_progress = 0.763814
 
 [connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]

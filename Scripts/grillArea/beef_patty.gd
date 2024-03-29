@@ -93,6 +93,8 @@ func burgerToMouse():
 func snapToGrill(pos):
 	snapPos = pos
 	onGrill = true
+	$pattyParticles.visible = true
+	$pattyParticles.play()
 	$cookTimer.start()
 	move_and_collide((burgerToGrill()))
 	await get_tree().create_timer(0.1).timeout
@@ -157,6 +159,8 @@ func _on_cook_timer_timeout():
 	
 	
 func sendToBuild():
+	$pattyParticles.visible = false
+	$pattyParticles.stop()
 	onGrill = false
 	$cookTimer.stop()
 	$collision.disabled = true

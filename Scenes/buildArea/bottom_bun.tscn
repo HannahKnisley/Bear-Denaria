@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://da3n8lnlsmu6t"]
+[gd_scene load_steps=4 format=3 uid="uid://da3n8lnlsmu6t"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/toppings.gd" id="1_k12uw"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_5hi78"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_t2aof"]
+[ext_resource type="Texture2D" uid="uid://cgdtvsqobbqts" path="res://Assets2D/buildAssets/BottomBun.png" id="2_ks88a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jilp6"]
 size = Vector2(50, 5)
@@ -16,18 +13,16 @@ freeze = true
 freeze_mode = 1
 script = ExtResource("1_k12uw")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-modulate = Color(0.8, 0.690196, 0.521569, 1)
-self_modulate = Color(0.862745, 0.862745, 0.862745, 1)
-rotation = -3.14159
-scale = Vector2(104.949, -89)
-mesh = SubResource("SphereMesh_5hi78")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="MeshInstance2D2"]
-position = Vector2(9.16303e-09, -0.123596)
-mesh = SubResource("SphereMesh_t2aof")
+[node name="temp2" type="TextureRect" parent="."]
+offset_left = -88.0
+offset_top = -99.0
+offset_right = 84.0
+offset_bottom = 56.0
+texture = ExtResource("2_ks88a")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 34)
+position = Vector2(0, 27)
 scale = Vector2(1.8, 1.8)
 shape = SubResource("RectangleShape2D_jilp6")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwx46htu77xwq"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/toppings.gd" id="1_apx1e"]
+[ext_resource type="Texture2D" uid="uid://b8xr70lpr3vb2" path="res://Assets2D/buildAssets/Onion.png" id="2_7dl6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7afvo"]
+size = Vector2(119, 12)
+
+[node name="lettuce" type="RigidBody2D"]
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_apx1e")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_7afvo")
+
+[node name="temp" type="TextureRect" parent="."]
+offset_left = -75.0
+offset_top = -38.0
+offset_right = 79.0
+offset_bottom = 109.0
+texture = ExtResource("2_7dl6l")
+expand_mode = 1
+stretch_mode = 5

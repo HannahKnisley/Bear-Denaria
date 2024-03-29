@@ -1,25 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1hhfr5pm8oqd"]
+[gd_scene load_steps=4 format=3 uid="uid://b1hhfr5pm8oqd"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/bun_spawn.gd" id="1_dr6oj"]
 [ext_resource type="PackedScene" uid="uid://ceitx1gvpvn38" path="res://Scenes/buildArea/top_bun.tscn" id="2_b2trh"]
 [ext_resource type="PackedScene" uid="uid://da3n8lnlsmu6t" path="res://Scenes/buildArea/bottom_bun.tscn" id="3_ma7tw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_norwf"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_nrqpb"]
-
-[node name="bunSpawn" type="Area2D"]
+[node name="bunSpawn" type="Node2D"]
 script = ExtResource("1_dr6oj")
 topBun = ExtResource("2_b2trh")
 bottomBun = ExtResource("3_ma7tw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3, 3)
-shape = SubResource("CircleShape2D_norwf")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(50, 50)
-mesh = SubResource("SphereMesh_nrqpb")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
