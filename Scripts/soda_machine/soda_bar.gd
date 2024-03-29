@@ -14,7 +14,7 @@ func _process(delta):
 	else:
 		$/root/WorldRoot/pop_machine/cup/soda_bar.visible = true
 	if $/root/WorldRoot/pop_machine/cup/water_bar.value == 1:
-		print("bad")
+		#print("bad")
 		$/root/WorldRoot/pop_machine/cup/water_bar.visible = false
 	else:
 		$/root/WorldRoot/pop_machine/cup/water_bar.visible = true

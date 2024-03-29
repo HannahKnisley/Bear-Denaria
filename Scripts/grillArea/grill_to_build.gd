@@ -15,6 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_released("mouseClick") and !sliding:
+		
 		if pattyIn:
 			myPatty.set_collision_mask_value(1, false)
 			myPatty.set_collision_mask_value(2, true)
