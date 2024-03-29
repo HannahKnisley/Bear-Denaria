@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://k1g7wiufabsy"]
+
+[ext_resource type="Script" path="res://Scripts/soda_machine/Cookie.gd" id="1_axi0e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfdh4"]
+radius = 109.115
+
+[sub_resource type="SphereMesh" id="SphereMesh_322wa"]
+
+[sub_resource type="Gradient" id="Gradient_muhdk"]
+offsets = PackedFloat32Array(0.138614)
+colors = PackedColorArray(0.974242, 0.827815, 0.67458, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ydvmi"]
+gradient = SubResource("Gradient_muhdk")
+
+[node name="cookiee" type="Area2D" groups=["cookie"]]
+position = Vector2(454, 249)
+script = ExtResource("1_axi0e")
+cookie = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["cookie"]]
+position = Vector2(3, 10)
+shape = SubResource("CircleShape2D_vfdh4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CollisionShape2D"]
+position = Vector2(-2, 4)
+scale = Vector2(174.697, 159.25)
+mesh = SubResource("SphereMesh_322wa")
+texture = SubResource("GradientTexture2D_ydvmi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

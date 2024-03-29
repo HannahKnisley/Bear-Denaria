@@ -32,6 +32,7 @@ func spawn_item():
 
 
 func _on_body_entered(body):
+	
 	canSpawn = false
 
 

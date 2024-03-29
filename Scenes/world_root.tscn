@@ -34,12 +34,6 @@ position = Vector2(3936, -1)
 [node name="pop_machine" parent="." instance=ExtResource("7_fy302")]
 position = Vector2(9695, 85)
 
-[node name="soda_bar" parent="pop_machine/cup" index="1"]
-metadata/_edit_use_anchors_ = true
-
-[node name="water_bar" parent="pop_machine/cup" index="2"]
-metadata/_edit_use_anchors_ = true
-
 [node name="fryArea" parent="." instance=ExtResource("8_pme8h")]
 position = Vector2(8269, -3)
 
