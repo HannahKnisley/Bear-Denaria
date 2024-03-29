@@ -25,7 +25,7 @@ func _process(delta):
 	if flipping:
 		flippingAnimate(delta)
 		
-	elif !flipping and !sliding and !Input.is_action_pressed("mouseClick") and !inBuildArea:
+	elif !flipping and !sliding and !Input.is_action_pressed("mouseClick") and !inBuildArea and !placedInBuild:
 		if self.global_position != snapPos:
 			self.set_collision_mask_value(1, false)
 			self.set_collision_mask_value(2, true)
@@ -41,17 +41,15 @@ func _physics_process(delta):
 	if Input.is_action_pressed("mouseClick"):
 		if mouseCollide and !flipping and !sliding:
 			$cookTimer.stop()
-			if inBuildArea:
-				self.set_collision_mask_value(1, true)
-				self.set_collision_mask_value(2, false)
-			else:
-				self.set_collision_mask_value(1, false)
-				self.set_collision_mask_value(2, true)
+			self.set_collision_mask_value(1, false)
+			self.set_collision_mask_value(2, true)
 			if !placedInBuild:
 				move_and_collide(burgerToMouse()) 
 		
 	if Input.is_action_just_released("mouseClick"):
 		if inBuildArea and mouseCollide:
+			self.set_collision_mask_value(1, true)
+			self.set_collision_mask_value(2, false)
 			placedInBuild = true
 			setSnap(self.global_position)
 			self.freeze = false

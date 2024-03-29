@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwk5iio8qi5bc"]
+[gd_scene load_steps=9 format=3 uid="uid://cwk5iio8qi5bc"]
 
 [ext_resource type="PackedScene" uid="uid://dwps88i147nc5" path="res://Scenes/UI/mainUI.tscn" id="1_f11s7"]
 [ext_resource type="PackedScene" uid="uid://6v3p1p6eibu0" path="res://Scenes/GrillArea/grill_area.tscn" id="1_v3hge"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqkrceq700rfj" path="res://Scenes/Order_screen/order_screenn.tscn" id="5_qg03r"]
 [ext_resource type="PackedScene" uid="uid://d1tu7ywdngl7a" path="res://Scenes/Order_screen/taking_an_order.tscn" id="6_we4cx"]
 [ext_resource type="PackedScene" uid="uid://b6vnl073pnt1k" path="res://Scenes/Soda/pop_machine.tscn" id="7_fy302"]
+[ext_resource type="PackedScene" uid="uid://befklmitxuu1a" path="res://Scenes/fryArea/fry_area.tscn" id="8_pme8h"]
 
 [node name="WorldRoot" type="Node2D"]
 
@@ -31,6 +32,15 @@ position = Vector2(3936, -1)
 [node name="MainUI" parent="CanvasLayer" instance=ExtResource("1_f11s7")]
 
 [node name="pop_machine" parent="." instance=ExtResource("7_fy302")]
-position = Vector2(8184, 44)
+position = Vector2(9695, 85)
+
+[node name="soda_bar" parent="pop_machine/cup" index="1"]
+metadata/_edit_use_anchors_ = true
+
+[node name="water_bar" parent="pop_machine/cup" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="fryArea" parent="." instance=ExtResource("8_pme8h")]
+position = Vector2(8269, -3)
 
 [editable path="pop_machine"]

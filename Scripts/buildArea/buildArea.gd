@@ -1,18 +1,18 @@
 extends Area2D
 
 var toppingIn = false
+@export var theBurg: PackedScene
 var myTopping
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_released("mouseClick") and toppingIn:
-		self.add_child(myTopping)
-		print(self.get_children())
+		myTopping.reparent($theBurger)
 
 
 
@@ -29,4 +29,9 @@ func _on_body_exited(body):
 
 
 func sendBurger():
-	print("send")
+	$theBurger.reparent(get_node("../traySpawner/burgerTray"))
+	var theBurger = theBurg.instantiate()
+	self.add_child(theBurger)
+	theBurger.global_position = self.global_position+Vector2(0,160)
+
+

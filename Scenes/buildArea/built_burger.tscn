@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdjls1rn4qic6"]
+[gd_scene load_steps=4 format=3 uid="uid://bdjls1rn4qic6"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/buildArea.gd" id="1_edb0f"]
+[ext_resource type="PackedScene" uid="uid://clg26k18eqb2q" path="res://Scenes/buildArea/the_burger.tscn" id="2_1n7nd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohtwd"]
 size = Vector2(96.25, 519.5)
 
 [node name="builtBurger" type="Area2D"]
 script = ExtResource("1_edb0f")
+theBurg = ExtResource("2_1n7nd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3)
 shape = SubResource("RectangleShape2D_ohtwd")
 
-[node name="theBurger" type="Node2D" parent="."]
+[node name="theBurger" parent="." instance=ExtResource("2_1n7nd")]
+position = Vector2(1, 161)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
