@@ -1,10 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://b6vnl073pnt1k"]
+[gd_scene load_steps=35 format=3 uid="uid://b6vnl073pnt1k"]
 
 [ext_resource type="Script" path="res://Scripts/soda_machine/button for machine soda.gd" id="1_snenu"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/soda_bar.gd" id="2_0fucr"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/area_to_put_cup.gd" id="5_3dhtu"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/water_button.gd" id="6_2x2ud"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/soda_button.gd" id="6_3aqo0"]
+[ext_resource type="Script" path="res://Scenes/Soda/Cookie_spawner.gd" id="6_34lq4"]
+[ext_resource type="Script" path="res://Scripts/soda_machine/cookieplate.gd" id="6_lv0oe"]
+[ext_resource type="PackedScene" uid="uid://k1g7wiufabsy" path="res://Scenes/Soda/cookie.tscn" id="7_fu1l2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ui0ip"]
 
@@ -77,6 +80,11 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7fes2"]
 gradient = SubResource("Gradient_rjrj4")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0syth"]
+radius = 69.5701
+
+[sub_resource type="SphereMesh" id="SphereMesh_0qtyf"]
 
 [node name="pop_machine" type="Node2D"]
 
@@ -210,6 +218,7 @@ text = "Water"
 
 [node name="cookieplate" type="Area2D" parent="."]
 position = Vector2(121, 585)
+script = ExtResource("6_lv0oe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cookieplate"]
 position = Vector2(7, 2)
@@ -221,11 +230,19 @@ scale = Vector2(167.189, 151.882)
 mesh = SubResource("SphereMesh_yfdc3")
 texture = SubResource("GradientTexture2D_7fes2")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Cookie_spawner" type="Area2D" parent="."]
+position = Vector2(146, 178)
+script = ExtResource("6_34lq4")
+cookie = ExtResource("7_fu1l2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie_spawner"]
+position = Vector2(8, 2)
+shape = SubResource("CircleShape2D_0syth")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D/CollisionShape2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Cookie_spawner/CollisionShape2D"]
+position = Vector2(20.2503, 26.25)
+scale = Vector2(41.5465, 53.5)
+mesh = SubResource("SphereMesh_0qtyf")
 
 [connection signal="mouse_entered" from="cup" to="cup" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="cup" to="cup" method="_on_mouse_exited"]
@@ -237,3 +254,13 @@ texture = SubResource("GradientTexture2D_7fes2")
 [connection signal="mouse_exited" from="water_button" to="water_button" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="soda_button" to="soda_button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="soda_button" to="soda_button" method="_on_mouse_exited"]
+[connection signal="area_entered" from="cookieplate" to="cookieplate" method="_on_area_entered"]
+[connection signal="body_entered" from="cookieplate" to="cookieplate" method="_on_body_entered"]
+[connection signal="body_entered" from="cookieplate" to="Cookie_spawner" method="_on_cookieplate_body_entered"]
+[connection signal="mouse_entered" from="cookieplate" to="cookieplate" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="cookieplate" to="cookieplate" method="_on_mouse_exited"]
+[connection signal="area_entered" from="Cookie_spawner" to="cookieplate" method="_on_cookie_spawner_area_entered"]
+[connection signal="body_entered" from="Cookie_spawner" to="Cookie_spawner" method="_on_body_entered"]
+[connection signal="body_exited" from="Cookie_spawner" to="Cookie_spawner" method="_on_body_exited"]
+[connection signal="mouse_entered" from="Cookie_spawner" to="Cookie_spawner" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cookie_spawner" to="Cookie_spawner" method="_on_mouse_exited"]

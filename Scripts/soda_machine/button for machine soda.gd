@@ -26,7 +26,7 @@ func _process(delta):
 	if pressedButton == true:
 		no_more = true
 		#$/root/pop_machine/cup/sodalevel25.visible = true
-		print("yup")
+		
 		#print($/root/pop_machine/soda_bar.value)
 		#$/root/pop_machine/soda_bar.value+=0.6
 	
