@@ -18,4 +18,4 @@ func _process(delta):
 		$/root/WorldRoot/pop_machine/cup/water_bar.visible = false
 	else:
 		$/root/WorldRoot/pop_machine/cup/water_bar.visible = true
-		print("badddd")
+		
