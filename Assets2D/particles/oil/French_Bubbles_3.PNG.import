@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjlerdjum6wxw"
-path="res://.godot/imported/French_Bubbles_3.PNG-db9e48be2bb5a4b6d79ec8218a76553d.ctex"
+uid="uid://bgfxi3habfbw1"
+path="res://.godot/imported/French_Bubbles_3.PNG-d983d2d3b4663f767e226fc733565428.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/particles/patty/French_Bubbles_3.PNG"
-dest_files=["res://.godot/imported/French_Bubbles_3.PNG-db9e48be2bb5a4b6d79ec8218a76553d.ctex"]
+source_file="res://Assets2D/particles/oil/French_Bubbles_3.PNG"
+dest_files=["res://.godot/imported/French_Bubbles_3.PNG-d983d2d3b4663f767e226fc733565428.ctex"]
 
 [params]
 

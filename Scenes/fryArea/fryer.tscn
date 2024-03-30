@@ -1,9 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://6h7q1iuxo1v6"]
+[gd_scene load_steps=7 format=3 uid="uid://6h7q1iuxo1v6"]
 
 [ext_resource type="Script" path="res://Scripts/fryArea/fryer.gd" id="1_1a4ya"]
+[ext_resource type="Texture2D" uid="uid://c1iqkfttk36la" path="res://Assets2D/particles/oil/Frencg_Bubbs_2.PNG" id="2_nxo3p"]
+[ext_resource type="Texture2D" uid="uid://bgfxi3habfbw1" path="res://Assets2D/particles/oil/French_Bubbles_3.PNG" id="3_4fyih"]
+[ext_resource type="Texture2D" uid="uid://bufrhxxetad0a" path="res://Assets2D/particles/oil/French_Bubblies_1.PNG" id="4_6jw6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu3si"]
 size = Vector2(160, 122)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oo5ms"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nxo3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4fyih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6jw6u")
+}],
+"loop": true,
+"name": &"oilParticles",
+"speed": 10.0
+}]
 
 [node name="fryer" type="Area2D"]
 script = ExtResource("1_1a4ya")
@@ -13,6 +33,13 @@ shape = SubResource("RectangleShape2D_hu3si")
 
 [node name="cookTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="oilAnimate" type="AnimatedSprite2D" parent="."]
+visible = false
+rotation = 1.5708
+scale = Vector2(0.242485, 0.238768)
+sprite_frames = SubResource("SpriteFrames_oo5ms")
+animation = &"oilParticles"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
