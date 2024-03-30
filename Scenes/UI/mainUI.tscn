@@ -1,13 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwps88i147nc5"]
+[gd_scene load_steps=15 format=3 uid="uid://dwps88i147nc5"]
 
 [ext_resource type="Script" path="res://Scripts/UI/scene_change_buttons.gd" id="1_1dxrr"]
 [ext_resource type="Texture2D" uid="uid://cuw5xp1sii5ng" path="res://Assets2D/UIAssets/Order_Station_Button.PNG" id="2_tum0r"]
 [ext_resource type="Texture2D" uid="uid://j54mhpmo0wg1" path="res://Assets2D/UIAssets/Grill_Station_Button.PNG" id="3_exoh7"]
+[ext_resource type="Texture2D" uid="uid://dvnlwqeq6a74s" path="res://Assets2D/UIAssets/Background_Button.PNG" id="3_ghf18"]
 [ext_resource type="AudioStream" uid="uid://cfarnpabp7ocg" path="res://OtherAssets/Sound/cookingbackground.wav" id="3_xg5rt"]
-[ext_resource type="Texture2D" uid="uid://b18sd7rimju8m" path="res://Assets2D/UIAssets/Big_Rope_Guy.PNG" id="4_r2c6h"]
 [ext_resource type="Texture2D" uid="uid://dn3nk4s7rru6t" path="res://Assets2D/UIAssets/Assembly_Station_Button.PNG" id="4_vrb21"]
 [ext_resource type="Texture2D" uid="uid://bqd3gfw44ufg6" path="res://Assets2D/UIAssets/Fry_Station_Button.PNG" id="5_7sirv"]
 [ext_resource type="Texture2D" uid="uid://bg1o7n3wax442" path="res://Assets2D/UIAssets/DrinkCookie_Station_Button.PNG" id="6_4q0v4"]
+[ext_resource type="Texture2D" uid="uid://cpqjyfrbq4nkd" path="res://Assets2D/UIAssets/Better__Big_Guy.PNG" id="8_uvrji"]
+[ext_resource type="Texture2D" uid="uid://dea8mxqba4cut" path="res://Assets2D/UIAssets/Budget_Thing.PNG" id="10_fd0dv"]
+[ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="11_rn8uo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljkxt"]
 size = Vector2(681, 676)
@@ -30,10 +33,10 @@ script = ExtResource("1_1dxrr")
 [node name="screenButtons" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.210938
-anchor_top = 0.875
-anchor_right = 0.793403
-anchor_bottom = 0.978395
+anchor_left = 0.11
+anchor_top = 0.828571
+anchor_right = 0.746
+anchor_bottom = 0.978571
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
@@ -45,12 +48,38 @@ texture_normal = ExtResource("2_tum0r")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="screenButtons/orderButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0725806
+anchor_top = -0.0729927
+anchor_right = 1.09677
+anchor_bottom = 1.06569
+texture = ExtResource("3_ghf18")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="grillButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_exoh7")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="screenButtons/grillButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0725806
+anchor_top = -0.0729927
+anchor_right = 1.09677
+anchor_bottom = 1.06569
+texture = ExtResource("3_ghf18")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="buildButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
@@ -59,6 +88,19 @@ texture_normal = ExtResource("4_vrb21")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="screenButtons/buildButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0725806
+anchor_top = -0.0729927
+anchor_right = 1.09677
+anchor_bottom = 1.06569
+texture = ExtResource("3_ghf18")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="fryButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -66,12 +108,38 @@ texture_normal = ExtResource("5_7sirv")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="screenButtons/fryButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0725806
+anchor_top = -0.0729927
+anchor_right = 1.09677
+anchor_bottom = 1.06569
+texture = ExtResource("3_ghf18")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="drinkButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("6_4q0v4")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="screenButtons/drinkButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0725806
+anchor_top = -0.0729927
+anchor_right = 1.09677
+anchor_bottom = 1.06569
+texture = ExtResource("3_ghf18")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xg5rt")
@@ -82,7 +150,7 @@ layout_mode = 0
 anchor_top = -0.0314286
 anchor_right = 1.002
 anchor_bottom = 0.26
-texture = ExtResource("4_r2c6h")
+texture = ExtResource("8_uvrji")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -124,6 +192,48 @@ position = Vector2(548, 469)
 position = Vector2(174.25, -2.25)
 shape = SubResource("RectangleShape2D_0mgoi")
 disabled = true
+
+[node name="budget" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 0.794
+anchor_top = 0.831429
+anchor_right = 1.005
+anchor_bottom = 1.02429
+texture = ExtResource("10_fd0dv")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="budget"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.33
+anchor_bottom = 0.266
+offset_left = 95.0
+offset_top = 49.0
+offset_right = 91.37
+offset_bottom = 48.09
+theme = ExtResource("11_rn8uo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Budget:"
+horizontal_alignment = 1
+
+[node name="budgetNum" type="Label" parent="budget"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.33
+anchor_bottom = 0.266
+offset_left = 95.0
+offset_top = 77.0
+offset_right = 91.37
+offset_bottom = 76.09
+theme = ExtResource("11_rn8uo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "$0"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="screenButtons/orderButton" to="." method="_on_order_button_pressed"]
 [connection signal="pressed" from="screenButtons/grillButton" to="." method="_on_grill_button_pressed"]
