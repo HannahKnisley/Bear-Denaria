@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://by2acaw6xglso"]
+
+[ext_resource type="Script" path="res://Scripts/Order/quality_meter.gd" id="1_o7s5o"]
+[ext_resource type="Texture2D" uid="uid://cruanmua3envk" path="res://Assets2D/orderAssets/Meter_Trash_Food.PNG" id="1_wbb8d"]
+[ext_resource type="Texture2D" uid="uid://c15ickna7pk2i" path="res://Assets2D/grillAssets/Pointer_Guy.PNG" id="2_x4r2a"]
+
+[node name="qualityMeter" type="Node2D"]
+script = ExtResource("1_o7s5o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.0
+offset_top = -128.0
+offset_right = 214.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_wbb8d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="guy" type="TextureRect" parent="."]
+offset_left = 165.0
+offset_top = -81.0
+offset_right = 357.0
+offset_bottom = -20.0
+rotation = 1.5708
+texture = ExtResource("2_x4r2a")
+expand_mode = 1
+stretch_mode = 5

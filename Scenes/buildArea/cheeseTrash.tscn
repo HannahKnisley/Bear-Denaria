@@ -17,7 +17,7 @@ script = ExtResource("1_ea0i4")
 position = Vector2(0, 56.5)
 shape = SubResource("RectangleShape2D_7afvo")
 
-[node name="temp" type="TextureRect" parent="."]
+[node name="temp" type="TextureRect" parent="." groups=["cheese", "trash"]]
 offset_left = -80.0
 offset_top = -46.0
 offset_right = 74.0

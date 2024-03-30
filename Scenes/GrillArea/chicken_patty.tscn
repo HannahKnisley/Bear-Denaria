@@ -39,7 +39,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="chicken_patty" type="RigidBody2D" groups=["patty", "topping"]]
+[node name="chicken_patty" type="RigidBody2D" groups=["chicken", "patty", "topping", "trash"]]
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_suist")

@@ -26,8 +26,7 @@ func _process(delta):
 			self.translate(toppingToMouse())
 			
 	if Input.is_action_just_released("mouseClick"):
-		if followMouse:
-			if onTray:
+		if followMouse and onTray:
 				self.reparent(myTray)
 				canHold = false
 		followMouse = false

@@ -222,7 +222,7 @@ texture = ExtResource("11_r5btd")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="collision" type="CollisionShape2D" parent="."]
+[node name="collision" type="CollisionShape2D" parent="." groups=["beef"]]
 scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_5hv6k")
 

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jilp6"]
 size = Vector2(50, 5)
 
-[node name="buttomBun" type="RigidBody2D"]
+[node name="buttomBun" type="RigidBody2D" groups=["bottomBun", "trash"]]
 contact_monitor = true
 lock_rotation = true
 freeze = true

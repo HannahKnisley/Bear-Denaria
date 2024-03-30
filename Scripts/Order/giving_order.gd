@@ -42,13 +42,50 @@ func giveOrder(ticket):
 			for item in child.get_children():
 				if item.is_in_group(ticket.myOrder[count]):
 					if ticket.myOrder[count] == "topBun" or ticket.myOrder[count] == "bottomBun":
-						myScore += 10
+						if item.is_in_group("trash"):
+							myScore += 5
+						else:
+							myScore += 10
 					elif ticket.myOrder[count] == "lettuce" or ticket.myOrder[count] =="tomato" or ticket.myOrder[count]=="onion" or ticket.myOrder[count]=="cheese" or ticket.myOrder[count]=="pickle":
-						myScore += 18
+						if item.is_in_group("trash"):
+							myScore += 9
+						else:
+							myScore += 18
 					elif ticket.myOrder[count]=="beef" or ticket.myOrder[count]=="chicken":
-						myScore += 24
+						if item.is_in_group("trash"):
+							myScore += 12
+						else:
+							myScore += 24
 					elif ticket.myOrder[count]=="fries" or ticket.myOrder[count]=="drink":
-						myScore += 20
+						if item.is_in_group("trash"):
+							myScore += 10
+						else:
+							myScore += 20
+				count+=1	
+				
+		elif child.is_in_group("fries"):
+			if "fries" in ticket.myOrder:
+				if child.is_in_group("trash"):
+					myScore += 10
+				else:
+					myScore += 20
+		elif child.is_in_group("drink"):
+			if "drink" in ticket.myOrder:
+				if child.is_in_group("trash"):
+					myScore += 10
+				else:
+					myScore += 20
 					
+	var totalScore = myScore/maxScore
+	while totalScore > 0:
+		$qualityMeter.doStep()
+		await get_tree().create_timer(0.1).timeout
+		totalScore -= 1
+		
+	totalScore = myScore/maxScore
+	if totalScore >= myPickyLevel:
+		print("WIN!")
+	else:
+		print("Lose :(")
 	
 	

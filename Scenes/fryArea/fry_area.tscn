@@ -50,7 +50,7 @@ position = Vector2(942, 485)
 topping = ExtResource("6_6n0mh")
 
 [node name="skipFries" parent="." instance=ExtResource("3_fowl4")]
-position = Vector2(841, 287)
+position = Vector2(746, 287)
 
 [node name="cookingMeter" parent="." instance=ExtResource("6_kyg62")]
 position = Vector2(469, 498)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://beocquu6qif3w"]
+[gd_scene load_steps=9 format=3 uid="uid://beocquu6qif3w"]
 
 [ext_resource type="Script" path="res://Scripts/Order/giving_order.gd" id="1_sq53v"]
+[ext_resource type="PackedScene" uid="uid://by2acaw6xglso" path="res://Scenes/Order_screen/quality_meter.tscn" id="2_7r6bb"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_f8p2l"]
 
@@ -46,3 +47,6 @@ text = "t"
 
 [node name="curTray" type="Node2D" parent="."]
 position = Vector2(513, 634)
+
+[node name="qualityMeter" parent="." instance=ExtResource("2_7r6bb")]
+position = Vector2(515, 134)
