@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://6v3p1p6eibu0"]
 
-[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/Grill.png" id="1_rty3p"]
+[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/grill.png" id="1_rty3p"]
 [ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
 [ext_resource type="Texture2D" uid="uid://cu0glqmog1j8p" path="res://Assets2D/misc/ButtonUp.png" id="2_08cpd"]
 [ext_resource type="PackedScene" uid="uid://cocyyg8ps4hq5" path="res://Scenes/GrillArea/cooktop.tscn" id="2_wnctg"]

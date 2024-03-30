@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqkrceq700rfj"]
+[gd_scene load_steps=11 format=3 uid="uid://cqkrceq700rfj"]
 
 [ext_resource type="Script" path="res://Scripts/Order/order_screen.gd" id="1_e0ad2"]
 [ext_resource type="PackedScene" uid="uid://cs1t1sudl5fu6" path="res://Scenes/Order_screen/customer.tscn" id="2_rkd65"]
+[ext_resource type="AudioStream" uid="uid://blaj3jiqyff8q" path="res://OtherAssets/Sound/bell.wav" id="3_jrrg3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tik3v"]
 size = Vector2(98, 595)
@@ -56,5 +57,8 @@ position = Vector2(1073, 162)
 
 [node name="waitLine" type="Node2D" parent="."]
 position = Vector2(1081, 463)
+
+[node name="bell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jrrg3")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

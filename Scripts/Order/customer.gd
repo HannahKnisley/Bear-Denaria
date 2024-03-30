@@ -28,6 +28,9 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 		Globals.firstCustomer = self
 		Globals.customerAtCounter = true
 		
+		
+		
+		
 
 func _on_area_2d_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("counter") or area.is_in_group("customer"):

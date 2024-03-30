@@ -17,7 +17,6 @@ gradient = SubResource("Gradient_muhdk")
 [node name="cookiee" type="Area2D" groups=["cookie"]]
 position = Vector2(454, 249)
 script = ExtResource("1_axi0e")
-cookie = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["cookie"]]
 position = Vector2(3, 10)

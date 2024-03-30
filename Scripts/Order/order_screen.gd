@@ -15,7 +15,7 @@ func _process(delta):
 func _on_spawn_timer_timeout():
 	var mob = Customer.instantiate()
 	
-	
+	$bell.play()
 	if mob_num >= 3:
 		
 		remove_child(mob)
