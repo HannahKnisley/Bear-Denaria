@@ -15,6 +15,8 @@ func _process(delta):
 		myFries.reparent(self)
 		myFries.global_position = self.global_position
 		$cookTimer.start()
+		$oilAnimate.visible = true
+		$oilAnimate.play()
 
 
 func _on_area_entered(area):
@@ -39,3 +41,4 @@ func _on_cook_timer_timeout():
 func _on_child_exiting_tree(node):
 	$cookTimer.stop()
 	myMeter.reset()
+	$oilAnimate.visible = false
