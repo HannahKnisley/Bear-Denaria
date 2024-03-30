@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr2ff16ug1ttw"]
+[gd_scene load_steps=6 format=3 uid="uid://dr2ff16ug1ttw"]
 
 [ext_resource type="Script" path="res://Scripts/dayscreen/dayscreen.gd" id="1_7jl2f"]
 [ext_resource type="AudioStream" uid="uid://cia6wgowm5s6t" path="res://OtherAssets/Sound/dayscreenmusic.wav" id="2_2hig8"]
-
-[sub_resource type="Gradient" id="Gradient_q02qf"]
-offsets = PackedFloat32Array(0.987097)
-colors = PackedColorArray(0.419608, 0.823529, 0.619608, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1vb5m"]
-gradient = SubResource("Gradient_q02qf")
+[ext_resource type="Texture2D" uid="uid://c1w1442uhmwma" path="res://Assets2D/Day_Screen.PNG" id="2_o41ob"]
+[ext_resource type="Texture2D" uid="uid://dvnlwqeq6a74s" path="res://Assets2D/UIAssets/Background_Button.PNG" id="3_23fhc"]
+[ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="4_kvr4w"]
 
 [node name="dayscreen" type="Control"]
 layout_mode = 3
@@ -24,36 +20,46 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.004
 anchor_bottom = 1.005
-offset_right = 0.391968
-offset_bottom = -0.23999
-texture = SubResource("GradientTexture2D_1vb5m")
+offset_right = 15.0001
+offset_bottom = -2.5
+texture = ExtResource("2_o41ob")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="Day" type="Label" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.368
-anchor_top = 0.861
-anchor_right = 0.488
-anchor_bottom = 1.0
-offset_left = 0.0639648
-offset_top = 0.0719604
-offset_right = -0.176025
-offset_bottom = 3.0
-theme_override_font_sizes/font_size = 65
+anchor_left = 0.275
+anchor_top = 0.762857
+anchor_right = 0.71
+anchor_bottom = 0.981429
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_23fhc")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4105
+anchor_top = 0.832857
+anchor_right = 0.5895
+anchor_bottom = 0.965714
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Day" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_kvr4w")
+theme_override_font_sizes/font_size = 150
 text = "Day "
 
-[node name="Daynum" type="Label" parent="." groups=["dayscreencount"]]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.516
-anchor_top = 0.872
-anchor_right = 0.55
-anchor_bottom = 1.015
-offset_left = -0.432007
-offset_top = -0.0560303
-offset_right = 0.399963
-offset_bottom = 0.279907
-theme_override_font_sizes/font_size = 65
+[node name="Daynum" type="Label" parent="HBoxContainer" groups=["dayscreencount"]]
+layout_mode = 2
+theme = ExtResource("4_kvr4w")
+theme_override_font_sizes/font_size = 150
 text = "1"
 
 [node name="Timer" type="Timer" parent="."]

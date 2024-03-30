@@ -1,20 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://ci34ayh2s65fo"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/burgerTray.gd" id="1_nkrxw"]
+[ext_resource type="Texture2D" uid="uid://cemani8menq43" path="res://Assets2D/misc/Ticket_Holder.PNG" id="2_7bfpd"]
 [ext_resource type="Texture2D" uid="uid://dulofc0urj248" path="res://Assets2D/buildAssets/Tray.png" id="2_y8xdu"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_6b2vf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwhjo"]
 
 [node name="burgerTray" type="Area2D" groups=["burgerTray"]]
 script = ExtResource("1_nkrxw")
 
-[node name="ticketHolder" type="MeshInstance2D" parent="."]
+[node name="ticketHolder" type="TextureRect" parent="."]
 visible = false
-position = Vector2(181, 0)
-scale = Vector2(62.25, 126.75)
-mesh = SubResource("BoxMesh_6b2vf")
+offset_left = 89.0
+offset_top = -91.0
+offset_right = 275.0
+offset_bottom = 76.0
+texture = ExtResource("2_7bfpd")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rwhjo")

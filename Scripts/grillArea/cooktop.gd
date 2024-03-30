@@ -14,8 +14,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("mouseClick"):
 		if canHoldPatty and collidingPatty:
-			print("meowmeow")
 			heldPatty.snapToGrill(self.global_position)
+			heldPatty.reparent(self)
 			canHoldPatty = false
 		
 	elif !Input.is_action_just_released("mouseClick") and !Input.is_action_pressed("mouseClick"):
@@ -28,7 +28,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("patty") and canHoldPatty:
-		print("enter")
 		heldPatty = body
 		collidingPatty = true
 		
@@ -38,7 +37,6 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body == heldPatty:
-		print("exit")
 		canHoldPatty = true
 		collidingPatty = false
 		

@@ -1,18 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://6v3p1p6eibu0"]
+[gd_scene load_steps=13 format=3 uid="uid://6v3p1p6eibu0"]
 
-[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/grill.png" id="1_rty3p"]
+[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/Grill.png" id="1_rty3p"]
+[ext_resource type="Script" path="res://Scenes/GrillArea/grill_area.gd" id="1_slhkf"]
 [ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
 [ext_resource type="Texture2D" uid="uid://cu0glqmog1j8p" path="res://Assets2D/misc/ButtonUp.png" id="2_08cpd"]
 [ext_resource type="PackedScene" uid="uid://cocyyg8ps4hq5" path="res://Scenes/GrillArea/cooktop.tscn" id="2_wnctg"]
 [ext_resource type="Texture2D" uid="uid://ds0l7ksxg552d" path="res://Assets2D/misc/ButtonDoen.png" id="3_ibgjn"]
 [ext_resource type="PackedScene" uid="uid://cyic7t5yfpo8n" path="res://Scenes/GrillArea/spatula.tscn" id="3_upwfe"]
 [ext_resource type="PackedScene" uid="uid://b8hns1ngiicnc" path="res://Scenes/GrillArea/grill_to_build.tscn" id="4_x3esj"]
-[ext_resource type="PackedScene" uid="uid://cll14i0d7ol1g" path="res://Scenes/GrillArea/chicken_patty_spawner.tscn" id="5_cpdi6"]
+[ext_resource type="PackedScene" uid="uid://d16qytf4rw7hu" path="res://Scenes/GrillArea/chicken_patty.tscn" id="9_fertg"]
+[ext_resource type="PackedScene" uid="uid://coep7vy5ag3h4" path="res://Scenes/GrillArea/trash_beef_patty.tscn" id="10_46jx2"]
+[ext_resource type="Texture2D" uid="uid://ddpj0yipvr1ma" path="res://Assets2D/grillAssets/GrillOptionsLid.png" id="10_apahq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mhs7s"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ppw7"]
 radius = 29.0689
 
 [node name="GrillArea" type="Node2D"]
+script = ExtResource("1_slhkf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -1.0
@@ -45,7 +49,9 @@ stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
 position = Vector2(107, 102)
-shape = SubResource("CircleShape2D_mhs7s")
+shape = SubResource("CircleShape2D_4ppw7")
+
+[node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
 position = Vector2(338, 256)
@@ -69,17 +75,36 @@ scale = Vector2(1.01381, 0.996506)
 [node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
 position = Vector2(908, 458)
 
-[node name="spatulaBelow" type="Node2D" parent="."]
+[node name="goodToppings" type="Node2D" parent="."]
 
-[node name="spatula" parent="spatulaBelow" instance=ExtResource("3_upwfe")]
-position = Vector2(754, 389)
-
-[node name="pattySpawner" parent="." instance=ExtResource("2_7hck8")]
+[node name="pattySpawner" parent="goodToppings" instance=ExtResource("2_7hck8")]
 position = Vector2(87, 278)
 
-[node name="chickenPattySpawner" parent="." instance=ExtResource("5_cpdi6")]
+[node name="pattySpawnerchicken" parent="goodToppings" instance=ExtResource("2_7hck8")]
+position = Vector2(61, 486)
+patty = ExtResource("9_fertg")
+
+[node name="trashToppings" type="Node2D" parent="."]
 visible = false
-position = Vector2(79, 438)
+
+[node name="pattySpawner" parent="trashToppings" instance=ExtResource("2_7hck8")]
+position = Vector2(86, 279)
+patty = ExtResource("10_46jx2")
 
 [node name="spatulaAbove" type="Node2D" parent="."]
 position = Vector2(107, 405)
+
+[node name="spatula" parent="spatulaAbove" instance=ExtResource("3_upwfe")]
+position = Vector2(647, -16)
+
+[node name="lid" type="TextureRect" parent="."]
+visible = false
+offset_right = 1023.0
+offset_bottom = 705.0
+texture = ExtResource("10_apahq")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="button" to="." method="_on_button_mouse_exited"]

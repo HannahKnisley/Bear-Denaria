@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy8eh6g6fb36l"
-path="res://.godot/imported/Grill.png-d6856da7644f05cc04b552e59a50ea83.ctex"
+uid="uid://cg1oh52d68cqw"
+path="res://.godot/imported/TopChickenOvercooked.png-453e7e2950539e92ab470da6884d982b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/grillAssets/Grill.png"
-dest_files=["res://.godot/imported/Grill.png-d6856da7644f05cc04b552e59a50ea83.ctex"]
+source_file="res://Assets2D/grillAssets/chickenPatties/TopChickenOvercooked.png"
+dest_files=["res://.godot/imported/TopChickenOvercooked.png-453e7e2950539e92ab470da6884d982b.ctex"]
 
 [params]
 

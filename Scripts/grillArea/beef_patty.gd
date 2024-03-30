@@ -147,7 +147,6 @@ func _on_cook_timer_timeout():
 	if bottomCook < 100:
 		bottomCook += 2
 		$cookingMeter.doStep()
-		print(bottomCook)
 		if bottomCook == 26:
 			self.updateAppearance()
 		elif bottomCook == 50:

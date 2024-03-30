@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy8eh6g6fb36l"
-path="res://.godot/imported/Grill.png-d6856da7644f05cc04b552e59a50ea83.ctex"
+uid="uid://bpyiydjqn3whb"
+path="res://.godot/imported/TopTrashBurgerCooked.png-b0ac12cc1ad3b42ee0da01b18a433062.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/grillAssets/Grill.png"
-dest_files=["res://.godot/imported/Grill.png-d6856da7644f05cc04b552e59a50ea83.ctex"]
+source_file="res://Assets2D/grillAssets/trashBeefPatties/TopTrashBurgerCooked.png"
+dest_files=["res://.godot/imported/TopTrashBurgerCooked.png-b0ac12cc1ad3b42ee0da01b18a433062.ctex"]
 
 [params]
 

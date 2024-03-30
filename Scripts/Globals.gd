@@ -3,11 +3,16 @@ extends Node2D
 var firstCustomer
 var customerAtCounter = false
 
+var dayCount = 1
+var budget = 0
+
 var numOrders = 0
 
 var lastBun = "top"
 
 var readyForTicket = false
+
+
 
 var burger_type
 var tomato = false

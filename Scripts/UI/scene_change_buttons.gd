@@ -1,10 +1,11 @@
 extends Control
 
 var atOrderScreen = true
+var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Globals.budget = rng.randi_range(3,8)*10
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,6 +14,9 @@ func _process(delta):
 		$takeOrder.visible = true
 	else:
 		$takeOrder.visible = false
+		
+	$budget/budgetNum.text = "$"+str(Globals.budget)
+
 
 
 func _on_order_button_pressed():

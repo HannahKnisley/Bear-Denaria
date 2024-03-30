@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy8eh6g6fb36l"
-path="res://.godot/imported/Grill.png-d6856da7644f05cc04b552e59a50ea83.ctex"
+uid="uid://c1kwwcgvrm073"
+path="res://.godot/imported/BottomChickenRaw.png-08b7ab583d51c8f728c9e712bfec2325.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/grillAssets/Grill.png"
-dest_files=["res://.godot/imported/Grill.png-d6856da7644f05cc04b552e59a50ea83.ctex"]
+source_file="res://Assets2D/grillAssets/chickenPatties/BottomChickenRaw.png"
+dest_files=["res://.godot/imported/BottomChickenRaw.png-08b7ab583d51c8f728c9e712bfec2325.ctex"]
 
 [params]
 

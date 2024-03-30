@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 @export var patty: PackedScene
 
@@ -6,15 +6,17 @@ var canSpawn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawn_patty()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released("mouseClick"):
-		await get_tree().create_timer(0.1).timeout
-		if canSpawn:
-			spawn_patty()
+	if self.get_child_count() == 0 and self.get_parent().visible == true:
+		spawn_patty()
+			
+	if self.get_parent().visible == false:
+		for child in self.get_children():
+			child.queue_free()
 
 
 func spawn_patty():
@@ -23,12 +25,3 @@ func spawn_patty():
 	newPatty.global_position = self.global_position
 	
 
-
-func _on_body_entered(body):
-	if body.is_in_group("patty"):
-		canSpawn = false
-
-
-func _on_body_exited(body):
-	if body.is_in_group("patty"):
-		canSpawn = true
