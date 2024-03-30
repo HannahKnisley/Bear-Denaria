@@ -22,3 +22,5 @@ func _on_child_entered_tree(node):
 	if node.is_in_group("cup"):
 		myCup = node
 		fillCup()
+		
+		$sodafill.play()

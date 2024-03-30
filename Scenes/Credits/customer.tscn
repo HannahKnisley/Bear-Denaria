@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://umg6kc6u6ic"]
+[gd_scene load_steps=5 format=3 uid="uid://umg6kc6u6ic"]
 
 [ext_resource type="Script" path="res://Scripts/Order/customer.gd" id="1_arx6u"]
+[ext_resource type="AudioStream" uid="uid://blaj3jiqyff8q" path="res://OtherAssets/Sound/bell.wav" id="2_g5hyv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oijop"]
 size = Vector2(87, 38.5)
@@ -9,6 +10,10 @@ size = Vector2(87, 38.5)
 
 [node name="Customer" type="Node2D"]
 script = ExtResource("1_arx6u")
+
+[node name="bell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_g5hyv")
+autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(171, 50)
