@@ -1,22 +1,71 @@
-[gd_scene load_steps=4 format=3 uid="uid://c57l62shnoq4o"]
+[gd_scene load_steps=8 format=3 uid="uid://c57l62shnoq4o"]
 
 [ext_resource type="Script" path="res://Scripts/fryArea/fries.gd" id="1_ku1id"]
+[ext_resource type="Texture2D" uid="uid://brrh3asc3rb5s" path="res://Assets2D/fryAssets/Raw_Fries.PNG" id="2_2mfhy"]
+[ext_resource type="Texture2D" uid="uid://mp5fq87fhtsy" path="res://Assets2D/fryAssets/Undercooked_Fries.PNG" id="3_k07kg"]
+[ext_resource type="Texture2D" uid="uid://b2tjhngtfgs7k" path="res://Assets2D/fryAssets/Ripe_Fries.PNG" id="4_3rqmj"]
+[ext_resource type="Texture2D" uid="uid://cxukfm56554sn" path="res://Assets2D/fryAssets/Overcooked_Fries.PNG" id="5_0ohb4"]
+[ext_resource type="Texture2D" uid="uid://b5bw24pbr5tnt" path="res://Assets2D/fryAssets/Burnt_Fries.PNG" id="6_1216w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0kdn7"]
-radius = 24.0416
-
-[sub_resource type="SphereMesh" id="SphereMesh_6ol3t"]
+radius = 43.2897
 
 [node name="fries" type="Area2D" groups=["fries"]]
+position = Vector2(48, 0)
 script = ExtResource("1_ku1id")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0kdn7")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(1, 1, 0.164706, 1)
-scale = Vector2(47.3033, 46.75)
-mesh = SubResource("SphereMesh_6ol3t")
+[node name="fry1" type="TextureRect" parent="."]
+offset_left = -71.0
+offset_top = -60.0
+offset_right = 70.0
+offset_bottom = 66.0
+texture = ExtResource("2_2mfhy")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="fry2" type="TextureRect" parent="."]
+visible = false
+offset_left = -67.0
+offset_top = -58.0
+offset_right = 64.0
+offset_bottom = 62.0
+texture = ExtResource("3_k07kg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="fry3" type="TextureRect" parent="."]
+visible = false
+offset_left = -62.0
+offset_top = -56.0
+offset_right = 65.0
+offset_bottom = 60.0
+texture = ExtResource("4_3rqmj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="fry4" type="TextureRect" parent="."]
+visible = false
+offset_left = -68.0
+offset_top = -62.0
+offset_right = 77.0
+offset_bottom = 63.0
+texture = ExtResource("5_0ohb4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="fry5" type="TextureRect" parent="."]
+visible = false
+offset_left = -69.0
+offset_top = -59.0
+offset_right = 72.0
+offset_bottom = 57.0
+texture = ExtResource("6_1216w")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

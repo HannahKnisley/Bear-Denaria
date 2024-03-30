@@ -239,6 +239,6 @@ position = Vector2(-0.312498, 0.0624895)
 scale = Vector2(0.163375, 0.164125)
 sprite_frames = SubResource("SpriteFrames_j7mhk")
 animation = &"pattyAnimation"
-frame_progress = 0.76641
+frame_progress = 0.198363
 
 [connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]

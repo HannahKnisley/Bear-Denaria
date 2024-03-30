@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgphwdac77pdj"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/top_bun.gd" id="1_tta2a"]
+[ext_resource type="Texture2D" uid="uid://kgmum3fphoq7" path="res://Assets2D/buildAssets/TrashtopBun.png" id="2_h3ndq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ofqs"]
+size = Vector2(50, 5)
+
+[node name="topBun" type="RigidBody2D"]
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_tta2a")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+scale = Vector2(1.8, 1.8)
+shape = SubResource("RectangleShape2D_7ofqs")
+
+[node name="temp" type="TextureRect" parent="."]
+offset_left = -85.0
+offset_top = -100.0
+offset_right = 87.0
+offset_bottom = 55.0
+texture = ExtResource("2_h3ndq")
+expand_mode = 1
+stretch_mode = 5

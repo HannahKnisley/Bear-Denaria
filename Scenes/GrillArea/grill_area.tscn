@@ -1,21 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://6v3p1p6eibu0"]
+[gd_scene load_steps=10 format=3 uid="uid://6v3p1p6eibu0"]
 
-[ext_resource type="Texture2D" uid="uid://ciobddeo0rdft" path="res://Assets2D/grillAssets/Grillhehe.png" id="1_obic3"]
+[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/Grill.png" id="1_rty3p"]
 [ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
+[ext_resource type="Texture2D" uid="uid://cu0glqmog1j8p" path="res://Assets2D/misc/ButtonUp.png" id="2_08cpd"]
 [ext_resource type="PackedScene" uid="uid://cocyyg8ps4hq5" path="res://Scenes/GrillArea/cooktop.tscn" id="2_wnctg"]
+[ext_resource type="Texture2D" uid="uid://ds0l7ksxg552d" path="res://Assets2D/misc/ButtonDoen.png" id="3_ibgjn"]
 [ext_resource type="PackedScene" uid="uid://cyic7t5yfpo8n" path="res://Scenes/GrillArea/spatula.tscn" id="3_upwfe"]
 [ext_resource type="PackedScene" uid="uid://b8hns1ngiicnc" path="res://Scenes/GrillArea/grill_to_build.tscn" id="4_x3esj"]
 [ext_resource type="PackedScene" uid="uid://cll14i0d7ol1g" path="res://Scenes/GrillArea/chicken_patty_spawner.tscn" id="5_cpdi6"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhs7s"]
+radius = 29.0689
+
 [node name="GrillArea" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1000.0
-offset_bottom = 700.0
-texture = ExtResource("1_obic3")
+offset_left = -1.0
+offset_top = -25.0
+offset_right = 1023.0
+offset_bottom = 732.0
+texture = ExtResource("1_rty3p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="button" type="Area2D" parent="."]
+
+[node name="buttonUp" type="TextureRect" parent="button"]
+offset_top = 20.0
+offset_right = 1019.0
+offset_bottom = 708.0
+texture = ExtResource("2_08cpd")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="buttonDown" type="TextureRect" parent="button"]
+visible = false
+offset_top = 20.0
+offset_right = 1019.0
+offset_bottom = 708.0
+texture = ExtResource("3_ibgjn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
+position = Vector2(107, 102)
+shape = SubResource("CircleShape2D_mhs7s")
 
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
 position = Vector2(338, 256)

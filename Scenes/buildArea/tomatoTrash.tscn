@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl5q8oxkuqhgo"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/toppings.gd" id="1_fqkfs"]
+[ext_resource type="Texture2D" uid="uid://cly1su1prxc52" path="res://Assets2D/buildAssets/TrashTomato.png" id="2_spt3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7afvo"]
+size = Vector2(119, 20)
+
+[node name="lettuce" type="RigidBody2D"]
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_fqkfs")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_7afvo")
+
+[node name="temp" type="TextureRect" parent="."]
+offset_left = -80.0
+offset_top = -53.0
+offset_right = 74.0
+offset_bottom = 94.0
+texture = ExtResource("2_spt3y")
+expand_mode = 1
+stretch_mode = 5

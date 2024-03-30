@@ -19,6 +19,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("mouseClick"):
 		if canHold and mouseIn:
 			followMouse = true
+		else:
+			followMouse = false
 	if Input.is_action_pressed("mouseClick"):
 		if canHold and followMouse:
 			self.translate(toppingToMouse())
@@ -28,14 +30,27 @@ func _process(delta):
 			if onTray:
 				self.reparent(myTray)
 				canHold = false
-			followMouse = false
+		followMouse = false
 			
 	if !followMouse and canHold:
 		self.translate(toppingToSnap())
 
 func cook():
 	if cookLevel != 100:
-		cookLevel += 2
+		cookLevel += 1
+		if cookLevel > 25:
+			$fry1.visible = false
+			$fry2.visible = true
+		if cookLevel > 45:
+			$fry2.visible = false
+			$fry3.visible = true
+		if cookLevel >70:
+			$fry3.visible = false
+			$fry4.visible = true
+		if cookLevel == 90:
+			$fry4.visible = false
+			$fry5.visible = true
+
 
 func toppingToMouse():
 	var targetoPos = get_global_mouse_position()

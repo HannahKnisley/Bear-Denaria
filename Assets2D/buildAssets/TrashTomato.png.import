@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy8eh6g6fb36l"
-path="res://.godot/imported/Grill.png-d6856da7644f05cc04b552e59a50ea83.ctex"
+uid="uid://cly1su1prxc52"
+path="res://.godot/imported/TrashTomato.png-28693176a94364ff4ebf6cc8cbe7fc02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets2D/grillAssets/Grill.png"
-dest_files=["res://.godot/imported/Grill.png-d6856da7644f05cc04b552e59a50ea83.ctex"]
+source_file="res://Assets2D/buildAssets/TrashTomato.png"
+dest_files=["res://.godot/imported/TrashTomato.png-28693176a94364ff4ebf6cc8cbe7fc02.ctex"]
 
 [params]
 

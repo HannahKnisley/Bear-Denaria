@@ -6,7 +6,7 @@ var myMeter
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	myMeter = get_node("../cookingMeter")
+	myMeter = get_node("../cookingMeter2")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

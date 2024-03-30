@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bynsovbi47u0h"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/toppings.gd" id="1_ea0i4"]
+[ext_resource type="Texture2D" uid="uid://bj8txmxg8sgou" path="res://Assets2D/buildAssets/TrashCheese.png" id="2_cji3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7afvo"]
+size = Vector2(119, 3)
+
+[node name="lettuce" type="RigidBody2D"]
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_ea0i4")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 56.5)
+shape = SubResource("RectangleShape2D_7afvo")
+
+[node name="temp" type="TextureRect" parent="."]
+offset_left = -80.0
+offset_top = -46.0
+offset_right = 74.0
+offset_bottom = 101.0
+texture = ExtResource("2_cji3u")
+expand_mode = 1
+stretch_mode = 5

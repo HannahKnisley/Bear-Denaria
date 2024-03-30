@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://de0au55jlsneo"]
+
+[ext_resource type="Script" path="res://Scripts/buildArea/toppings.gd" id="1_gedpa"]
+[ext_resource type="Texture2D" uid="uid://bpw5eu0j7smq2" path="res://Assets2D/buildAssets/TrashOnion.png" id="2_dvx1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7afvo"]
+size = Vector2(119, 12)
+
+[node name="lettuce" type="RigidBody2D"]
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_gedpa")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_7afvo")
+
+[node name="temp" type="TextureRect" parent="."]
+offset_left = -75.0
+offset_top = -38.0
+offset_right = 79.0
+offset_bottom = 109.0
+texture = ExtResource("2_dvx1x")
+expand_mode = 1
+stretch_mode = 5
