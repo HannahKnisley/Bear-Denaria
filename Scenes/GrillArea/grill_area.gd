@@ -16,9 +16,11 @@ func _process(delta):
 			
 		$lid.visible = true
 		if $goodToppings.visible == true:
+			$metal.play()
 			$goodToppings.visible = false
 			$trashToppings.visible = true
 		else:
+			$metal.play()
 			$trashToppings.visible = false
 			$goodToppings.visible = true
 		await get_tree().create_timer(1).timeout
