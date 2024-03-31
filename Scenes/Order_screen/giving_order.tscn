@@ -28,7 +28,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="curCustomer" type="Node2D" parent="."]
-position = Vector2(550, 339)
+position = Vector2(603, 339)
 
 [node name="desk" type="TextureRect" parent="."]
 offset_left = -4.0
@@ -40,10 +40,10 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="curTray" type="Node2D" parent="."]
-position = Vector2(513, 599)
+position = Vector2(513, 586)
 
 [node name="qualityMeter" parent="." instance=ExtResource("2_7r6bb")]
-position = Vector2(515, 134)
+position = Vector2(193, 134)
 
 [node name="waitLine" type="Node2D" parent="."]
 position = Vector2(-445, 363)

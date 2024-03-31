@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://befklmitxuu1a"]
+[gd_scene load_steps=11 format=3 uid="uid://befklmitxuu1a"]
 
 [ext_resource type="PackedScene" uid="uid://olv3du7cskf" path="res://Scenes/fryArea/fry_spawner.tscn" id="1_f4aeh"]
 [ext_resource type="Texture2D" uid="uid://dmf0jv3tpep6g" path="res://Assets2D/fryAssets/Fry_Station.PNG" id="1_ww0vv"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/fryArea/frye2r.gd" id="3_1le65"]
 [ext_resource type="PackedScene" uid="uid://d3ww2h6cbqe1p" path="res://Scenes/fryArea/skip_fries.tscn" id="3_fowl4"]
 [ext_resource type="PackedScene" uid="uid://bogtpup5w2g4m" path="res://Scenes/fryArea/pipeCleaners.tscn" id="6_6n0mh"]
+[ext_resource type="Script" path="res://Scripts/buildArea/trash_toppingSpawner.gd" id="6_7kgcm"]
+[ext_resource type="Script" path="res://Scripts/fryArea/frySpawn.gd" id="6_614ww"]
 [ext_resource type="PackedScene" uid="uid://3pgtymcr6hkb" path="res://Scenes/GrillArea/cooking_meter.tscn" id="6_kyg62"]
 
 [node name="fryArea" type="Node2D"]
@@ -44,9 +46,11 @@ stretch_mode = 5
 
 [node name="frySpawner" parent="." instance=ExtResource("1_f4aeh")]
 position = Vector2(64, 484)
+script = ExtResource("6_614ww")
 
 [node name="pipeCleanerSpawner" parent="." instance=ExtResource("1_f4aeh")]
 position = Vector2(942, 485)
+script = ExtResource("6_7kgcm")
 topping = ExtResource("6_6n0mh")
 
 [node name="skipFries" parent="." instance=ExtResource("3_fowl4")]

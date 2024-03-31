@@ -17,7 +17,6 @@ shape = SubResource("CircleShape2D_jkx0o")
 
 [node name="sizzle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_fpvtv")
-volume_db = -4.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

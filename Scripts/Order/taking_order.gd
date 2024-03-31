@@ -39,6 +39,7 @@ func takeOrder(customer):
 	$button.visible = false
 	$/root/WorldRoot/CanvasLayer/MainUI/screenButtons.visible = false
 	$name.text = customer.myName
+	$name.visible = true
 	newTicket = ticket.instantiate()
 	$/root/WorldRoot/CanvasLayer/MainUI/ticketContainer.add_child(newTicket)
 	newTicket.myCustomer = customer
@@ -95,10 +96,11 @@ func takeOrder(customer):
 	$/root/WorldRoot/CanvasLayer/MainUI/screenButtons.visible = true
 	$bear.visible = true
 	$bearWrite.visible = false
+	$name.visible = false
 
 
 func _on_spawn_customer_timeout():
-	if Globals.numCustomers < 5:
+	if Globals.numCustomers < 4:
 		var mob = customer.instantiate()
 		$orderLine.add_child(mob)
 		mob.global_position = $orderLine.global_position

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=31 format=3 uid="uid://bbv7j14qeefkv"]
 
 [ext_resource type="Texture2D" uid="uid://cfnjgyquldkgm" path="res://Assets2D/buildAssets/SetUpStation.png" id="1_asei2"]
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
@@ -19,12 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://d0gh226kfwe60" path="res://Scenes/buildArea/pickle.tscn" id="11_pvgag"]
 [ext_resource type="Texture2D" uid="uid://cbui0yirl1mb3" path="res://Assets2D/buildAssets/SetUpStationTrashOptions.png" id="14_s7xov"]
 [ext_resource type="PackedScene" uid="uid://bgphwdac77pdj" path="res://Scenes/buildArea/top_bunTrash.tscn" id="15_lshqk"]
+[ext_resource type="Script" path="res://Scripts/buildArea/trash_bun_spawn.gd" id="16_f2l6n"]
 [ext_resource type="PackedScene" uid="uid://b0xhmln2egxny" path="res://Scenes/buildArea/bottom_bunTrash.tscn" id="16_twmug"]
 [ext_resource type="PackedScene" uid="uid://b5b3l1056ag5f" path="res://Scenes/buildArea/lettuceTrash.tscn" id="17_vpiva"]
 [ext_resource type="PackedScene" uid="uid://bl5q8oxkuqhgo" path="res://Scenes/buildArea/tomatoTrash.tscn" id="18_bkfsy"]
 [ext_resource type="PackedScene" uid="uid://de0au55jlsneo" path="res://Scenes/buildArea/onionTrash.tscn" id="19_fr35f"]
+[ext_resource type="Script" path="res://Scripts/buildArea/trash_toppingSpawner.gd" id="19_ipjh1"]
 [ext_resource type="PackedScene" uid="uid://bynsovbi47u0h" path="res://Scenes/buildArea/cheeseTrash.tscn" id="20_54127"]
-[ext_resource type="PackedScene" uid="uid://b4i7tv1nos6mf" path="res://Scenes/buildArea/pickleTrash.tscn" id="21_3adps"]
 [ext_resource type="Texture2D" uid="uid://dh5dwkw1rj0qm" path="res://Assets2D/buildAssets/SetUpStationOptionsLid.png" id="23_wmtp7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lv2mm"]
@@ -140,28 +141,34 @@ stretch_mode = 5
 
 [node name="bunSpawn" parent="trashToppings" instance=ExtResource("5_c5fhj")]
 position = Vector2(181, 524)
+script = ExtResource("16_f2l6n")
 topBun = ExtResource("15_lshqk")
 bottomBun = ExtResource("16_twmug")
 
 [node name="lettuceSpawner" parent="trashToppings" instance=ExtResource("6_q436k")]
 position = Vector2(41, 507)
+script = ExtResource("19_ipjh1")
 topping = ExtResource("17_vpiva")
 
 [node name="tomatoSpawner" parent="trashToppings" instance=ExtResource("6_q436k")]
 position = Vector2(205, 370)
+script = ExtResource("19_ipjh1")
 topping = ExtResource("18_bkfsy")
 
 [node name="onionSpawner" parent="trashToppings" instance=ExtResource("6_q436k")]
 position = Vector2(73, 350)
+script = ExtResource("19_ipjh1")
 topping = ExtResource("19_fr35f")
 
 [node name="cheeseSpawner" parent="trashToppings" instance=ExtResource("6_q436k")]
 position = Vector2(222, 259)
+script = ExtResource("19_ipjh1")
 topping = ExtResource("20_54127")
 
 [node name="pickleSpawner" parent="trashToppings" instance=ExtResource("6_q436k")]
 position = Vector2(105, 247)
-topping = ExtResource("21_3adps")
+script = ExtResource("19_ipjh1")
+topping = ExtResource("11_pvgag")
 
 [node name="lid" type="TextureRect" parent="."]
 visible = false

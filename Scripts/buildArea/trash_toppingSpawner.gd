@@ -3,7 +3,6 @@ extends Node2D
 @export var topping: PackedScene
 
 var canSpawn = false
-var buttonPressed = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,10 +11,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if self.get_child_count() == 0 and self.get_parent().visible == true and Globals.budget>1:
+	if self.get_child_count() == 0 and self.get_parent().visible == true:
 		spawn_item()
-	if self.get_parent().visible == false or Globals.budget<2:
-		buttonPressed = true
+	if self.get_parent().visible == false:
 		for child in self.get_children():
 			child.queue_free()
 
@@ -25,7 +23,3 @@ func spawn_item():
 	self.add_child(newTopping)
 	newTopping.global_position = self.global_position
 	
-	if buttonPressed == false:
-		Globals.budget -= 2
-	else:
-		buttonPressed = false

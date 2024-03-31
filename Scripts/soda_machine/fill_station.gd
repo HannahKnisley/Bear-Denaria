@@ -9,7 +9,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Globals.budget <3:
+		$CollisionShape2D.disabled = true
 	
 func fillCup():
 	while myCup.get_child(1).value < 100:
@@ -22,5 +23,5 @@ func _on_child_entered_tree(node):
 	if node.is_in_group("cup"):
 		myCup = node
 		fillCup()
-		
+		Globals.budget -= 3
 		$sodafill.play()

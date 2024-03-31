@@ -12,10 +12,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if self.get_child_count() == 0 and self.get_parent().visible == true and Globals.budget>1:
+	if self.get_child_count() == 0 and self.get_parent().visible == true and Globals.budget>=3:
 		spawn_item()
 	if self.get_parent().visible == false or Globals.budget<2:
-		buttonPressed = true
 		for child in self.get_children():
 			child.queue_free()
 
@@ -26,6 +25,6 @@ func spawn_item():
 	newTopping.global_position = self.global_position
 	
 	if buttonPressed == false:
-		Globals.budget -= 2
+		Globals.budget -= 3
 	else:
 		buttonPressed = false

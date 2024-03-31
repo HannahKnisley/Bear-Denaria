@@ -5,6 +5,13 @@ extends Control
 func _ready():
 	$HBoxContainer/Daynum.text = str(Globals.dayCount)
 
+	Globals.numOrders = 0
+	Globals.numCustomers = 0
+	Globals.customersServed = 0
+
+	Globals.lastBun = "top"
+
+	Globals.readyForTicket = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

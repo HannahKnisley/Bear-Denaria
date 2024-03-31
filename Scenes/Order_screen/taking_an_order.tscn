@@ -95,16 +95,17 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="spawnCustomer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 60.0
 autostart = true
 
 [node name="orderLine" type="Node2D" parent="."]
 position = Vector2(-430, 285)
 
 [node name="name" type="Label" parent="."]
-offset_left = 380.0
+visible = false
+offset_left = 438.0
 offset_top = 548.0
-offset_right = 616.0
+offset_right = 674.0
 offset_bottom = 627.0
 theme = ExtResource("10_ajo1m")
 theme_override_colors/font_color = Color(1, 1, 1, 1)

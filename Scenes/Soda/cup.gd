@@ -27,7 +27,7 @@ func _process(delta):
 			
 	if Input.is_action_just_released("mouseClick"):
 		if followMouse:
-			if onTray:
+			if onTray and full:
 				self.reparent(myStation)
 				canHold = false
 			elif onStation and !full:

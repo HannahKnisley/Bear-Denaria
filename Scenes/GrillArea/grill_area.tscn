@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://b8hns1ngiicnc" path="res://Scenes/GrillArea/grill_to_build.tscn" id="4_x3esj"]
 [ext_resource type="PackedScene" uid="uid://d16qytf4rw7hu" path="res://Scenes/GrillArea/chicken_patty.tscn" id="9_fertg"]
 [ext_resource type="Script" path="res://Scripts/grillArea/trash_patty_spawner.gd" id="9_h5i7h"]
+[ext_resource type="PackedScene" uid="uid://coep7vy5ag3h4" path="res://Scenes/GrillArea/trash_beef_patty.tscn" id="10_46jx2"]
 [ext_resource type="Texture2D" uid="uid://ddpj0yipvr1ma" path="res://Assets2D/grillAssets/GrillOptionsLid.png" id="10_apahq"]
-[ext_resource type="AudioStream" uid="uid://obn3b11vqbn" path="res://OtherAssets/Sound/lidopen.wav" id="12_s8l2d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ppw7"]
 radius = 29.0689
@@ -91,7 +91,7 @@ visible = false
 [node name="pattySpawner" parent="trashToppings" instance=ExtResource("2_7hck8")]
 position = Vector2(86, 279)
 script = ExtResource("9_h5i7h")
-patty = null
+patty = ExtResource("10_46jx2")
 
 [node name="spatulaAbove" type="Node2D" parent="."]
 position = Vector2(107, 405)
@@ -107,9 +107,6 @@ texture = ExtResource("10_apahq")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
-
-[node name="metal" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_s8l2d")
 
 [connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="button" to="." method="_on_button_mouse_exited"]
