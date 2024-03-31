@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6v3p1p6eibu0"]
+[gd_scene load_steps=16 format=3 uid="uid://6v3p1p6eibu0"]
 
 [ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/grill.png" id="1_rty3p"]
 [ext_resource type="Script" path="res://Scenes/GrillArea/grill_area.gd" id="1_slhkf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/grillArea/trash_patty_spawner.gd" id="9_h5i7h"]
 [ext_resource type="PackedScene" uid="uid://coep7vy5ag3h4" path="res://Scenes/GrillArea/trash_beef_patty.tscn" id="10_46jx2"]
 [ext_resource type="Texture2D" uid="uid://ddpj0yipvr1ma" path="res://Assets2D/grillAssets/GrillOptionsLid.png" id="10_apahq"]
+[ext_resource type="AudioStream" uid="uid://hdxmb0mb6aw8" path="res://OtherAssets/frying-steak-74556.wav" id="14_lgg37"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ppw7"]
 radius = 29.0689
@@ -112,6 +113,10 @@ texture = ExtResource("10_apahq")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
+
+[node name="steak" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_lgg37")
+volume_db = 24.0
 
 [connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="button" to="." method="_on_button_mouse_exited"]

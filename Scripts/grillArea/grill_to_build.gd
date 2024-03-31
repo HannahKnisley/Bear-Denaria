@@ -17,6 +17,7 @@ func _process(delta):
 	if Input.is_action_just_released("mouseClick") and !sliding:
 		
 		if pattyIn:
+			$/root/WorldRoot/GrillArea/steak.stop()
 			myPatty.set_collision_mask_value(1, false)
 			myPatty.set_collision_mask_value(2, true)
 			myPatty.reparent(self)
