@@ -14,4 +14,6 @@ func _process(delta):
 
 
 func _on_exit_button_pressed():
+	$leave.play()
+	await $leave.finished
 	get_tree().change_scene_to_file("res://Scenes/Titlescreen/title_screen.tscn")

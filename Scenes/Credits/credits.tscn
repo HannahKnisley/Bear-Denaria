@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgjpyudlqnhxa"]
+[gd_scene load_steps=10 format=3 uid="uid://cgjpyudlqnhxa"]
 
 [ext_resource type="Script" path="res://Scripts/credits/credits.gd" id="1_ldpqh"]
 [ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="2_ciwdq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ce3q3igk0bjx7" path="res://Assets2D/menu/Exit_Translucent.PNG" id="3_sham1"]
 [ext_resource type="Texture2D" uid="uid://bip82l6tlix62" path="res://Assets2D/grillAssets/Plate.png" id="5_1utpc"]
 [ext_resource type="FontFile" uid="uid://b3jqcnsrmvyaa" path="res://OtherAssets/Fonts/VertigoFLF.ttf" id="6_ipsb0"]
+[ext_resource type="AudioStream" uid="uid://dcgl525fscg60" path="res://OtherAssets/clicking.wav" id="7_yk4ii"]
 
 [sub_resource type="Gradient" id="Gradient_p0awi"]
 colors = PackedColorArray(0.0803864, 0.120179, 0.298216, 1, 2.35841e-06, 0, 0.685646, 1)
@@ -89,5 +90,9 @@ Artists:
 Ella Garcia and Haley Magee"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="leave" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_yk4ii")
+volume_db = 24.0
 
 [connection signal="pressed" from="exitButton" to="." method="_on_exit_button_pressed"]

@@ -50,7 +50,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-390, -479)
 stream = ExtResource("5_jeh7r")
 volume_db = 24.0
-pitch_scale = 2.52
 
 [node name="Label" type="Label" parent="startButton"]
 visible = false
@@ -96,7 +95,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-390, -479)
 stream = ExtResource("5_jeh7r")
 volume_db = 24.0
-pitch_scale = 2.47
 
 [node name="quitButton" type="TextureButton" parent="."]
 layout_mode = 2
@@ -115,7 +113,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-390, -479)
 stream = ExtResource("5_jeh7r")
 volume_db = 24.0
-pitch_scale = 2.52
 
 [node name="Label" type="Label" parent="quitButton"]
 visible = false

@@ -20,19 +20,28 @@ func _process(delta):
 
 
 func _on_order_button_pressed():
+	$screenButtons/orderButton/buttonsPartTwo.play()
+	await $screenButtons/orderButton/buttonsPartTwo.finished
 	atOrderScreen = true	
+	
+	
 	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/Order_screen.global_position + Vector2(500,350)
 	$ticketCollect.visible = false
 	$ticketCollect/CollisionShape2D.disabled = true
+	
 
 
 func _on_grill_button_pressed():
+	$screenButtons/grillButton/buttonssPartTwo.play()
+	#await $screenButtons/grillButton/buttonsPartTwo.finished
 	atOrderScreen = false
 	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/GrillArea.global_position + Vector2(500,350)
 	$ticketCollect.visible = false
 	$ticketCollect/CollisionShape2D.disabled = true
 
 func _on_build_button_pressed():
+	$screenButtons/buildButton/buttonsPartTwoo.play()
+	#await $screenButtons/buildButton/buttonsPartTwo.finished
 	atOrderScreen = false
 	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/build_area.global_position + Vector2(500,350)
 	$ticketCollect.visible = false
@@ -41,6 +50,8 @@ func _on_build_button_pressed():
 
 
 func _on_take_order_pressed():
+	$buttonsPartTwo.play()
+	await $buttonsPartTwo.finished
 	atOrderScreen = false
 	$screenButtons.visible = false
 	$/root/WorldRoot/Camera.global_position =  $/root/WorldRoot/taking_an_order.global_position + Vector2(500,350)
@@ -51,6 +62,8 @@ func _on_take_order_pressed():
 
 
 func _on_fry_button_pressed():
+	$screenButtons/fryButton/buttonsPartTwo.play()
+	await $screenButtons/fryButton/buttonsPartTwo.finished
 	atOrderScreen = false
 	$ticketCollect.visible = false
 	$ticketCollect/CollisionShape2D.disabled = true
@@ -58,6 +71,8 @@ func _on_fry_button_pressed():
 
 
 func _on_drink_button_pressed():
+	$screenButtons/drinkButton/buttonsPartTwo.play()
+	await $screenButtons/drinkButton/buttonsPartTwo.finished
 	atOrderScreen = false
 	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/drinkArea.global_position + Vector2(500,350)
 	if Globals.readyForTicket:

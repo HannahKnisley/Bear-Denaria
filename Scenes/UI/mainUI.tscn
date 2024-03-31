@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dwps88i147nc5"]
+[gd_scene load_steps=16 format=3 uid="uid://dwps88i147nc5"]
 
 [ext_resource type="Script" path="res://Scripts/UI/scene_change_buttons.gd" id="1_1dxrr"]
 [ext_resource type="Texture2D" uid="uid://cuw5xp1sii5ng" path="res://Assets2D/UIAssets/Order_Station_Button.PNG" id="2_tum0r"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cpqjyfrbq4nkd" path="res://Assets2D/UIAssets/Better__Big_Guy.PNG" id="8_uvrji"]
 [ext_resource type="Texture2D" uid="uid://dea8mxqba4cut" path="res://Assets2D/UIAssets/Budget_Thing.PNG" id="10_fd0dv"]
 [ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="11_rn8uo"]
+[ext_resource type="AudioStream" uid="uid://bybpauux2wvcu" path="res://OtherAssets/Sound/toy-button.wav" id="12_n7te6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljkxt"]
 size = Vector2(681, 676)
@@ -61,6 +62,11 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="buttonsPartTwo" type="AudioStreamPlayer2D" parent="screenButtons/orderButton"]
+stream = ExtResource("12_n7te6")
+volume_db = 24.0
+pitch_scale = 2.33
+
 [node name="grillButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -80,6 +86,10 @@ texture = ExtResource("3_ghf18")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="buttonssPartTwo" type="AudioStreamPlayer2D" parent="screenButtons/grillButton"]
+stream = ExtResource("12_n7te6")
+pitch_scale = 2.33
 
 [node name="buildButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
@@ -101,6 +111,10 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="buttonsPartTwoo" type="AudioStreamPlayer2D" parent="screenButtons/buildButton"]
+stream = ExtResource("12_n7te6")
+pitch_scale = 2.33
+
 [node name="fryButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -120,6 +134,10 @@ texture = ExtResource("3_ghf18")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="buttonsPartTwo" type="AudioStreamPlayer2D" parent="screenButtons/fryButton"]
+stream = ExtResource("12_n7te6")
+volume_db = 24.0
 
 [node name="drinkButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
@@ -141,9 +159,13 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="buttonsPartTwo" type="AudioStreamPlayer2D" parent="screenButtons/drinkButton"]
+stream = ExtResource("12_n7te6")
+volume_db = 24.0
+pitch_scale = 2.33
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xg5rt")
-autoplay = true
 
 [node name="OrderLine" type="TextureRect" parent="."]
 layout_mode = 0

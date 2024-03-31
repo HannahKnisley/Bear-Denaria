@@ -15,7 +15,7 @@ func _process(delta):
 func _on_spawn_timer_timeout():
 	var mob = Customer.instantiate()
 	
-	$bell.play()
+	
 	if mob_num >= 3:
 		
 		remove_child(mob)
@@ -24,6 +24,7 @@ func _on_spawn_timer_timeout():
 		print(mob_num)
 		$orderLine.add_child(mob)
 		mob.global_position = $orderLine.global_position
+		$bell.stop()
 	
 	
 		
