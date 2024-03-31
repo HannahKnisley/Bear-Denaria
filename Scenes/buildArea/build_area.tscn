@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=32 format=3 uid="uid://bbv7j14qeefkv"]
 
 [ext_resource type="Texture2D" uid="uid://cfnjgyquldkgm" path="res://Assets2D/buildAssets/SetUpStation.png" id="1_asei2"]
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ds0l7ksxg552d" path="res://Assets2D/misc/ButtonDoen.png" id="5_uewt6"]
 [ext_resource type="PackedScene" uid="uid://ci34ayh2s65fo" path="res://Scenes/buildArea/burgerTray.tscn" id="6_krcfv"]
 [ext_resource type="PackedScene" uid="uid://231vtmjttfef" path="res://Scenes/buildArea/item_spawner.tscn" id="6_q436k"]
+[ext_resource type="AudioStream" uid="uid://d07rav5c24xbd" path="res://OtherAssets/Sound/lidclose.wav" id="7_0s6hv"]
 [ext_resource type="PackedScene" uid="uid://bvschwpnc07ja" path="res://Scenes/buildArea/lettuce.tscn" id="7_a2t4v"]
 [ext_resource type="PackedScene" uid="uid://cl8xi053agody" path="res://Scenes/buildArea/tomato.tscn" id="8_j1jf5"]
 [ext_resource type="PackedScene" uid="uid://bwx46htu77xwq" path="res://Scenes/buildArea/onion.tscn" id="9_ui2oi"]
@@ -89,6 +90,10 @@ stretch_mode = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
 position = Vector2(107, 102)
 shape = SubResource("CircleShape2D_lv2mm")
+
+[node name="lidd" type="AudioStreamPlayer2D" parent="button"]
+stream = ExtResource("7_0s6hv")
+volume_db = 24.0
 
 [node name="Plate" type="StaticBody2D" parent="."]
 collision_layer = 3

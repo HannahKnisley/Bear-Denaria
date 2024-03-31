@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ce3q3igk0bjx7" path="res://Assets2D/menu/Exit_Translucent.PNG" id="3_sham1"]
 [ext_resource type="Texture2D" uid="uid://bip82l6tlix62" path="res://Assets2D/grillAssets/Plate.png" id="5_1utpc"]
 [ext_resource type="FontFile" uid="uid://b3jqcnsrmvyaa" path="res://OtherAssets/Fonts/VertigoFLF.ttf" id="6_ipsb0"]
-[ext_resource type="AudioStream" uid="uid://dcgl525fscg60" path="res://OtherAssets/clicking.wav" id="7_yk4ii"]
+[ext_resource type="AudioStream" uid="uid://dcgl525fscg60" path="res://OtherAssets/Sound/clicking.wav" id="7_yk4ii"]
 
 [sub_resource type="Gradient" id="Gradient_p0awi"]
 colors = PackedColorArray(0.0803864, 0.120179, 0.298216, 1, 2.35841e-06, 0, 0.685646, 1)
