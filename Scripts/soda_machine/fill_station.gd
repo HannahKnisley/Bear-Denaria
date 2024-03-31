@@ -24,4 +24,4 @@ func _on_child_entered_tree(node):
 		myCup = node
 		fillCup()
 		Globals.budget -= 3
-		$sodafill.play()
+		$/root/WorldRoot/drinkArea/fillStation/fillsoda.play()
