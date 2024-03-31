@@ -16,6 +16,13 @@ func _process(delta):
 		if myTray.get_child_count() > 0:
 			var noFries = noFry.instantiate()
 			myTray.get_child(0).add_child(noFries)
+		$soundButton.play()
+		$buttonUP.visible = false
+		$buttonDOWN.visible = true
+		
+	if Input.is_action_just_released("mouseClick"):
+		$buttonUP.visible = true
+		$buttonDOWN.visible = false
 			
 
 

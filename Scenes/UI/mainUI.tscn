@@ -144,6 +144,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="backgrounSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_w1j7q")
+volume_db = -1.0
 autoplay = true
 
 [node name="button" type="AudioStreamPlayer" parent="."]
@@ -179,7 +180,6 @@ shape = SubResource("RectangleShape2D_8bubi")
 [node name="ticketContainer" type="Node2D" parent="."]
 
 [node name="ticketCollect" type="Area2D" parent="." groups=["ticketCollect"]]
-visible = false
 position = Vector2(496, 469)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ticketCollect"]

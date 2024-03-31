@@ -9,6 +9,7 @@ var topCook = 0
 var bottomCook = 0
 var flipping = false
 var up = true
+var beenFlipped = false
 
 var sliding = false
 
@@ -47,6 +48,7 @@ func _physics_process(delta):
 				move_and_collide(burgerToMouse()) 
 		
 	if Input.is_action_just_released("mouseClick"):
+		await get_tree().create_timer(0.1).timeout
 		if inBuildArea and mouseCollide:
 			self.set_collision_mask_value(1, true)
 			self.set_collision_mask_value(2, false)
@@ -123,6 +125,7 @@ func flippingAnimate(delta):
 	else:
 		up = false
 		updateAppearance()
+		flip()
 		
 	if self.global_position < (snapPos-Vector2(0,5)) and !up:
 		move_and_collide((snapPos-self.global_position)*delta*10)
@@ -207,5 +210,21 @@ func updateAppearance():
 		$Tops/burntTop.visible = true
 		
 		
+func flip():
+	if !beenFlipped:
+		for child in $Tops.get_children():
+			child.flip_h = true
+		
+		for child in $Bottoms.get_children():
+			child.flip_h = true
+		beenFlipped = true
+		
+	else:
+		for child in $Tops.get_children():
+			child.flip_h = false
+		
+		for child in $Bottoms.get_children():
+			child.flip_h = false
+		beenFlipped = false
 	
 

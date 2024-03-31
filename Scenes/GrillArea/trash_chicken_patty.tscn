@@ -1,0 +1,245 @@
+[gd_scene load_steps=19 format=3 uid="uid://dksgvk82sbatr"]
+
+[ext_resource type="Script" path="res://Scripts/grillArea/beef_patty.gd" id="1_un4pu"]
+[ext_resource type="Texture2D" uid="uid://cktw74322j2n1" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenTopRaw.png" id="2_ta7gs"]
+[ext_resource type="Texture2D" uid="uid://b77q234vhr8ob" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenTopUnderCooked.png" id="3_noe68"]
+[ext_resource type="Texture2D" uid="uid://b7f7yvrctxk4w" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenTopCooked.png" id="4_6nf2n"]
+[ext_resource type="Texture2D" uid="uid://hq2r0o7mdk8l" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenTopOverCooked.png" id="5_mxxbw"]
+[ext_resource type="Texture2D" uid="uid://drdivxufajkoe" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenTopBurnt.png" id="6_tcn1l"]
+[ext_resource type="Texture2D" uid="uid://cr5utjonmstgv" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenBottomRaw.png" id="7_8340o"]
+[ext_resource type="Texture2D" uid="uid://cqi51vrjqblog" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenBottomUndercooked.png" id="8_ivpql"]
+[ext_resource type="Texture2D" uid="uid://bvhwhoepfy0po" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenBottomCooked.png" id="9_i0a6q"]
+[ext_resource type="Texture2D" uid="uid://cspvv7rm1owiw" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenBottomOverCooked.png" id="10_a2d8e"]
+[ext_resource type="Texture2D" uid="uid://cirlvoahlo4u0" path="res://Assets2D/grillAssets/trashChickenPatties/TrashChickenBottomBurnt.png" id="11_nh7qw"]
+[ext_resource type="PackedScene" uid="uid://3pgtymcr6hkb" path="res://Scenes/GrillArea/cooking_meter.tscn" id="12_abkat"]
+[ext_resource type="Texture2D" uid="uid://cqvlcagl2e4rg" path="res://Assets2D/particles/fries/Fry_Bubbles_1.PNG" id="13_u6fsa"]
+[ext_resource type="Texture2D" uid="uid://2hl6rfpqmkfr" path="res://Assets2D/particles/fries/Fry_Bubbles_2.PNG" id="14_nhmr3"]
+[ext_resource type="Texture2D" uid="uid://c8qunl4fs2nrr" path="res://Assets2D/particles/fries/Fry_Bubbles_3.PNG" id="15_vdehv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_22mxl"]
+radius = 24.4508
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3lb8"]
+size = Vector2(119, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ge1wc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_u6fsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nhmr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vdehv")
+}],
+"loop": true,
+"name": &"pattyAnimation",
+"speed": 10.0
+}]
+
+[node name="chicken_patty" type="RigidBody2D" groups=["chicken", "patty", "topping", "trash"]]
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_un4pu")
+
+[node name="cookTimer" type="Timer" parent="."]
+
+[node name="Tops" type="Node2D" parent="."]
+
+[node name="rawTop" type="TextureRect" parent="Tops"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ta7gs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="underTop" type="TextureRect" parent="Tops"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_noe68")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="goodTop" type="TextureRect" parent="Tops"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6nf2n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="overTop" type="TextureRect" parent="Tops"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mxxbw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="burntTop" type="TextureRect" parent="Tops"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_tcn1l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bottoms" type="Node2D" parent="."]
+
+[node name="rawBottom" type="TextureRect" parent="Bottoms"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_8340o")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="underBottom" type="TextureRect" parent="Bottoms"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ivpql")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="goodBottom" type="TextureRect" parent="Bottoms"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_i0a6q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="overBottom" type="TextureRect" parent="Bottoms"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_a2d8e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="burntBottom" type="TextureRect" parent="Bottoms"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_nh7qw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="collision" type="CollisionShape2D" parent="."]
+scale = Vector2(1.8, 1.8)
+shape = SubResource("CircleShape2D_22mxl")
+
+[node name="buildCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 37.5)
+shape = SubResource("RectangleShape2D_y3lb8")
+disabled = true
+
+[node name="cookingMeter" parent="." instance=ExtResource("12_abkat")]
+visible = false
+position = Vector2(95, -8)
+
+[node name="pattyParticles" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-3.70313, -8.14062)
+scale = Vector2(0.144594, 0.124281)
+sprite_frames = SubResource("SpriteFrames_ge1wc")
+animation = &"pattyAnimation"
+frame = 2
+frame_progress = 0.850998
+
+[connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]

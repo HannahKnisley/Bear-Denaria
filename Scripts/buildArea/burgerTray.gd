@@ -17,10 +17,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if self.get_child_count() > 3:
-		for i in range(3,self.get_child_count()):
+	if self.get_child_count() > 4:
+		for i in range(4,self.get_child_count()):
 			if self.get_child(i).is_in_group("ticket"):
 				self.get_child(i).global_position = $ticketHolder.global_position+Vector2(90,30)
+			elif self.get_child(i).is_in_group("fries"):
+				self.get_child(i).translate(($trayHor/fryHolder.global_position-self.get_child(i).global_position)*delta*10)
+			elif self.get_child(i).is_in_group("drink"):
+				self.get_child(i).translate(($trayHor/drinkHolder.global_position-self.get_child(i).global_position)*delta*10)
 			elif self.get_child(i).global_position != self.global_position:
 				self.get_child(i).translate((self.global_position-self.get_child(i).global_position)*delta*10)
 			
@@ -48,6 +52,8 @@ func _on_child_entered_tree(node):
 		sentToFries = true
 		await get_tree().create_timer(1).timeout
 		self.reparent($/root/WorldRoot/fryArea/trayHolder)
+		$trays2.visible = false
+		$trayHor.visible = true
 		await get_tree().create_timer(1).timeout
 		self.visible = false
 		inFryWait = true

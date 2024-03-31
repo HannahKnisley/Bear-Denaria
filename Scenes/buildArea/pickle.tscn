@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://byub7uu84y0po" path="res://Assets2D/buildAssets/Pickles.png" id="2_sucnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7afvo"]
-size = Vector2(119, 20)
+size = Vector2(119, 8)
 
 [node name="lettuce" type="RigidBody2D" groups=["pickle"]]
 contact_monitor = true
@@ -14,7 +14,7 @@ freeze_mode = 1
 script = ExtResource("1_62har")
 
 [node name="buildCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 48)
+position = Vector2(0, 61)
 shape = SubResource("RectangleShape2D_7afvo")
 
 [node name="temp" type="TextureRect" parent="." groups=["pickle"]]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bbv7j14qeefkv"]
+[gd_scene load_steps=33 format=3 uid="uid://bbv7j14qeefkv"]
 
 [ext_resource type="Texture2D" uid="uid://cfnjgyquldkgm" path="res://Assets2D/buildAssets/SetUpStation.png" id="1_asei2"]
 [ext_resource type="Script" path="res://Scripts/buildArea/pattyContainer.gd" id="1_jn5iw"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://Scripts/buildArea/trash_toppingSpawner.gd" id="19_ipjh1"]
 [ext_resource type="PackedScene" uid="uid://bynsovbi47u0h" path="res://Scenes/buildArea/cheeseTrash.tscn" id="20_54127"]
 [ext_resource type="Texture2D" uid="uid://dh5dwkw1rj0qm" path="res://Assets2D/buildAssets/SetUpStationOptionsLid.png" id="23_wmtp7"]
+[ext_resource type="PackedScene" uid="uid://b4i7tv1nos6mf" path="res://Scenes/buildArea/pickleTrash.tscn" id="25_5ds6j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lv2mm"]
 radius = 29.0689
@@ -173,7 +174,7 @@ topping = ExtResource("20_54127")
 [node name="pickleSpawner" parent="trashToppings" instance=ExtResource("6_q436k")]
 position = Vector2(105, 247)
 script = ExtResource("19_ipjh1")
-topping = ExtResource("11_pvgag")
+topping = ExtResource("25_5ds6j")
 
 [node name="lid" type="TextureRect" parent="."]
 visible = false
@@ -191,7 +192,7 @@ script = ExtResource("1_jn5iw")
 position = Vector2(376, 12)
 
 [node name="traySpawner" type="Node2D" parent="."]
-position = Vector2(939, 328)
+position = Vector2(936, 280)
 script = ExtResource("5_nj56j")
 tray = ExtResource("6_krcfv")
 

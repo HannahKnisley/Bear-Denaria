@@ -4,7 +4,7 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Globals.budget = rng.randi_range(3,8)*10
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

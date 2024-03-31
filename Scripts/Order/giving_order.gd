@@ -93,17 +93,18 @@ func giveOrder(ticket):
 		
 	totalScore = (float(myScore)/float(maxScore))*100
 	if totalScore >= myPickyLevel:
-		print("WIN!")
+		$winSound.play()
 	else:
-		print("Lose :(")
+		$loseSound.play()
 		
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(4).timeout
 	Globals.customersServed += 1
 	if Globals.customersServed == 5:
 		Globals.dayCount += 1
 		get_tree().change_scene_to_file("res://Scenes/dayscreen/dayscreen.tscn")
-	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/build_area.global_position + Vector2(500,350)
+	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/drinkArea.global_position + Vector2(500,350)
 	$/root/WorldRoot/CanvasLayer/MainUI/screenButtons.visible = true
+	$qualityMeter.reset()
 	customer.queue_free()
 	ticket.queue_free()
 	$curTray.get_child(0).queue_free()

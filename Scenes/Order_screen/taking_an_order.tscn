@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d1tu7ywdngl7a"]
+[gd_scene load_steps=36 format=3 uid="uid://d1tu7ywdngl7a"]
 
 [ext_resource type="Script" path="res://Scripts/Order/taking_order.gd" id="1_0rh7d"]
 [ext_resource type="PackedScene" uid="uid://be1133xfpyrwl" path="res://Scenes/Order_screen/ticket.tscn" id="2_fesk1"]
@@ -22,12 +22,17 @@
 [ext_resource type="Texture2D" uid="uid://bkhnoet2ytbr6" path="res://Assets2D/orderAssets/beefPatty.PNG" id="19_fr4r5"]
 [ext_resource type="Texture2D" uid="uid://cobx7mye58sqy" path="res://Assets2D/orderAssets/chickenPatty.PNG" id="20_voorq"]
 [ext_resource type="Texture2D" uid="uid://dalh871vc2kx2" path="res://Assets2D/orderAssets/lettuce.PNG" id="21_u0k82"]
-[ext_resource type="Texture2D" uid="uid://bfu0evv387jr0" path="res://Assets2D/orderAssets/tomato.png" id="22_s40t8"]
+[ext_resource type="Texture2D" uid="uid://bfu0evv387jr0" path="res://Assets2D/orderAssets/tomato.PNG" id="22_s40t8"]
 [ext_resource type="Texture2D" uid="uid://cjrvfxuwroyx" path="res://Assets2D/orderAssets/cheese.PNG" id="23_w32gj"]
 [ext_resource type="Texture2D" uid="uid://ciab1ppcwrq4o" path="res://Assets2D/orderAssets/pickle.PNG" id="24_e0j1y"]
 [ext_resource type="Texture2D" uid="uid://b83876kf7uj3u" path="res://Assets2D/orderAssets/onion.PNG" id="25_g4jxk"]
 [ext_resource type="Texture2D" uid="uid://cxiyqmm7nb3wr" path="res://Assets2D/orderAssets/drink.PNG" id="26_2dun3"]
 [ext_resource type="Texture2D" uid="uid://p4sdqqcprcoc" path="res://Assets2D/orderAssets/fries.PNG" id="27_2wm7r"]
+[ext_resource type="AudioStream" uid="uid://bk1gvor4lfbuw" path="res://OtherAssets/Sound/Yapping.wav" id="29_8xuo6"]
+[ext_resource type="AudioStream" uid="uid://dtww2pkwbx8no" path="res://OtherAssets/Sound/Yapping2.wav" id="30_1h2j4"]
+[ext_resource type="AudioStream" uid="uid://cevy4vfba6jgx" path="res://OtherAssets/Sound/yapping3.wav" id="31_v73qg"]
+[ext_resource type="AudioStream" uid="uid://1cb0pfgdw44n" path="res://OtherAssets/Sound/yapping4.wav" id="32_k6ahp"]
+[ext_resource type="AudioStream" uid="uid://bd7n4j5n6druo" path="res://OtherAssets/Sound/YappingSpecial.wav" id="33_jqveb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_imxp4"]
 animations = [{
@@ -311,6 +316,28 @@ offset_bottom = 132.0
 texture = ExtResource("27_2wm7r")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="yaps" type="Node2D" parent="."]
+
+[node name="yap1" type="AudioStreamPlayer" parent="yaps"]
+stream = ExtResource("29_8xuo6")
+volume_db = 2.0
+
+[node name="yap2" type="AudioStreamPlayer" parent="yaps"]
+stream = ExtResource("30_1h2j4")
+volume_db = 2.0
+
+[node name="yap3" type="AudioStreamPlayer" parent="yaps"]
+stream = ExtResource("31_v73qg")
+volume_db = 2.0
+
+[node name="yap4" type="AudioStreamPlayer" parent="yaps"]
+stream = ExtResource("32_k6ahp")
+volume_db = 2.0
+
+[node name="yap5" type="AudioStreamPlayer" parent="yaps"]
+stream = ExtResource("33_jqveb")
+volume_db = 2.0
 
 [connection signal="timeout" from="spawnCustomer" to="." method="_on_spawn_customer_timeout"]
 [connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]

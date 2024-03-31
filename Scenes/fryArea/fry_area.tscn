@@ -23,10 +23,10 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="trayHolder" type="Node2D" parent="."]
-position = Vector2(-139, 281)
+position = Vector2(-381, 281)
 
 [node name="curTray" type="Node2D" parent="."]
-position = Vector2(492, 279)
+position = Vector2(440, 279)
 
 [node name="fryer" parent="." instance=ExtResource("2_va8au")]
 position = Vector2(335, 499)

@@ -15,7 +15,7 @@ func doStep():
 		count += step
 		
 func reset():
-	$guy.global_position.y += count
+	$guy.global_position.x += count
 	count = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

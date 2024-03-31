@@ -1,25 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci34ayh2s65fo"]
+[gd_scene load_steps=6 format=3 uid="uid://ci34ayh2s65fo"]
 
 [ext_resource type="Script" path="res://Scripts/buildArea/burgerTray.gd" id="1_nkrxw"]
 [ext_resource type="Texture2D" uid="uid://cemani8menq43" path="res://Assets2D/misc/Ticket_Holder.PNG" id="2_7bfpd"]
 [ext_resource type="Texture2D" uid="uid://dulofc0urj248" path="res://Assets2D/buildAssets/Tray.png" id="2_y8xdu"]
+[ext_resource type="Texture2D" uid="uid://dy3kcvowaumy2" path="res://Assets2D/orderAssets/HORIZONTALTRAY.png" id="4_n66dn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwhjo"]
+size = Vector2(141, 197)
 
 [node name="burgerTray" type="Area2D" groups=["burgerTray"]]
 script = ExtResource("1_nkrxw")
 
 [node name="ticketHolder" type="TextureRect" parent="."]
 visible = false
-offset_left = 89.0
-offset_top = -91.0
-offset_right = 275.0
-offset_bottom = 76.0
+offset_left = 204.0
+offset_top = -125.0
+offset_right = 390.0
+offset_bottom = 42.0
 texture = ExtResource("2_7bfpd")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, 37.5)
 shape = SubResource("RectangleShape2D_rwhjo")
 
 [node name="trays2" type="TextureRect" parent="."]
@@ -29,13 +32,36 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -127.0
-offset_top = -151.5
+offset_top = -111.5
 offset_right = 127.0
-offset_bottom = 151.5
+offset_bottom = 191.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_y8xdu")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="trayHor" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -155.0
+offset_right = 236.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_n66dn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="drinkHolder" type="Node2D" parent="trayHor"]
+position = Vector2(-148, 157)
+
+[node name="fryHolder" type="Node2D" parent="trayHor"]
+position = Vector2(226, 160)
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

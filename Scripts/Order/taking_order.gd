@@ -47,6 +47,8 @@ func takeOrder(customer):
 	toppingsAmount = rng.randi_range(1,5)
 	
 	await get_tree().create_timer(waitTime).timeout
+	var myYap = rng.randf_range(0,4)
+	$yaps.get_child(myYap).play()
 	$speechBubble.visible = true
 	var picky = rng.randi_range(0,4)
 	newTicket.takeOrder(picky)
@@ -91,6 +93,7 @@ func takeOrder(customer):
 		$speechBubble/drink.visible = false
 	
 	$speechBubble.visible = false
+	$yaps.get_child(myYap).stop()
 	await get_tree().create_timer(waitTime).timeout
 	customer.reparent($/root/WorldRoot/givingOrder/waitLine)
 	$/root/WorldRoot/CanvasLayer/MainUI/screenButtons.visible = true

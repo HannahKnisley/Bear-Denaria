@@ -1,38 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://tle1fggglcxi"]
+[gd_scene load_steps=7 format=3 uid="uid://tle1fggglcxi"]
 
 [ext_resource type="Script" path="res://Scenes/Soda/cup.gd" id="1_81g6d"]
+[ext_resource type="Texture2D" uid="uid://tjgjuyfjoruq" path="res://Assets2D/sodaAssets/BackOfCup.png" id="2_ureil"]
+[ext_resource type="Texture2D" uid="uid://dm0y5jgvdnswq" path="res://Assets2D/sodaAssets/FrontOfCup.png" id="3_eeykg"]
+[ext_resource type="Texture2D" uid="uid://dyndeu8prny7a" path="res://Assets2D/sodaAssets/SodaInside.png" id="4_sfuq6"]
+[ext_resource type="Texture2D" uid="uid://db78gm4jy5bgc" path="res://Assets2D/sodaAssets/TrashSodaInside.png" id="5_am2ge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk07s"]
-size = Vector2(46, 75)
+size = Vector2(71, 126.5)
 
 [node name="cup" type="Area2D" groups=["cup", "drink"]]
 script = ExtResource("1_81g6d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0.5, -35.75)
 shape = SubResource("RectangleShape2D_wk07s")
 
-[node name="cupFillGood" type="ProgressBar" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -23.5
-offset_top = -38.5
-offset_right = 23.5
-offset_bottom = 38.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="cupFillGood" type="TextureProgressBar" parent="."]
+offset_left = -74.0
+offset_top = -126.0
+offset_right = 1926.0
+offset_bottom = 1874.0
+scale = Vector2(0.08, 0.08)
 fill_mode = 3
+texture_under = ExtResource("2_ureil")
+texture_over = ExtResource("3_eeykg")
+texture_progress = ExtResource("4_sfuq6")
 
-[node name="cupFillTrash" type="ProgressBar" parent="."]
+[node name="cupFillTrash" type="TextureProgressBar" parent="."]
 visible = false
-offset_left = -23.0
-offset_top = -52.0
-offset_right = 24.0
-offset_bottom = 25.0
+offset_left = -74.0
+offset_top = -126.0
+offset_right = 1926.0
+offset_bottom = 1874.0
+scale = Vector2(0.08, 0.08)
 fill_mode = 3
+texture_under = ExtResource("2_ureil")
+texture_over = ExtResource("3_eeykg")
+texture_progress = ExtResource("5_am2ge")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,10 +1,11 @@
 extends Control
-
+var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$HBoxContainer/Daynum.text = str(Globals.dayCount)
-
+	Globals.budget = rng.randi_range(2,6)*10
+	
 	Globals.numOrders = 0
 	Globals.numCustomers = 0
 	Globals.customersServed = 0

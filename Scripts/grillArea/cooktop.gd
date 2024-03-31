@@ -14,17 +14,17 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("mouseClick"):
 		if canHoldPatty and collidingPatty:
-			
-			$/root/WorldRoot/GrillArea/steak.play()
 			heldPatty.snapToGrill(self.global_position)
 			heldPatty.reparent(self)
 			canHoldPatty = false
 			$sizzle.play()
+			print("meow")
 		
 		
 	elif !Input.is_action_just_released("mouseClick") and !Input.is_action_pressed("mouseClick"):
 		if collidingPatty:
 			canHoldPatty = false
+		
 			
 
 
@@ -44,7 +44,6 @@ func _on_body_exited(body):
 	if body == heldPatty:
 		canHoldPatty = true
 		collidingPatty = false
-		$sizzle.stop()
 	
 		
 		
@@ -55,3 +54,7 @@ func _on_sizzle_finished():
 	if !canHoldPatty:
 		$sizzle.play()
 		
+
+
+func _on_child_exiting_tree(node):
+	$sizzle.stop()
