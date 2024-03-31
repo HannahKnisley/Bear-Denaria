@@ -8,4 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if $/root/WorldRoot/CanvasLayer/MainUI.build == true:
+		$/root/WorldRoot/CanvasLayer/MainUI/screenButtons/buildButton/buttonsPartTwoo.play()

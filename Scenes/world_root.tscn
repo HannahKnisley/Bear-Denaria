@@ -40,3 +40,5 @@ position = Vector2(10421, -247)
 
 [node name="givingOrder" parent="." instance=ExtResource("9_5uoyi")]
 position = Vector2(10406, -1922)
+
+[editable path="CanvasLayer/MainUI"]

@@ -1,5 +1,5 @@
 extends Control
-
+var build = false
 var atOrderScreen = true
 var rng = RandomNumberGenerator.new()
 
@@ -32,7 +32,8 @@ func _on_order_button_pressed():
 
 
 func _on_grill_button_pressed():
-	$screenButtons/grillButton/buttonssPartTwo.play()
+
+	build = true
 	#await $screenButtons/grillButton/buttonsPartTwo.finished
 	atOrderScreen = false
 	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/GrillArea.global_position + Vector2(500,350)
@@ -40,12 +41,15 @@ func _on_grill_button_pressed():
 	$ticketCollect/CollisionShape2D.disabled = true
 
 func _on_build_button_pressed():
-	$screenButtons/buildButton/buttonsPartTwoo.play()
+	
 	#await $screenButtons/buildButton/buttonsPartTwo.finished
+	$screenButtons/buildButton/buttonsPartTwoo.play()
 	atOrderScreen = false
 	$/root/WorldRoot/Camera.global_position = $/root/WorldRoot/build_area.global_position + Vector2(500,350)
+
 	$ticketCollect.visible = false
 	$ticketCollect/CollisionShape2D.disabled = true
+	
 
 
 
