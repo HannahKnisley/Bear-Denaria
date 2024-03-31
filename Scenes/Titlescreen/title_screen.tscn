@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfeh7uu0vmwo2"]
+[gd_scene load_steps=11 format=3 uid="uid://dfeh7uu0vmwo2"]
 
 [ext_resource type="Texture2D" uid="uid://cj8dtka4e1dro" path="res://Assets2D/menu/TitleScreen.png" id="1_5wxx0"]
 [ext_resource type="Script" path="res://Scripts/UI/title_screen.gd" id="1_fh18m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cipekpx1etfjd" path="res://Assets2D/menu/Play_Translucent.PNG" id="3_bhgkp"]
 [ext_resource type="Texture2D" uid="uid://dogc5mu5of23f" path="res://Assets2D/menu/Credits_Menu.PNG" id="4_teuuy"]
 [ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="5_ftxje"]
+[ext_resource type="AudioStream" uid="uid://dcgl525fscg60" path="res://OtherAssets/clicking.wav" id="5_jeh7r"]
 [ext_resource type="Texture2D" uid="uid://ca4synxkehpad" path="res://Assets2D/menu/Credits_Translucent.PNG" id="5_xupow"]
 [ext_resource type="Texture2D" uid="uid://c720ynw73g7cb" path="res://Assets2D/menu/Exit_Button.PNG" id="6_8depg"]
 [ext_resource type="Texture2D" uid="uid://ce3q3igk0bjx7" path="res://Assets2D/menu/Exit_Translucent.PNG" id="7_lytn4"]
@@ -44,6 +45,12 @@ texture_hover = ExtResource("3_bhgkp")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="buttton" type="AudioStreamPlayer2D" parent="startButton"]
+position = Vector2(-390, -479)
+stream = ExtResource("5_jeh7r")
+volume_db = 24.0
+pitch_scale = 2.52
 
 [node name="Label" type="Label" parent="startButton"]
 visible = false
@@ -85,6 +92,12 @@ theme = ExtResource("5_ftxje")
 text = "Credits"
 metadata/_edit_use_anchors_ = true
 
+[node name="buttton" type="AudioStreamPlayer2D" parent="creditsButton"]
+position = Vector2(-390, -479)
+stream = ExtResource("5_jeh7r")
+volume_db = 24.0
+pitch_scale = 2.47
+
 [node name="quitButton" type="TextureButton" parent="."]
 layout_mode = 2
 anchor_left = -0.0180542
@@ -97,6 +110,12 @@ texture_hover = ExtResource("7_lytn4")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="buttton" type="AudioStreamPlayer2D" parent="quitButton"]
+position = Vector2(-390, -479)
+stream = ExtResource("5_jeh7r")
+volume_db = 24.0
+pitch_scale = 2.52
 
 [node name="Label" type="Label" parent="quitButton"]
 visible = false

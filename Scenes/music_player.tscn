@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bapw5cofij3hv"]
+
+[ext_resource type="AudioStream" uid="uid://36vkkagpug74" path="res://OtherAssets/Sound/frying-steak-74556.wav" id="1_n4huw"]
+
+[node name="MusicPlayer" type="Node2D"]
+
+[node name="button" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_n4huw")
