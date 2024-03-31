@@ -1,25 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs1t1sudl5fu6"]
+[gd_scene load_steps=6 format=3 uid="uid://cs1t1sudl5fu6"]
 
 [ext_resource type="Script" path="res://Scripts/Order/customer.gd" id="1_1jljr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oijop"]
-size = Vector2(87, 38.5)
-
-[sub_resource type="PrismMesh" id="PrismMesh_5jquy"]
+[ext_resource type="Texture2D" uid="uid://b5kcu4r7tk6mx" path="res://Assets2D/orderAssets/PolarBear.png" id="2_5ftyn"]
+[ext_resource type="Texture2D" uid="uid://bdt2ohawyuqlq" path="res://Assets2D/orderAssets/Caprybara.png" id="3_eofh2"]
+[ext_resource type="Texture2D" uid="uid://xb5orx35uvhj" path="res://Assets2D/orderAssets/DownloadsPossum.png" id="4_6dnvk"]
+[ext_resource type="AudioStream" uid="uid://blaj3jiqyff8q" path="res://OtherAssets/Sound/bell.wav" id="5_1eiyg"]
 
 [node name="Customer" type="Node2D" groups=["customer"]]
 script = ExtResource("1_1jljr")
 
-[node name="Area2D" type="Area2D" parent="." groups=["customer"]]
+[node name="polar" type="TextureRect" parent="."]
+visible = false
+offset_left = -260.0
+offset_top = -326.0
+offset_right = 727.0
+offset_bottom = 357.0
+texture = ExtResource("2_5ftyn")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Customer"]]
-position = Vector2(0.250099, 17.375)
-shape = SubResource("RectangleShape2D_oijop")
+[node name="possum" type="TextureRect" parent="."]
+visible = false
+offset_left = -260.0
+offset_top = -326.0
+offset_right = 727.0
+offset_bottom = 357.0
+texture = ExtResource("3_eofh2")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
-position = Vector2(1.25, -17.625)
-scale = Vector2(80.5, -78.75)
-mesh = SubResource("PrismMesh_5jquy")
+[node name="capy" type="TextureRect" parent="."]
+visible = false
+offset_left = -260.0
+offset_top = -326.0
+offset_right = 727.0
+offset_bottom = 357.0
+texture = ExtResource("4_6dnvk")
+expand_mode = 1
+stretch_mode = 4
 
-[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
-[connection signal="area_shape_exited" from="Area2D" to="." method="_on_area_2d_area_shape_exited"]
+[node name="bell" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1eiyg")

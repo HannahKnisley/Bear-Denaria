@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cuw5xp1sii5ng" path="res://Assets2D/UIAssets/Order_Station_Button.PNG" id="2_tum0r"]
 [ext_resource type="Texture2D" uid="uid://j54mhpmo0wg1" path="res://Assets2D/UIAssets/Grill_Station_Button.PNG" id="3_exoh7"]
 [ext_resource type="Texture2D" uid="uid://dvnlwqeq6a74s" path="res://Assets2D/UIAssets/Background_Button.PNG" id="3_ghf18"]
-[ext_resource type="AudioStream" uid="uid://cfarnpabp7ocg" path="res://OtherAssets/Sound/cookingbackground.wav" id="3_xg5rt"]
 [ext_resource type="Texture2D" uid="uid://dn3nk4s7rru6t" path="res://Assets2D/UIAssets/Assembly_Station_Button.PNG" id="4_vrb21"]
 [ext_resource type="Texture2D" uid="uid://bqd3gfw44ufg6" path="res://Assets2D/UIAssets/Fry_Station_Button.PNG" id="5_7sirv"]
 [ext_resource type="Texture2D" uid="uid://bg1o7n3wax442" path="res://Assets2D/UIAssets/DrinkCookie_Station_Button.PNG" id="6_4q0v4"]
 [ext_resource type="Texture2D" uid="uid://cpqjyfrbq4nkd" path="res://Assets2D/UIAssets/Better__Big_Guy.PNG" id="8_uvrji"]
+[ext_resource type="AudioStream" uid="uid://blhp3ifyxb8vp" path="res://OtherAssets/Sound/BearDenSong.wav" id="8_w1j7q"]
 [ext_resource type="Texture2D" uid="uid://dea8mxqba4cut" path="res://Assets2D/UIAssets/Budget_Thing.PNG" id="10_fd0dv"]
 [ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="11_rn8uo"]
 [ext_resource type="AudioStream" uid="uid://bybpauux2wvcu" path="res://OtherAssets/Sound/toy-button.wav" id="12_n7te6"]
@@ -62,11 +62,6 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="buttonsPartTwo" type="AudioStreamPlayer2D" parent="screenButtons/orderButton"]
-stream = ExtResource("12_n7te6")
-volume_db = 24.0
-pitch_scale = 2.33
-
 [node name="grillButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -86,10 +81,6 @@ texture = ExtResource("3_ghf18")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
-
-[node name="buttonssPartTwo" type="AudioStreamPlayer2D" parent="screenButtons/grillButton"]
-stream = ExtResource("12_n7te6")
-pitch_scale = 2.33
 
 [node name="buildButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
@@ -111,10 +102,6 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="buttonsPartTwoo" type="AudioStreamPlayer2D" parent="screenButtons/buildButton"]
-stream = ExtResource("12_n7te6")
-pitch_scale = 2.33
-
 [node name="fryButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -134,10 +121,6 @@ texture = ExtResource("3_ghf18")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
-
-[node name="buttonsPartTwo" type="AudioStreamPlayer2D" parent="screenButtons/fryButton"]
-stream = ExtResource("12_n7te6")
-volume_db = 24.0
 
 [node name="drinkButton" type="TextureButton" parent="screenButtons"]
 layout_mode = 2
@@ -159,13 +142,13 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="buttonsPartTwo" type="AudioStreamPlayer2D" parent="screenButtons/drinkButton"]
-stream = ExtResource("12_n7te6")
-volume_db = 24.0
-pitch_scale = 2.33
+[node name="backgrounSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_w1j7q")
+autoplay = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_xg5rt")
+[node name="button" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_n7te6")
+volume_db = -5.0
 
 [node name="OrderLine" type="TextureRect" parent="."]
 layout_mode = 0
@@ -194,17 +177,6 @@ position = Vector2(18, 10.5)
 shape = SubResource("RectangleShape2D_8bubi")
 
 [node name="ticketContainer" type="Node2D" parent="."]
-
-[node name="takeOrder" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.262
-anchor_top = 0.0657143
-anchor_right = 0.392
-anchor_bottom = 0.14
-text = "Take Order"
-metadata/_edit_use_anchors_ = true
 
 [node name="ticketCollect" type="Area2D" parent="." groups=["ticketCollect"]]
 visible = false
@@ -262,4 +234,4 @@ horizontal_alignment = 1
 [connection signal="pressed" from="screenButtons/buildButton" to="." method="_on_build_button_pressed"]
 [connection signal="pressed" from="screenButtons/fryButton" to="." method="_on_fry_button_pressed"]
 [connection signal="pressed" from="screenButtons/drinkButton" to="." method="_on_drink_button_pressed"]
-[connection signal="pressed" from="takeOrder" to="." method="_on_take_order_pressed"]
+[connection signal="finished" from="backgrounSound" to="." method="_on_backgroun_sound_finished"]

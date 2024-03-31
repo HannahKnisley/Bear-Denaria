@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cocyyg8ps4hq5"]
+[gd_scene load_steps=4 format=3 uid="uid://cocyyg8ps4hq5"]
 
 [ext_resource type="Script" path="res://Scripts/grillArea/cooktop.gd" id="1_m85fm"]
+[ext_resource type="AudioStream" uid="uid://36vkkagpug74" path="res://OtherAssets/Sound/frying-steak-74556.wav" id="2_fpvtv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jkx0o"]
 radius = 7.00793
@@ -14,5 +15,10 @@ script = ExtResource("1_m85fm")
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_jkx0o")
 
+[node name="sizzle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_fpvtv")
+volume_db = -4.0
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="finished" from="sizzle" to="." method="_on_sizzle_finished"]

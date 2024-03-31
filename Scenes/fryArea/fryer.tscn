@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://6h7q1iuxo1v6"]
+[gd_scene load_steps=8 format=3 uid="uid://6h7q1iuxo1v6"]
 
 [ext_resource type="Script" path="res://Scripts/fryArea/fryer.gd" id="1_1a4ya"]
 [ext_resource type="Texture2D" uid="uid://c1iqkfttk36la" path="res://Assets2D/particles/oil/Frencg_Bubbs_2.PNG" id="2_nxo3p"]
 [ext_resource type="Texture2D" uid="uid://bgfxi3habfbw1" path="res://Assets2D/particles/oil/French_Bubbles_3.PNG" id="3_4fyih"]
 [ext_resource type="Texture2D" uid="uid://bufrhxxetad0a" path="res://Assets2D/particles/oil/French_Bubblies_1.PNG" id="4_6jw6u"]
+[ext_resource type="AudioStream" uid="uid://36vkkagpug74" path="res://OtherAssets/Sound/frying-steak-74556.wav" id="5_14m0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu3si"]
 size = Vector2(160, 122)
@@ -41,7 +42,12 @@ scale = Vector2(0.242485, 0.238768)
 sprite_frames = SubResource("SpriteFrames_oo5ms")
 animation = &"oilParticles"
 
+[node name="sizzle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_14m0h")
+volume_db = -4.0
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="timeout" from="cookTimer" to="." method="_on_cook_timer_timeout"]
+[connection signal="finished" from="sizzle" to="." method="_on_sizzle_finished"]

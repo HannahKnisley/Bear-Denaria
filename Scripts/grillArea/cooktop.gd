@@ -17,6 +17,7 @@ func _process(delta):
 			heldPatty.snapToGrill(self.global_position)
 			heldPatty.reparent(self)
 			canHoldPatty = false
+			$sizzle.play()
 		
 	elif !Input.is_action_just_released("mouseClick") and !Input.is_action_pressed("mouseClick"):
 		if collidingPatty:
@@ -39,4 +40,10 @@ func _on_body_exited(body):
 	if body == heldPatty:
 		canHoldPatty = true
 		collidingPatty = false
+		$sizzle.stop()
 		
+
+
+func _on_sizzle_finished():
+	if !canHoldPatty:
+		$sizzle.play()

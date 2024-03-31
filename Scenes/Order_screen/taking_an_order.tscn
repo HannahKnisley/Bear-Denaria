@@ -1,47 +1,316 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1tu7ywdngl7a"]
+[gd_scene load_steps=31 format=3 uid="uid://d1tu7ywdngl7a"]
 
 [ext_resource type="Script" path="res://Scripts/Order/taking_order.gd" id="1_0rh7d"]
 [ext_resource type="PackedScene" uid="uid://be1133xfpyrwl" path="res://Scenes/Order_screen/ticket.tscn" id="2_fesk1"]
+[ext_resource type="PackedScene" uid="uid://cs1t1sudl5fu6" path="res://Scenes/Order_screen/customer.tscn" id="3_l3efi"]
+[ext_resource type="Texture2D" uid="uid://fawbgy4minil" path="res://Assets2D/orderAssets/OrderingStation.png" id="3_n5l24"]
+[ext_resource type="Texture2D" uid="uid://c8127jq1ar1n" path="res://Assets2D/jotchua.jpeg" id="4_226nt"]
+[ext_resource type="Texture2D" uid="uid://co0tfy3y4oxhl" path="res://Assets2D/orderAssets/OrderingStationDesk.png" id="4_yp1ai"]
+[ext_resource type="Texture2D" uid="uid://c2xn83q1gmnbm" path="res://Assets2D/orderAssets/OrderingStationCharacterWriting2.png" id="7_4x5te"]
+[ext_resource type="Texture2D" uid="uid://cn8vqpa0q5301" path="res://Assets2D/orderAssets/OrderingStationCharacterIdlke.png" id="8_nfs3s"]
+[ext_resource type="Texture2D" uid="uid://4ncal87f3qd1" path="res://Assets2D/orderAssets/OrderingStationCharacter3.png" id="8_uljv5"]
+[ext_resource type="Texture2D" uid="uid://28aqrdf7xm5a" path="res://Assets2D/orderAssets/NEw_Take_Order.png" id="9_bnuc8"]
+[ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="10_ajo1m"]
+[ext_resource type="Texture2D" uid="uid://c5f0ebi8hkhhf" path="res://Assets2D/orderAssets/bottomBun.PNG" id="11_n2hmn"]
+[ext_resource type="Texture2D" uid="uid://cl00pt87ekuan" path="res://Assets2D/orderAssets/speech bubble.png" id="11_x2ml3"]
+[ext_resource type="Texture2D" uid="uid://b2ncx2mqbe1ja" path="res://Assets2D/orderAssets/Meter_Trashest_Customer.PNG" id="12_5rhu8"]
+[ext_resource type="Texture2D" uid="uid://7m7w2l67nv7q" path="res://Assets2D/orderAssets/Meter_MidTrash_Customer.PNG" id="13_c1ovm"]
+[ext_resource type="Texture2D" uid="uid://cj5n73j7epr8j" path="res://Assets2D/orderAssets/Meter_Mid_Customer.PNG" id="14_kt8qu"]
+[ext_resource type="Texture2D" uid="uid://b4qhoc334i3gn" path="res://Assets2D/orderAssets/Meter_MidFresh_Customer.PNG" id="15_b1pwq"]
+[ext_resource type="Texture2D" uid="uid://cpq4coy0j08dn" path="res://Assets2D/orderAssets/Meter_Freshest_Customer.PNG" id="16_n7la1"]
+[ext_resource type="Texture2D" uid="uid://cs7wv76va0phf" path="res://Assets2D/orderAssets/topBun.PNG" id="18_s5dqu"]
+[ext_resource type="Texture2D" uid="uid://bkhnoet2ytbr6" path="res://Assets2D/orderAssets/beefPatty.PNG" id="19_fr4r5"]
+[ext_resource type="Texture2D" uid="uid://cobx7mye58sqy" path="res://Assets2D/orderAssets/chickenPatty.PNG" id="20_voorq"]
+[ext_resource type="Texture2D" uid="uid://dalh871vc2kx2" path="res://Assets2D/orderAssets/lettuce.PNG" id="21_u0k82"]
+[ext_resource type="Texture2D" uid="uid://bfu0evv387jr0" path="res://Assets2D/orderAssets/tomato.PNG" id="22_s40t8"]
+[ext_resource type="Texture2D" uid="uid://cjrvfxuwroyx" path="res://Assets2D/orderAssets/cheese.PNG" id="23_w32gj"]
+[ext_resource type="Texture2D" uid="uid://ciab1ppcwrq4o" path="res://Assets2D/orderAssets/pickle.PNG" id="24_e0j1y"]
+[ext_resource type="Texture2D" uid="uid://b83876kf7uj3u" path="res://Assets2D/orderAssets/onion.PNG" id="25_g4jxk"]
+[ext_resource type="Texture2D" uid="uid://cxiyqmm7nb3wr" path="res://Assets2D/orderAssets/drink.PNG" id="26_2dun3"]
+[ext_resource type="Texture2D" uid="uid://p4sdqqcprcoc" path="res://Assets2D/orderAssets/fries.PNG" id="27_2wm7r"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_n8iig"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_imxp4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4x5te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uljv5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[sub_resource type="Gradient" id="Gradient_7axx4"]
-offsets = PackedFloat32Array(0.0990099)
-colors = PackedColorArray(0.829161, 0.884918, 0.949883, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_phjv6"]
-gradient = SubResource("Gradient_7axx4")
-
-[sub_resource type="BoxMesh" id="BoxMesh_6urms"]
-
-[sub_resource type="Gradient" id="Gradient_nr2te"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0.568627, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cauk3"]
-gradient = SubResource("Gradient_nr2te")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lemja"]
+size = Vector2(160.5, 65.5)
 
 [node name="taking_an_order" type="Node2D"]
 script = ExtResource("1_0rh7d")
 ticket = ExtResource("2_fesk1")
+customer = ExtResource("3_l3efi")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-position = Vector2(516, 416)
-rotation = 3.14159
-scale = Vector2(270.695, 362.765)
-mesh = SubResource("PrismMesh_n8iig")
-texture = SubResource("GradientTexture2D_phjv6")
+[node name="background" type="TextureRect" parent="."]
+offset_right = 999.0
+offset_bottom = 753.0
+texture = ExtResource("3_n5l24")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="counter" type="MeshInstance2D" parent="."]
-position = Vector2(500.807, 655)
-scale = Vector2(-1010.34, 147.047)
-mesh = SubResource("BoxMesh_6urms")
-texture = SubResource("GradientTexture2D_cauk3")
+[node name="jotchua" type="TextureRect" parent="."]
+offset_left = 934.0
+offset_top = 276.0
+offset_right = 1011.0
+offset_bottom = 326.0
+texture = ExtResource("4_226nt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="curCustomer" type="Node2D" parent="."]
+position = Vector2(557, 330)
+
+[node name="desk" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_top = 1.0
+offset_right = 1017.0
+offset_bottom = 770.0
+texture = ExtResource("4_yp1ai")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="bearWrite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(428, 411)
+scale = Vector2(0.193226, 0.193226)
+sprite_frames = SubResource("SpriteFrames_imxp4")
+
+[node name="bear" type="TextureRect" parent="."]
+offset_left = -5.0
+offset_top = 42.0
+offset_right = 954.0
+offset_bottom = 708.0
+texture = ExtResource("8_nfs3s")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="spawnCustomer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="orderLine" type="Node2D" parent="."]
+position = Vector2(-430, 285)
 
 [node name="name" type="Label" parent="."]
-offset_left = 444.0
-offset_top = 616.0
-offset_right = 680.0
-offset_bottom = 695.0
-theme_override_font_sizes/font_size = 45
+offset_left = 380.0
+offset_top = 548.0
+offset_right = 616.0
+offset_bottom = 627.0
+theme = ExtResource("10_ajo1m")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
 text = "t"
+
+[node name="button" type="Area2D" parent="."]
+position = Vector2(-9, 15)
+
+[node name="TextureRect" type="TextureRect" parent="button"]
+offset_right = 286.0
+offset_bottom = 234.0
+texture = ExtResource("9_bnuc8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
+position = Vector2(112.75, 118.25)
+shape = SubResource("RectangleShape2D_lemja")
+
+[node name="speechBubble" type="TextureRect" parent="."]
+visible = false
+offset_left = 165.0
+offset_top = 69.0
+offset_right = 364.0
+offset_bottom = 239.0
+texture = ExtResource("11_x2ml3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="picky1" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("12_5rhu8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="picky2" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("13_c1ovm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="picky3" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("14_kt8qu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="picky4" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("15_b1pwq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="picky5" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("16_n7la1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bottomBun" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("11_n2hmn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="topBun" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("18_s5dqu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="beef" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("19_fr4r5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="chicken" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("20_voorq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="lettuce" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("21_u0k82")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="tomato" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("22_s40t8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="onion" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("25_g4jxk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="cheese" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("23_w32gj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="pickle" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("24_e0j1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="drink" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("26_2dun3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="fry" type="TextureRect" parent="speechBubble"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 132.0
+texture = ExtResource("27_2wm7r")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="timeout" from="spawnCustomer" to="." method="_on_spawn_customer_timeout"]
+[connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="button" to="." method="_on_button_mouse_exited"]

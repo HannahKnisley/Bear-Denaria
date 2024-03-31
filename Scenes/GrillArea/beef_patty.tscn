@@ -39,7 +39,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="BeefPatty" type="RigidBody2D" groups=["patty", "topping"]]
+[node name="BeefPatty" type="RigidBody2D" groups=["beef", "patty", "topping"]]
 contact_monitor = true
 lock_rotation = true
 freeze = true

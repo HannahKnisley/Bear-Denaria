@@ -1,8 +1,8 @@
 extends Node2D
 
-var maxSteps = 330
+var maxSteps = 275
 var count = 0
-var step = 3.30
+var step = 2.75
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +11,7 @@ func _ready():
 
 func doStep():
 	if count<maxSteps:
-		$guy.translate(Vector2(-1,0))
+		$guy.global_position.x -= step
 		count += step
 		
 func reset():

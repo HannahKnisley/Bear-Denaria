@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6q13l0atlu6i"]
+[gd_scene load_steps=6 format=3 uid="uid://c6q13l0atlu6i"]
 
 [ext_resource type="PackedScene" uid="uid://231vtmjttfef" path="res://Scenes/buildArea/item_spawner.tscn" id="1_x5gk2"]
 [ext_resource type="PackedScene" uid="uid://tle1fggglcxi" path="res://Scenes/Soda/cup.tscn" id="2_yucl1"]
@@ -6,11 +6,6 @@
 [ext_resource type="Script" path="res://Scripts/soda_machine/fill_station_trash.gd" id="4_x5sih"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_eu8q1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp7nl"]
-size = Vector2(82, 217)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5jwoq"]
 
 [node name="drinkArea" type="Node2D"]
 
@@ -47,15 +42,3 @@ mesh = SubResource("PrismMesh_eu8q1")
 position = Vector2(636, 89)
 scale = Vector2(86.5, 77.5)
 mesh = SubResource("PrismMesh_eu8q1")
-
-[node name="onTray" type="Area2D" parent="."]
-position = Vector2(856, 311)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="onTray"]
-position = Vector2(6, -3)
-shape = SubResource("RectangleShape2D_gp7nl")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="onTray/CollisionShape2D"]
-position = Vector2(-2.17478, 5.50906)
-scale = Vector2(-61.3212, 192.982)
-mesh = SubResource("BoxMesh_5jwoq")

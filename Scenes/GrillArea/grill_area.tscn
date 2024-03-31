@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://6v3p1p6eibu0"]
 
-[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/grill.png" id="1_rty3p"]
+[ext_resource type="Texture2D" uid="uid://dy8eh6g6fb36l" path="res://Assets2D/grillAssets/Grill.png" id="1_rty3p"]
 [ext_resource type="Script" path="res://Scenes/GrillArea/grill_area.gd" id="1_slhkf"]
 [ext_resource type="PackedScene" uid="uid://c16cne033c4of" path="res://Scenes/GrillArea/patty_spawner.tscn" id="2_7hck8"]
 [ext_resource type="Texture2D" uid="uid://cu0glqmog1j8p" path="res://Assets2D/misc/ButtonUp.png" id="2_08cpd"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cyic7t5yfpo8n" path="res://Scenes/GrillArea/spatula.tscn" id="3_upwfe"]
 [ext_resource type="PackedScene" uid="uid://b8hns1ngiicnc" path="res://Scenes/GrillArea/grill_to_build.tscn" id="4_x3esj"]
 [ext_resource type="PackedScene" uid="uid://d16qytf4rw7hu" path="res://Scenes/GrillArea/chicken_patty.tscn" id="9_fertg"]
-[ext_resource type="PackedScene" uid="uid://coep7vy5ag3h4" path="res://Scenes/GrillArea/trash_beef_patty.tscn" id="10_46jx2"]
+[ext_resource type="Script" path="res://Scripts/grillArea/trash_patty_spawner.gd" id="9_h5i7h"]
 [ext_resource type="Texture2D" uid="uid://ddpj0yipvr1ma" path="res://Assets2D/grillAssets/GrillOptionsLid.png" id="10_apahq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ppw7"]
@@ -51,6 +51,9 @@ stretch_mode = 5
 position = Vector2(107, 102)
 shape = SubResource("CircleShape2D_4ppw7")
 
+[node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
+position = Vector2(908, 458)
+
 [node name="spatulaBelow" type="Node2D" parent="."]
 
 [node name="Cooktop" parent="." instance=ExtResource("2_wnctg")]
@@ -72,9 +75,6 @@ position = Vector2(557, 370)
 position = Vector2(575, 486)
 scale = Vector2(1.01381, 0.996506)
 
-[node name="grillToBuild" parent="." instance=ExtResource("4_x3esj")]
-position = Vector2(908, 458)
-
 [node name="goodToppings" type="Node2D" parent="."]
 
 [node name="pattySpawner" parent="goodToppings" instance=ExtResource("2_7hck8")]
@@ -89,7 +89,8 @@ visible = false
 
 [node name="pattySpawner" parent="trashToppings" instance=ExtResource("2_7hck8")]
 position = Vector2(86, 279)
-patty = ExtResource("10_46jx2")
+script = ExtResource("9_h5i7h")
+patty = null
 
 [node name="spatulaAbove" type="Node2D" parent="."]
 position = Vector2(107, 405)

@@ -14,7 +14,7 @@ func _process(delta):
 	if self.get_child_count() == 0 and self.get_parent().visible == true:
 		spawn_patty()
 			
-	if self.get_parent().visible == false:
+	if self.get_parent().visible == false or Globals.budget<5:
 		for child in self.get_children():
 			child.queue_free()
 
@@ -25,3 +25,8 @@ func spawn_patty():
 	newPatty.global_position = self.global_position
 	
 
+
+
+func _on_child_exiting_tree(node):
+	if self.get_parent().visible == true:
+		Globals.budget -= 5

@@ -7,23 +7,13 @@ var dayCount = 1
 var budget = 0
 
 var numOrders = 0
+var numCustomers = 0
+var customersServed = 0
 
 var lastBun = "top"
 
 var readyForTicket = false
 
-
-
-var burger_type
-var tomato = false
-var letteace = false
-var pickle = false
-var pickey = false
-var kitchup = false
-var mustard = false
-var pressed_order = false
-var customertype = "nice"
-var ticket_move = false
 
 
 # Called when the node enters the scene tree for the first time.

@@ -6,3 +6,5 @@
 [node name="pattySpawner" type="Node2D"]
 script = ExtResource("1_dmaec")
 patty = ExtResource("2_pledu")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

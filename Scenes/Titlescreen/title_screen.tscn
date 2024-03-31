@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfeh7uu0vmwo2"]
+[gd_scene load_steps=12 format=3 uid="uid://dfeh7uu0vmwo2"]
 
 [ext_resource type="Texture2D" uid="uid://cj8dtka4e1dro" path="res://Assets2D/menu/TitleScreen.png" id="1_5wxx0"]
 [ext_resource type="Script" path="res://Scripts/UI/title_screen.gd" id="1_fh18m"]
-[ext_resource type="Texture2D" uid="uid://db5oneijwdere" path="res://Assets2D/menu/Play_Plate.PNG" id="2_1hxj6"]
-[ext_resource type="Texture2D" uid="uid://cipekpx1etfjd" path="res://Assets2D/menu/Play_Translucent.PNG" id="3_bhgkp"]
+[ext_resource type="Texture2D" uid="uid://dvn4g2pvfa58a" path="res://Assets2D/orderAssets/New_Play_Plate.png" id="3_0gb03"]
+[ext_resource type="Texture2D" uid="uid://baivako51yh8r" path="res://Assets2D/orderAssets/New_Pressed_Play_Plate.png" id="4_p3wgn"]
 [ext_resource type="Texture2D" uid="uid://dogc5mu5of23f" path="res://Assets2D/menu/Credits_Menu.PNG" id="4_teuuy"]
 [ext_resource type="Theme" uid="uid://ccj22doayxb2g" path="res://OtherAssets/Fonts/myLabel.tres" id="5_ftxje"]
-[ext_resource type="AudioStream" uid="uid://dcgl525fscg60" path="res://OtherAssets/clicking.wav" id="5_jeh7r"]
+[ext_resource type="AudioStream" uid="uid://dcgl525fscg60" path="res://OtherAssets/Sound/clicking.wav" id="5_jeh7r"]
 [ext_resource type="Texture2D" uid="uid://ca4synxkehpad" path="res://Assets2D/menu/Credits_Translucent.PNG" id="5_xupow"]
 [ext_resource type="Texture2D" uid="uid://c720ynw73g7cb" path="res://Assets2D/menu/Exit_Button.PNG" id="6_8depg"]
 [ext_resource type="Texture2D" uid="uid://ce3q3igk0bjx7" path="res://Assets2D/menu/Exit_Translucent.PNG" id="7_lytn4"]
+[ext_resource type="AudioStream" uid="uid://cfarnpabp7ocg" path="res://OtherAssets/Sound/cookingbackground.wav" id="11_co783"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -36,12 +37,12 @@ metadata/_edit_use_anchors_ = true
 [node name="startButton" type="TextureButton" parent="."]
 layout_mode = 2
 anchor_left = 0.391174
-anchor_top = 0.684286
+anchor_top = 0.67
 anchor_right = 0.650953
-anchor_bottom = 1.04286
+anchor_bottom = 1.02857
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_1hxj6")
-texture_hover = ExtResource("3_bhgkp")
+texture_normal = ExtResource("3_0gb03")
+texture_hover = ExtResource("4_p3wgn")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -126,8 +127,14 @@ theme = ExtResource("5_ftxje")
 text = "Exit"
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_co783")
+volume_db = -5.0
+autoplay = true
+
 [connection signal="mouse_entered" from="startButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="mouse_exited" from="startButton" to="." method="_on_start_button_mouse_exited"]
 [connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="creditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
