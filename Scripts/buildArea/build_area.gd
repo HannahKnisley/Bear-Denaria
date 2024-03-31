@@ -20,9 +20,11 @@ func _process(delta):
 			
 		$lid.visible = true
 		if $goodToppings.visible == true:
+			$button/lidd.play()
 			$goodToppings.visible = false
 			$trashToppings.visible = true
 		else:
+			$button/lidd.play()
 			$trashToppings.visible = false
 			$goodToppings.visible = true
 		await get_tree().create_timer(1).timeout

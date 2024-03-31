@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6q13l0atlu6i"]
+[gd_scene load_steps=8 format=3 uid="uid://c6q13l0atlu6i"]
 
 [ext_resource type="PackedScene" uid="uid://231vtmjttfef" path="res://Scenes/buildArea/item_spawner.tscn" id="1_x5gk2"]
 [ext_resource type="Script" path="res://Scripts/buildArea/trash_toppingSpawner.gd" id="2_qqnbg"]
 [ext_resource type="PackedScene" uid="uid://tle1fggglcxi" path="res://Scenes/Soda/cup.tscn" id="2_yucl1"]
 [ext_resource type="PackedScene" uid="uid://djb7sqnieo15j" path="res://Scenes/Soda/fill_station.tscn" id="3_l7cje"]
 [ext_resource type="Script" path="res://Scripts/soda_machine/fill_station_trash.gd" id="4_x5sih"]
+[ext_resource type="AudioStream" uid="uid://c3ke5tfdnbedo" path="res://OtherAssets/Sound/soda.wav" id="5_ju28f"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_eu8q1"]
 
@@ -30,6 +31,9 @@ topping = ExtResource("2_yucl1")
 
 [node name="fillStation" parent="." instance=ExtResource("3_l7cje")]
 position = Vector2(330, 252)
+
+[node name="fillsoda" type="AudioStreamPlayer2D" parent="fillStation"]
+stream = ExtResource("5_ju28f")
 
 [node name="fillStationTrash" parent="." instance=ExtResource("3_l7cje")]
 position = Vector2(639, 249)

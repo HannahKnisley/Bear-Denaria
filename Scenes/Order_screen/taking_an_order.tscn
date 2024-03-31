@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bkhnoet2ytbr6" path="res://Assets2D/orderAssets/beefPatty.PNG" id="19_fr4r5"]
 [ext_resource type="Texture2D" uid="uid://cobx7mye58sqy" path="res://Assets2D/orderAssets/chickenPatty.PNG" id="20_voorq"]
 [ext_resource type="Texture2D" uid="uid://dalh871vc2kx2" path="res://Assets2D/orderAssets/lettuce.PNG" id="21_u0k82"]
-[ext_resource type="Texture2D" uid="uid://bfu0evv387jr0" path="res://Assets2D/orderAssets/tomato.PNG" id="22_s40t8"]
+[ext_resource type="Texture2D" uid="uid://bfu0evv387jr0" path="res://Assets2D/orderAssets/tomato.png" id="22_s40t8"]
 [ext_resource type="Texture2D" uid="uid://cjrvfxuwroyx" path="res://Assets2D/orderAssets/cheese.PNG" id="23_w32gj"]
 [ext_resource type="Texture2D" uid="uid://ciab1ppcwrq4o" path="res://Assets2D/orderAssets/pickle.PNG" id="24_e0j1y"]
 [ext_resource type="Texture2D" uid="uid://b83876kf7uj3u" path="res://Assets2D/orderAssets/onion.PNG" id="25_g4jxk"]
